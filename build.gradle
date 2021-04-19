@@ -1,0 +1,55 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.soriel.music'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 스프링부트
+    compile('org.springframework.boot:spring-boot-starter-web');
+
+
+    // 롬북
+    compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+
+    //시큐리티 : 보안관련 @어노테이션 제공
+    compile('org.springframework.boot:spring-boot-starter-security')
+
+    //타임리프 : html css img 정적파일 연결
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    implementation('org.thymeleaf.extras:thymeleaf-extras-springsecurity5')
+
+    //jpa : jpa 사용
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    //h2 : 관계형 데이터베이스 제공
+    compile('com.h2database:h2')
+
+    //oauth2 : 소셜로그인
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+}
+
