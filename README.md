@@ -13,9 +13,9 @@
       3. 페이지 갯수 
                  
 5. DB 구성 
-      OAUTH2 DB [ Oauth2Table ] : SMTP 보내기  : [제현]
-      카드 DB   [ 카드사Table , 카드Table ]   : [여름]
-      게시판 DB [ 1:1상담 게시판 ]          : [강현]
+      1. OAUTH2 DB [ Oauth2Table ] : SMTP 보내기  : [제현]
+      2. 카드 DB   [ 카드사Table , 카드Table ]   : [여름]
+      3. 게시판 DB [ 1:1상담 게시판 ]          : [강현]
       
 6. 페이지 구조 [ HTML · CSS ]
       1. 메인페이지 : 메뉴(글꼴) , 메인세션 , 푸터 [여름]
