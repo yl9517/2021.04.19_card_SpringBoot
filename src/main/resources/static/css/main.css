@@ -1,0 +1,13 @@
+
+
+#main_home{
+    width : 100%;
+    background-color: pink;
+	height: auto;
+}
+#first_block{
+	height: 500px;
+    background-image: url("../images/main_image.jpg");
+    background-repeat: no-repeat;
+
+}
