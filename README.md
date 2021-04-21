@@ -13,7 +13,7 @@
       3. 페이지 갯수 
                  
 5. DB 구성 
-      1. OAUTH2 DB [ Oauth2Table ] : SMTP 보내기  : [제현]
+      1. OAUTH2 DB [ Oauth2Table ] : SMTP 보내기  : [제현] 
       2. 카드 DB   [ 카드사Table , 카드Table ]   : [여름]
       3. 게시판 DB [ 1:1상담 게시판 ]          : [강현]
       
