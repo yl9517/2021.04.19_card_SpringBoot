@@ -54,9 +54,11 @@ public class CardEntity {
     @Column (nullable = false)
     private String cardLink; //카드사 링크
 
+    @Column
+    private int count; //순위에 쓰일 카운트
 
     @Builder
-    public CardEntity(int cardCode, String cardName, String cardPhoto, String cardCompany, int annualFee, int beforePay, String cardType, String benefit1, String benefit1_detail, String benefit2, String benefit2_detail, String benefit3, String benefit3_detail, String cardLink) {
+    public CardEntity(int cardCode, String cardName, String cardPhoto, String cardCompany, int annualFee, int beforePay, String cardType, String benefit1, String benefit1_detail, String benefit2, String benefit2_detail, String benefit3, String benefit3_detail, String cardLink,int count) {
         this.cardCode = cardCode;
         this.cardName = cardName;
         this.cardPhoto = cardPhoto;
@@ -71,8 +73,10 @@ public class CardEntity {
         this.benefit3 = benefit3;
         this.benefit3_detail = benefit3_detail;
         this.cardLink = cardLink;
+        this.count=count;
     }
 
+    //수정
     public CardEntity update(String cardName, String cardPhoto, String cardCompany, int annualFee, int beforePay, String cardType, String benefit1, String benefit1_detail, String benefit2, String benefit2_detail, String benefit3, String benefit3_detail, String cardLink) {
         this.cardName = cardName;
         this.cardPhoto = cardPhoto;
@@ -91,7 +95,10 @@ public class CardEntity {
         return this;
     }
 
-
+    //버튼 누를때마다? 카운트 올라가기
+    public void countUp(){
+        this.count=count++;
+    }
 
 
 

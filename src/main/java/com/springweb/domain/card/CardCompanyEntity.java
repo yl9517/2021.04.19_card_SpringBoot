@@ -32,13 +32,19 @@ public class CardCompanyEntity {
         this.haveCardNum = haveCardNum;
     }
 
-    public CardCompanyEntity update(String companyName, String companyLogo, int haveCardNum){
+    //수정
+    public CardCompanyEntity update(String companyName, String companyLogo){
         this.companyName=companyName;
         this.companyLogo=companyLogo;
-        this.haveCardNum=haveCardNum;
 
         return this;
     }
+
+    //카드 등록할때마다 등록카드갯수 올라가기
+    public void addCard(){
+        this.haveCardNum=haveCardNum++;
+    }
+
 
 
 }
