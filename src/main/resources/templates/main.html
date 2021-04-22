@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,11 @@
 
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
 </head>
 
 <body>
-    <div th:replace="header.html::head"></div>
-    <div th:fragment="head">
+    <th:block th:replace = "/header :: header"></th:block>
 
     <div id="main_wrap">
 
@@ -28,12 +28,32 @@
 
         <div id="no_mv">
             <div id="second_block">
-                <h3> 내용 추가 어떤 내용 넣을지는 </h3>
+                <h2> 나에게 맞는 카드는 ?</h2>
+
+                <p>간편하게 </p>
             </div>
+
+            <div id="third_block">
+                <h2> 오늘의 카드 추천 </h2>
+                <ul>
+                    <li class="randomCard">
+                        <img src="../static/images/카드1.png">
+                        <p>신한 DEEP MAKING</p>
+                    </li>
+                    <li class="randomCard">
+
+                    </li>
+                    <li class="randomCard">
+
+                    </li>
+                 </ul>
+            </div>
+
         </div>
 
-
-
     </div>
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
 </body>
 </html>

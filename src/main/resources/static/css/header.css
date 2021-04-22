@@ -17,7 +17,7 @@
     margin: 0 auto;
 }
 
-#logo{
+#head #logo{
     background-color: red;
     padding : 10px;
 	text-align: center;
