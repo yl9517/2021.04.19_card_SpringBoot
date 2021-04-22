@@ -8,20 +8,25 @@
 </head>
 
 <body>
+    <div th:replace="header.html::head"></div>
+    <div th:fragment="head">
 
     <div id="main_wrap">
 
         <div id="mv">
             <div id="first_block">
-                <h1>No.1 <br>
-                    Credit Card Application Website </h1>
-                <p> 00카드는 모든 신용카드 다 준다 아아아아아소개소개소개 </p>
+                <div class="first_info">
+                    <h1>No.1 <br>
+                        Credit Card Application Website </h1>
+                    <p> 00신용카드 소개글 홈페이지 입니다 </p>
+                </div>
+
             </div>
         </div>
 
         <div id="no_mv">
             <div id="second_block">
-                <h3> 우리 홈페이지에서 카드 신청ㅎ ㅐ</h3>
+                <h3> 내용 추가 어떤 내용 넣을지는 </h3>
             </div>
         </div>
 
