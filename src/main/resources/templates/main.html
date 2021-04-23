@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/main.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        var jbOffset = $( '#menu_bar' ).offset();
+        $( window ).scroll( function() {
+          if ( $( document ).scrollTop() > jbOffset.top ) {
+            $( '#menu_bar' ).addClass( 'jbFixed' );
+          }
+          else {
+            $( '#menu_bar' ).removeClass( 'jbFixed' );
+          }
+        });
+      } );
+    </script>
+
 </head>
 
 <body>
@@ -36,16 +52,22 @@
             <div id="third_block">
                 <h2> 오늘의 카드 추천 </h2>
                 <ul>
-                    <li class="randomCard">
-                        <img src="../static/images/카드1.png">
-                        <p>신한 DEEP MAKING</p>
-                    </li>
-                    <li class="randomCard">
+                    <a href="#">
+                        <li class="randomCard">
+                            <img src="../static/images/카드1.png">
+                            <p>신한 DEEP MAKING</p>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="randomCard">
 
-                    </li>
-                    <li class="randomCard">
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="randomCard">
 
-                    </li>
+                        </li>
+                    </a>
                  </ul>
             </div>
 
