@@ -50,30 +50,33 @@ a{
 #second_block{
     margin : 0 auto;
     height: 300px;
-    background-color: pink;
 	text-align: center;
 }
 
 /*카드 랜덤 추천*/
 #third_block{
     height:700px;
+    text-align:center;
+    background-color: #e6ecf7;
+    padding: 0 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
-
 #third_block .randomCard{
-   /* background-image: url("../images/cardback.jpg");*/
+   /* background-image: url("../images/cardback.jpg");
     background-repeat: no-repeat;
     background-position: center center;
 	background-size: cover;
-   /* filter:blur(3px);*/
+    filter:blur(3px);*/
 
+    background-color: #fff;
     float : left;
-    border-radius : 20px;
     width : 380px;
     height : 510px;
-    text-align:center;
     margin: 0 10px;
-    box-shadow: 3px 3px 15px rgb(0 0 0 / 10%);
-}
+    border : 0.1px solid #e5e5e5;
+   }
 
 #third_block .randomCard img{
     width : 290px;
@@ -84,11 +87,12 @@ a{
     font-size : 24px;
 }
 #third_block a:hover .randomCard{
-   background-color: rgba(20,20,20,0.2);
-   opacity: 1;
-   transition:all 1s;
+
+    box-shadow: 0px 0px 20px 10px rgb(0 0 0 / 18%);
+   transition:all 0.4s;
 }
 #third_block a:hover .randomCard img{
    transform: rotate(90deg);
    transition:all 0.4s;
+
 }
