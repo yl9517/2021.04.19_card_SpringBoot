@@ -15,27 +15,48 @@
 #head{
     width:100%;
     margin: 0 auto;
+    height:auto;
+}
+#head hr{
+    margin : 0 auto;
+    width: 80px;
 }
 
 #head #logo{
-    background-color: red;
     padding : 10px;
 	text-align: center;
 }
-
 #menu_bar{
-    background-color: yellow;
-    padding : 20px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 15px 15px -15px rgb(0 0 0 / 15%);
+    z-index : 99; /*우선순위*/
+}
+
+#menu_inner{
+    width:1300px;
 	text-align: center;
+    padding : 15px;
+    margin : 0 auto;
+}
+#menu_inner .loginBtn img{
+    width : 30px;
+    height: 26px;
 }
 
 #menu_bar li{
 		list-style-type: none;
  		display: inline-block;
- 		padding: 0 50px;
+ 		padding: 0 70px;
  		font-size : 20px;
 }
 #menu_bar li a{
  		text-decoration: none;
  		color : black;
 }
+.jbFixed {
+        position: fixed;
+        top: 0px;
+      }
+
+
