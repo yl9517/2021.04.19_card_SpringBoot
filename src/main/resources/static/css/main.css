@@ -57,7 +57,7 @@ a{
     max-width:1100px;
     width:100%;
     margin : 0 auto;
-    height: 550px;
+    height: 560px;
 	text-align: center;
 
 }
@@ -78,12 +78,22 @@ a{
        font-size: 30px;
        border-radius: 50%;
        background-color: #f8efed;
+     transition: 0.4s;
 }
 #second_block li:nth-child(2) .show{
       margin-left:150px;
 }
 #second_block li:nth-child(3) .show{
       margin-left:300px;
+}
+
+#second_block li:hover .show{
+     width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 35px;
+     transition: 0.4s;
+
 }
 
 #second_block .screen .slide{
