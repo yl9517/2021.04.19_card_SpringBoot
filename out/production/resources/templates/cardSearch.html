@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/cardSearch.css" />
+
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
+    <div id="searchWrap">
+            <div id="subtitle">
+                <h1>카드 검색</h1>
+            </div>
+
+            <form>
+                <div id="searchInfo">
+                    <div id="gender">
+                        <p>성별</p>
+                        <input type="button" value="여자">
+                        <input type="button" value="남자">
+                    </div>
+                     <div id="age">
+                         <p>연령대</p>
+                        <input type="button" value="20대">
+                        <input type="button" value="30대">
+                        <input type="button" value="40대 이상">
+                    </div>
+                    <div id="type">
+                        <p>카드 타입</p>
+                        <input type="button" value="전체">
+                        <input type="button" value="할인">
+                        <input type="button" value="포인트">
+                    </div>
+                    <div id="benefit">
+                        <p>카드 혜택</p>
+                        <input type="button" value="교통">
+                        <input type="button" value="주유">
+                        <input type="button" value="통신">
+                        <input type="button" value="마트/편의점">
+                        <input type="button" value="쇼핑">
+                        <input type="button" value="카페/디저트">
+                        <input type="button" value="영화/문화">
+                    </div>
+
+                    <div id="submit">
+                        <input type="button" value="검색">
+                        <input type="button" value="초기화">
+                    </div>
+
+                </div>
+            </form>
+
+    </div>
+
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+</body>
+</html>

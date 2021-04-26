@@ -28,14 +28,13 @@ a{
 }
 #mv > div {
     background-image: url("../images/maamin.jpg");
-   /* background-color: #fffaf2;*/
 	height: 900px;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
 }
-/*상단 홈*/
+/*상단 글*/
 .first_info{
     position: relative;
     top: 40%;
@@ -48,7 +47,6 @@ a{
 
 /*하단 홈*/
 #no_mv{
-    /*position: relative;*/
     width :1300px;
     height: auto;
     background-color: #fff;
