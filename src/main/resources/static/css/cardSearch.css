@@ -1,0 +1,56 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
+/*카드 검색 전체 div*/
+ #searchWrap{
+    margin: 0 auto;
+    height: auto;
+    background-color : pink;
+ }
+
+ /*소제목*/
+ #subtitle{
+    margin: 0 auto;
+    width: 100%;
+    height : auto;
+    background-color : orange;
+ }
+ #subtitle h1{
+    margin: 0 auto;
+    width : 1300px;
+    display: flex; /*align-items와 함께 세로 센터만들기*/
+    align-items: center;
+    padding: 20px;
+   font-size : 35px;
+ }
+
+/*검색조건*/
+ #searchInfo{
+    width:1300px;
+    margin: 0 auto;
+    padding : 50px;
+ }
+ #searchInfo div{
+    margin-bottom : 40px;
+ }
+ #searchInfo p{
+    font-size : 25px;
+    margin: 10px 0;
+ }
+#searchInfo input{
+    width: 110px;
+    height: 70px;
+    font-size : 18px;
+}
+/*클릭 후*/
+#searchInfo #gender input:selected{
+}
