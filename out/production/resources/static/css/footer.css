@@ -1,0 +1,33 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+#foot{
+    width:100%;
+    padding : 40px;
+    margin: 0 auto;
+    text-align:center;
+    background-color : #0c2135;
+    color : #dcdcdc;
+}
+
+#foot #logo{
+	text-align: center;
+}
+#foot ul{
+    margin: 30px auto 20px;
+}
+#foot li{
+    display : inline;
+    margin :0 20px;
+    font-size : 14px;
+
+}
+
+#foot .copy{
+    color : #46649B;
+    font-size : 12px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+    <div id="main_wrap">
+
+        <div id="mv">
+            <div id="first_block">
+                <div class="first_info">
+                    <h1>No.1 <br>
+                        Credit Card Application Website </h1><br>
+                    <p> 00신용카드 소개글 홈페이지 입니다 </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="no_mv">
+            <div id="second_block">
+                <h2> 나에게 맞는 카드는 ?</h2>
+
+                <p>간편하게 </p>
+            </div>
+
+            <div id="third_block">
+                <h2> 오늘의 카드 추천 </h2>
+                <ul>
+                    <li class="randomCard">
+                        <img src="../static/images/카드1.png">
+                        <p>신한 DEEP MAKING</p>
+                    </li>
+                    <li class="randomCard">
+
+                    </li>
+                    <li class="randomCard">
+
+                    </li>
+                 </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+</body>
+</html>
