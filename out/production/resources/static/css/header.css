@@ -15,6 +15,7 @@
 #head{
     width:100%;
     margin: 0 auto;
+<<<<<<< HEAD
     height:auto;
 }
 #head hr{
@@ -42,21 +43,42 @@
 #menu_inner .loginBtn img{
     width : 30px;
     height: 26px;
+=======
+}
+
+#head #logo{
+    background-color: red;
+    padding : 10px;
+	text-align: center;
+}
+
+#menu_bar{
+    background-color: yellow;
+    padding : 20px;
+	text-align: center;
+>>>>>>> origin/master
 }
 
 #menu_bar li{
 		list-style-type: none;
  		display: inline-block;
+<<<<<<< HEAD
  		padding: 0 70px;
+=======
+ 		padding: 0 50px;
+>>>>>>> origin/master
  		font-size : 20px;
 }
 #menu_bar li a{
  		text-decoration: none;
  		color : black;
 }
+<<<<<<< HEAD
 .jbFixed {
         position: fixed;
         top: 0px;
       }
 
 
+=======
+>>>>>>> origin/master
