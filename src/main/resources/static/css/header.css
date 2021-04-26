@@ -23,9 +23,16 @@
 }
 
 #head #logo{
-    padding : 10px;
+    margin:5px;
 	text-align: center;
 }
+#logo img{
+	width:100px;
+}
+#logo .logoname{
+    margin-bottom : 20px;
+}
+
 #menu_bar{
     background-color: #fff;
     width: 100%;

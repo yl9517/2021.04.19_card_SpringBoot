@@ -17,6 +17,9 @@ ul,ol,li{
 #foot #logo{
 	text-align: center;
 }
+#logo img{
+    width:90px;
+}
 #foot ul{
     margin: 30px auto 20px;
 }
