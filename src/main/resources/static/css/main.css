@@ -35,6 +35,7 @@ a{
 	background-size: cover;
 	background-attachment: fixed;
 }
+/*상단 홈*/
 .first_info{
     position: relative;
     top: 40%;
@@ -42,11 +43,14 @@ a{
     font-size : 25px;
 }
 
+
+
+
 /*하단 홈*/
 #no_mv{
     /*position: relative;*/
     width :1300px;
-    height: 1000px;
+    height: auto;
     background-color: #fff;
     margin: -70px auto 0;
     box-shadow: 3px 3px 15px rgb(0 0 0 / 15%);
