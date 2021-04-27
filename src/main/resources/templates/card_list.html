@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/card_list.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
+    <div id="chartWrap">
+        <div id="subtitle">
+            <h1> 카드List </h1>
+        </div>
+
+        <table id="listInfo">
+            <tr>
+                <td> <img src="../static/images/카드1.png"> </td><!--사진-->
+                <td rowspan="3"> </td><!--혜택1 아이콘-->
+                <td rowspan="3"> </td><!--혜택2 아이콘-->
+                <td rowspan="3"> </td><!--혜택3 아이콘-->
+                <td rowspan="3"> 자세히보기 </td>
+            </tr>
+            <tr>
+                <td class="name"> 신한 DEEP MAKING</td><!--카드이름-->
+            </tr>
+            <tr>
+                <td> 신한카드</td><!--카드사-->
+            </tr>
+        </table>
+
+    </div>
+
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+</body>
+</html>
