@@ -29,7 +29,7 @@ a{
     width : 1300px;
     display: flex; /*align-items와 함께 세로 센터만들기*/
     align-items: center;
-    padding: 20px;
+    padding: 40px;
    font-size : 35px;
  }
 
@@ -49,8 +49,8 @@ a{
     margin: 10px 0;
  }
 #searchInfo input{
-    width: 110px;
-    height: 70px;
+    width: 120px;
+    height: 75px;
     font-size : 18px;
     margin-right : 10px;
     border-radius : 10px;
