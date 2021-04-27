@@ -1,0 +1,62 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
+/*카드 검색 전체 div*/
+ #chartWrap{
+    margin: 0 auto;
+    height: auto;
+    background-color : #e6ecf7;
+ }
+
+ /*소제목*/
+ #subtitle{
+    margin: 0 auto;
+    width: 100%;
+    height : auto;
+    background-color : #fff;
+ }
+ #subtitle h1{
+    margin: 0 auto;
+    width : 1300px;
+    display: flex; /*align-items와 함께 세로 센터만들기*/
+    align-items: center;
+    padding: 40px;
+   font-size : 35px;
+ }
+
+/*차트*/
+ #chartInfo{
+    width:1300px;
+    margin: 0 auto;
+    padding : 50px;
+    font-size : 20px;
+ }
+  #chartInfo li{
+  }
+ #chartInfo .num{
+    text-align:center;
+    font-size : 45px;
+    position: relative;
+    top:50%;
+    left: 0;
+    display:inline;
+    padding: 30px;
+  }
+ #chartInfo img{
+    position: relative;
+    top:50%;
+    left:15%;
+    width : 130px;
+ }
+  #chartInfo .name{
+    font-size : 30px;
+  }
