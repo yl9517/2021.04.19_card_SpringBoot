@@ -5,39 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inquire board</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
 <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
 <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
 
 
-
-    <link rel="stylesheet" href="../static/css/header.css" />
-
+    <link rel="stylesheet" th:href="@{/static/css/header.css}" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+
 </head>
 <body>
-        <th:block th:replace="header::header"></th:block>
 
+    <th:block th:replace="header:: header"></th:block>
 
-    <br><br>
     <div class="container">
 
 
-        <div id="a" class="text-center">
 
-            <p class="h4">문의게시판</p>
-            <p class="h2" style="border-bottom:black 3px solid;"></p>
+        <br><br><br><br> <br>
+        <div class="text-center">
+            <p class="h4">문의 게시판</p>
+            <p class="h2" style="border-bottom: black 3px solid;"></p>
+            <br>
+            <br>
+            <br>
         </div>
-
-
-
 
     <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px">
         <li class="nav-item">
-          <a class="nav-link active" href="board_write.html"  th:href="@{/board/boardwrite_page}" >글쓰기</a>
+            <a class="nav-link active" href="boardlist.html" th:href="@{/board/boardwrite_page}">글쓰기</a>
         </li>
     </ul>
     <table class="table">
@@ -55,15 +52,15 @@
            <tbody>
             <tr style="text-align:center;">
                 <th scope="row">
-                    <span></span>
+                    <span ></span>
                 </th>
                 <td id="title_rl">
-                    <a>
-                        <span></span>
+                    <a >
+                        <span ></span>
                     </a>
                 </td>
                 <td>
-                    <span></span>
+                    <span ></span>
                 </td>
                 <td>
                     <span ></span>
@@ -115,7 +112,8 @@
 <!--        </nav>-->
 
     </div>
-
+    <br><br><br><br><br><br>
+    <th:block th:replace="footer :: footer"></th:block>
 </body>
 </body>
 </html>

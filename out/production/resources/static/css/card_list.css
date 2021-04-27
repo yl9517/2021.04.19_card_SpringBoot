@@ -33,26 +33,27 @@ a{
    font-size : 35px;
  }
 
-/*차트*/
- #chartInfo{
+/*리스트*/
+ #listInfo{
     width:1300px;
     margin: 0 auto;
     padding : 50px;
     font-size : 20px;
-    border-collapse: collapse;
+ }
+ table{
+
  }
  tbody{
-    padding:30px;
     background-color : pink;
- }
 
- #chartInfo .num{
+ }
+ #listInfo .num{
     text-align:center;
     font-size : 45px;
   }
- #chartInfo img{
-    width : 130px;
+ #listInfo img{
+    width : 230px;
  }
-  #chartInfo .name{
+  #listInfo .name{
     font-size : 30px;
   }

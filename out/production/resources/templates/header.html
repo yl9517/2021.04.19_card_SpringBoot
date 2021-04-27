@@ -10,19 +10,22 @@
 <body>
     <header id="head">
         <div id="logo">
+            <a href="main" th:href="@{/}">
             <img src="../static/images/logo1.png" class="logoname">
             <img src="../static/images/logo2.png">
             <img src="../static/images/logo3.png" class="logoname">
+            </a>
         </div>
         <hr>
         <div id="menu_bar">
             <div id="menu_inner">
                 <ul>
-                    <li> <a href="#"> 차트 </a></li>
-                    <li> <a href="#"> 조건검색 </a></li>
+                    <li> <a href="card_chart.html" th:href="@{/card/card_chart_page}"> 차트 </a></li>
+                    <li> <a href="cardSearch.html" th:href="@{/card/card_search_page}"> 조건검색 </a></li>
                     <li> <a href="#"> 카드사 </a></li>
-                    <li> <a href="#"> 문의 </a></li>
-                    <li class="loginBtn"> <a href="#"> <img src="../static/images/login.png">  </a></li>
+                    <li>  <a href="boardlist.html" th:href="@{/board/boardlist_page}"> 문의 </a></li>
+                    <li class="loginBtn"> <a href="login.html" th:href="@{/user/login_page}"> <img src="../static/images/login.png">  </a></li>
+
                 </ul>
             </div>
         </div>
