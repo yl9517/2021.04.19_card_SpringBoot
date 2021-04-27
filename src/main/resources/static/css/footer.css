@@ -7,11 +7,14 @@ ul,ol,li{
 }
 #foot{
     width:100%;
-    padding : 40px;
-    margin: 0 auto;
-    text-align:center;
     background-color : #0c2135;
     color : #dcdcdc;
+}
+#footwrap{
+    padding : 40px 0;
+    width:1300px;
+    text-align:center;
+    margin: 0 auto;
 }
 
 #foot #logo{
@@ -21,7 +24,7 @@ ul,ol,li{
     width:90px;
 }
 #foot ul{
-    margin: 30px auto 20px;
+    margin: 30px;
 }
 #foot li{
     display : inline;
