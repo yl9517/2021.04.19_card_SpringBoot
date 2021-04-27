@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inquire board</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
-    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
+<!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
 
 
-    <link rel="stylesheet" th:href="@{/static/css/header.css}" />
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+
+    <link rel="stylesheet" href="../static/css/footer.css" />
 </head>
 <body>
+        <th:block th:replace="header::header"></th:block>
+
+
+    <br><br>
     <div class="container">
-        <th:block th:replace="header:: header"></th:block>
+
 
         <div id="a" class="text-center">
 
-            <p>문의게시판</p>
-            <p>--------</p>
+            <p class="h4">문의게시판</p>
+            <p class="h2" style="border-bottom:black 3px solid;"></p>
         </div>
 
 
@@ -33,7 +37,7 @@
 
     <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px">
         <li class="nav-item">
-            <a sec:authorize="isAuthenticated()" class="nav-link active" href="../inquire_form">글쓰기</a>
+          <a class="nav-link active" href="board_write.html"  th:href="@{/board/boardwrite_page}" >글쓰기</a>
         </li>
     </ul>
     <table class="table">
@@ -49,26 +53,26 @@
             </thead>
 
            <tbody>
-            <tr style="text-align:center;" th:each="끌어오기">
+            <tr style="text-align:center;">
                 <th scope="row">
-                    <span th:text="게시물아이디 끌어오기"></span>
+                    <span></span>
                 </th>
                 <td id="title_rl">
-                    <a th:href="상세보기로 넘겨주기">
-                        <span th:text="제목 끌어오기"></span>
+                    <a>
+                        <span></span>
                     </a>
                 </td>
                 <td>
-                    <span th:text="유저아이디(작성자) 끌어오기"></span>
+                    <span></span>
                 </td>
                 <td>
-                    <span th:text="카테고리 끌어오기"></span>
+                    <span ></span>
                 </td>
                 <td>
-                    <span th:text="작성일 끌어오기"></span>
+                    <span></span>
                 </td>
                 <td>
-                    <span th:text="$답변여부 끌어오기"></span>
+                    <span></span>
                 </td>
 
             </tr>
@@ -111,7 +115,7 @@
 <!--        </nav>-->
 
     </div>
-    <th:block th:replace="footer :: footer"></th:block>
+
 </body>
 </body>
 </html>
