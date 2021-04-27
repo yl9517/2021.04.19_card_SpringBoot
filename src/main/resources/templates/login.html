@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 
+    <link rel="stylesheet" th:href="@{/static/css/header.css}" />
     <link href="../static/css/login.css" rel="stylesheet">
     
 </head>
 <body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
         <div class = "page-container">
             <div class = "login-form-container shadow">
                 <div class="login-form-right-side">
@@ -19,9 +24,9 @@
                 <div class="login-form-left-side">
                     <div class="login-top-wrap">
                         <p class="top-message"> SOCIAL LOGIN </p>
-                        <p> Choose your Login type</p>
+                        <p class="choose-message"> Choose your Login type</p>
                     </div>
-                    <div class="login-input container" >
+                    <div class="login-inpu" >
                         <div class="login-Google">
                             <a href="#"> <img class="loginlogos" src="../static/images/googlelogin.png"> </a>
                         </div>
