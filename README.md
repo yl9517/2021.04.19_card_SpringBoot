@@ -7,6 +7,9 @@
       - 스프링부트 사용하는 이유 [ 강현 ]
 3. 레이아웃 [ 여름 ]
 
+
+
+
 3-1 개발순서 
 
       1. entity  [ 테이블 생성 ]
@@ -34,9 +37,9 @@
             1. 메뉴.html [ 완 ]
             2. 메인세션.html [ 완 ]
             3. 푸터.html [ 완 ]
-            4. 카드 차트.html
-            5. 조건 검색.html 
-                  1. 검색 결과 html
+            4. 카드 차트.html 
+            5. 조건 검색.html  [ 완 ]
+                  1. 검색 결과 html [ 완 ]
             7. 카드 비교.html
             8. 로고.PNG [ 완 ]
             9. favicon.ico [ 완 ]
@@ -69,6 +72,12 @@
 8. 참고 사이트 
       1. 로고PNG  [ https://hatchful.shopify.com/ ]
       2. ico 변환 [ https://www.hipdf.com/kr/png-to-ico ]
+
+
+9. 프로젝트 모델
+            프론트엔드(HTML) <-----[Dto]-----> controller(제어) <------[Dto]-------> service(로직)  <-------[Dto]-------> Repository(JPA) <-------[entity]-------> DB[h2]
+
+            		 	       			    
 
 
 
