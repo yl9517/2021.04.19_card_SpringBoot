@@ -1,0 +1,58 @@
+*{
+      margin:0;
+      padding:0;
+
+}
+
+.title{
+
+    text-align:center;
+
+
+
+}
+
+ul {
+    list-style:none;
+
+    padding:0;
+    text-align:center;
+}
+
+li {
+    float:left;
+    margin: 0 20 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+
+
+}
+
+#after1{
+			background-color : #1478FF;
+			color : white;
+			border-radius: 8px;
+			width: 60px;
+}
+#after1:hover{
+			background-color: #CDECFA;
+			color : black;
+}
+#after2{
+			background-color : #1478FF;
+			color : white;
+			border-radius: 8px;
+			width: 60px;
+}
+#after2:hover{
+			background-color: #CDECFA;
+			color : black;
+}
+
+#table1{
+
+    text-align:center;
+
+
+}
+
