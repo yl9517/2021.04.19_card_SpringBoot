@@ -37,9 +37,9 @@
             1. 메뉴.html [ 완 ]
             2. 메인세션.html [ 완 ]
             3. 푸터.html [ 완 ]
-            4. 카드 차트.html 
+            4. 카드 순위 리스트.html 
             5. 조건 검색.html  [ 완 ]
-                  1. 검색 결과 html [ 완 ]
+                  1.카드 리스트 html [ 완 ]
             7. 카드 비교.html
             8. 로고.PNG [ 완 ]
             9. favicon.ico [ 완 ]
@@ -47,8 +47,8 @@
             1. 로그인.html [ 완 ]
             2. 에러페이지.html  [ 완 ]
             3. 카드사.html 
-                  1. 카드사 상세페이지 .html 
-          
+                  1. 카드사 상세페이지 .html [ 1.카드 리스트 html [ 완 ] 참고 ]     
+                  2. 카드 상세페이지 
       4. 관리자 ,  1:1상담 게시판 [ 강현 ]
             1. 문의게시판 목록.html [ 완 ]
             2. 문의게시판 작성.html [ 완 ]
@@ -61,14 +61,38 @@
             9. 관리자 : 카드 목록.Html 
             10. 관리자 : 카드등록 .html 
             11. 관리자 : 카드수정 .html 
-           
+
             
 7. 백엔드[ spring 구현 ] 
-      1. 제품 API
-      2. OAUTH2 API
-      3. 게시판 API 
-
-
+      1. 카드 API
+            1. entity
+            2. repository
+            3. service [ 메소드 선언만 ]
+            4. dto [ dto , update ] 
+            5. controller [ GetMapping ]  
+            6. 
+      2. user( OAUTH2 ) API
+            1. entity
+            2. 
+            3. 
+            4. 
+            5. controller [ GetMapping ]  
+            6. 
+      3. 카드사( OAUTH2 ) API
+            1. entity
+            2. repository
+            3. service [ 메소드 선언만 ]
+            4. dto [ dto , update ] 
+            5. controller [ GetMapping ]  
+            6. 
+      4. 게시판 API
+            1. entity [ board , reply ] 
+            2. repository [ board , reply ] 
+            3. service [ 메소드 선언만 ]
+            4. dto [ dto , update , reply ] 
+            5. controller [ GetMapping ]  
+           
+           
 8. 참고 사이트 
       1. 로고PNG  [ https://hatchful.shopify.com/ ]
       2. ico 변환 [ https://www.hipdf.com/kr/png-to-ico ]
