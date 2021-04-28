@@ -11,6 +11,8 @@ public class BoardController {
 
 
 
+
+
     @GetMapping("/board/boardlist_page")
     public String boardlist_page(){
         return "boardlist";
