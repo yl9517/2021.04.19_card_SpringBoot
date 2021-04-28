@@ -40,20 +40,68 @@ a{
     padding : 50px;
     font-size : 20px;
  }
- table{
 
+ #listInfo #onecard{
+    background-color : #fff;
+    height:220px;
+    width:100%;
+    padding : 40px 50px;
+    margin-bottom: 30px;
  }
- tbody{
-    background-color : pink;
-
- }
- #listInfo .num{
-    text-align:center;
-    font-size : 45px;
-  }
  #listInfo img{
     width : 230px;
+    float : left;
  }
-  #listInfo .name{
-    font-size : 30px;
+
+#listInfo .text{
+    float : left;
+    margin: 10px 50px;
   }
+
+  #listInfo .name{
+    font-size : 35px;
+    margin-bottom :10px;
+  }
+  #listInfo .benefits{
+      width:830px;
+      float:left;
+      padding-left: 120px;
+  }
+    #listInfo .icon{
+        float:left;
+        width: 140px;
+       height: 140px;
+       line-height: 140px;
+       border-radius: 50%;
+       background-color: #f8efed;
+       margin: 0 60px;
+    }
+  #listInfo .icon img{
+    width:140px;
+  }
+
+   #listInfo .more{
+    position:relative;
+    top:-50%;
+    float: right;
+    font-size : 20px;
+    padding: 112px 13px;
+    background-color:  rgba(204,153,255, 0.5);
+    border-radius: 10px;
+   }
+    #listInfo .more:hover{
+    background-color:  rgba(204,153,255, 1);
+    transition: 0.3s;
+    }
+
+    #listInfo .condition{
+        font-size : 15px;
+        position : relative;
+        top: 78%;
+        left:-51%;
+    }
+
+    #listInfo .cart{
+        padding-top: 20px;
+        font-size : 20px;
+    }

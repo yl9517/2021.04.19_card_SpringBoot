@@ -39,20 +39,46 @@ a{
     margin: 0 auto;
     padding : 50px;
     font-size : 20px;
-    border-collapse: collapse;
  }
- tbody{
-    padding:30px;
-    background-color : pink;
+  #chartInfo #onechart{
+     background-color : #fff;
+     height:100px;
+     width:100%;
+     padding : 30px 50px;
+     margin-bottom: 30px;
+  }
+
+#onechart .rank{
+    font-size : 50px;
+    float:left;
+    padding: 20px 20px;
+    text-align:center;
+    margin-right : 10px;
  }
 
- #chartInfo .num{
-    text-align:center;
-    font-size : 45px;
-  }
- #chartInfo img{
+ #onechart img{
     width : 130px;
+    float:left;
+    margin: 10px 50px;
  }
-  #chartInfo .name{
+ #onechart .text{
+    float:left;
+ }
+  #onechart .name{
     font-size : 30px;
+    margin: 20px 0 10px;
   }
+  #onechart #ex a{
+        float:right;
+        position:relative;
+        font-size : 20px;
+        padding: 38px 13px;
+        background-color:  rgba(204,153,255, 0.5);
+        border-radius: 10px;
+        margin: 0 10px;
+  }
+
+     #onechart #ex a:hover{
+      background-color:  rgba(204,153,255, 1);
+      transition: 0.3s;
+      }
