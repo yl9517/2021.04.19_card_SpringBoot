@@ -1,0 +1,79 @@
+<html xmlns:th="http://www.thymleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inquire board</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
+  <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+  <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+
+
+  <link rel="stylesheet" th:href="@{/static/css/header.css}" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static/css/admin_cardregister.css"/>
+
+</head>
+
+<body>
+    <section>
+
+      <div class="imageinfo">
+        <p></p>
+        <h1>카드 등록</h1>
+        <hr>
+        <div id="cardimage">
+          <label>카드 이미지</label> <input type="file" id="cardPhoto" name="imagefile">
+        </div>
+
+        <div class="container" id="cardinfo">
+
+
+          <label>카드 명</label> <br>
+          <input type="text" id="cardname" placeholder="CardName" name="cardname">
+          <br><br>
+
+          <label>카드사</label> <br>
+
+          <input type="text" id="cardcompany" placeholder="Card Company" name="cardcompany"> <br><br>
+
+          <label>연회비</label> <br>
+          <input type="text" id="exPrice" name="exPrice"> <br>
+
+          <label>전월실적</label> <br>
+          <input type="text" > <br>
+
+          <label>카드 타입</label> <br>
+          <input type="text"> <br>
+
+          <label>장소</label> <br>
+          <input type="text"> <br>
+
+          <label>장소</label> <br>
+          <input type="text"> <br>
+
+          <label>장소</label> <br>
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
