@@ -74,8 +74,7 @@
       2. ico 변환 [ https://www.hipdf.com/kr/png-to-ico ]
 
 
-9. 프로젝트 모델
-프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
+9. 프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
 
             		 	       			    
 
