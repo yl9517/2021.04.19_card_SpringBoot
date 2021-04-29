@@ -1,0 +1,18 @@
+.cards-title{
+    text-align:center;
+    text-color:blue;
+}
+.cardss:hover{
+    transform: translate( 20px, 10% )
+
+}
+.cardsG{
+      text-align:center;
+
+}
+.cards-back{
+    background-image: url("../images/maamin.jpg");
+}
+.cards1{
+    background-image: url("../images/cardsBack.png");
+}

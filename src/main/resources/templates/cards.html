@@ -1,34 +1,39 @@
 <!DOCTYPE html>
+<html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>cards</title>
 
-    <link rel="stylesheet" th:href="@{/static/css/header.css}" />
+    <link rel="stylesheet" href="@{/static/css/header.css}" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+    <link rel="stylesheet" href="../static/css/cards.css" />
 
 </head>
 <body>
 
 <th:block th:replace = "/header :: header"></th:block>
 
-<div>
-
-    <div class="cards1">
-        <div>
+        <div class="cards-title">
            <h1>CARD24 에서 추천하는 카드사</h1>
         </div>
+            <br>
+            <br>
+    <div class="cards-back">
+
+        <div >
+            <button class="cards1" ><img class="cardss" src="../static/images/cards1.png"></button>
+        </div>
+
     </div>
 
-    <div>
-        
-    </div>
-
-    <div>
-        <img src="../static/images/cardsG.jpg">
-    </div>
-
-</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="cardsG">
+            <img width="850px" height="250px" src="../static/images/cardsG.jpg">
+        </div>
 
 <th:block th:replace = "/footer :: footer"></th:block>
 
