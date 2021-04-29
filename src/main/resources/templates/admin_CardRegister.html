@@ -22,47 +22,74 @@
 
       <div class="imageinfo">
         <p></p>
-        <h1>카드 등록</h1>
-        <hr>
-        <div id="cardimage">
-          <label>카드 이미지</label> <input type="file" id="cardPhoto" name="imagefile">
-        </div>
+        <h1 class="register">카드 등록</h1>
+        <br><br>
+        <form method="post" action="/post" id="form">
 
         <div class="container" id="cardinfo">
 
-
+          <label>카드 이미지</label><br>
+          <input type="file" id="cardPhoto">
+          <hr>
+          <br><br><br><br>
           <label>카드 명</label> <br>
-          <input type="text" id="cardname" placeholder="CardName" name="cardname">
-          <br><br>
+          <input type="text" id="cardName" placeholder="카드명">
+          <br><br><br>
 
           <label>카드사</label> <br>
 
-          <input type="text" id="cardcompany" placeholder="Card Company" name="cardcompany"> <br><br>
+          <input type="text" id="cardCompany" placeholder="카드사">
 
+          <br><br><br>
           <label>연회비</label> <br>
-          <input type="text" id="exPrice" name="exPrice"> <br>
+          <input type="text" id="annualFee" name="annualFee" placeholder="연 회비"> <br><br><br>
 
           <label>전월실적</label> <br>
-          <input type="text" > <br>
+          <input type="text" id="beforePay" name="beforePay" placeholder= "전월실적"> <br><br><br>
+
 
           <label>카드 타입</label> <br>
-          <input type="text"> <br>
+          <input type="text" id="cardType" name="cardType" placeholder="카드 타입"> <br><br><br>
 
-          <label>장소</label> <br>
-          <input type="text"> <br>
+          <label>카드 링크</label> <br>
+          <input type="text" id="cardLink" name="cardLink" placeholder="카드 링크"> <br><br><br>
 
-          <label>장소</label> <br>
-          <input type="text"> <br>
+          <label>순위</label> <br>
+          <input type="text" id="count" name="count" placeholder="순위"> <br><br><br>
 
-          <label>장소</label> <br>
+
+        </div>
+
+        <div id="cardbenefits">
+
+          <label id="1">혜택1</label> <br>
+          <input type="text" id="benefit1" name="benefit1" placeholder="혜택1"> <br>
+          <label>혜택 1 상세</label> <br>
+          <textarea cols="70" maxlength="300"></textarea>
+          <br><br>
+          <label>혜택2</label> <br>
+          <input type="text" id="benefit2" name="benefit2" placeholder="혜택2"> <br>
+          <label>혜택 2 상세</label> <br>
+          <textarea cols="70" maxlength="300"></textarea>
+          <br><br>
+          <label>혜택3</label> <br>
+          <input type="text" id="benefit3" name="benefit3" placeholder="혜택3"> <br>
+          <label>혜택 3 상세</label> <br>
+          <textarea cols="70" maxlength="300"></textarea>
 
 
         </div>
 
 
+        <input type="reset" value="다시 작성" id="resetbutton">
 
+        <input type="submit" value="등록" id="registerbutton">
 
+        <br><br>
+
+        </form>
       </div>
+
 
 
     </section>

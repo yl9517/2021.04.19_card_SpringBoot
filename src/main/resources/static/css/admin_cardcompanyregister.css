@@ -9,6 +9,9 @@
 
 }
 
+
+
+
 div.imageinfo{
 
 text-align:center;
@@ -19,19 +22,19 @@ text-align:center;
 
 
 
-#cardinfo{
+#companyinfo{
 
              float: left;
              margin: 40px 40px 40px 0;
              padding: 15px 30px;
-             width: 450px;
-             height:970px;
+             width: 1100px;
+             height:500px;
              border: 3px solid #8282ff ;
              border-radius: 10px;
 
 }
 
-#cardPhoto,#cardName,#cardCompany,#annualFee,#beforePay,#cardType,#cardLink{
+#companyinfo,#companyLogo,#companyName,#CardNum{
 
         margin:auto;
 
@@ -52,15 +55,10 @@ text-align:center;
 
 }
 
-textarea{
-
-        height:200px;
-
-}
 
 #registerbutton, #resetbutton{
 
-    margin: 10px 130px 30px 80px;
+    margin: 30px 100px 30px 100px;
     width:80px;
     height:50px;
     background-color:pink;
