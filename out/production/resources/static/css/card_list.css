@@ -83,7 +83,7 @@ a{
    #listInfo .more{
     position:relative;
     top:-50%;
-    float: right;
+    float: right;카
     font-size : 20px;
     padding: 112px 13px;
     background-color:  rgba(204,153,255, 0.5);
@@ -102,6 +102,17 @@ a{
     }
 
     #listInfo .cart{
-        padding-top: 20px;
+        display:inline;
+        padding-left:80px;
+        line-height: 52px;
         font-size : 20px;
     }
+   #listInfo .condition img{
+    width: 30px;
+    position : absolute;
+    left:53%;
+    padding:10px;
+   }
+      #listInfo .condition a:hover .cart{
+        color : rgba(204,153,255, 1);
+      }
