@@ -22,4 +22,10 @@ public class CardController {
 
         return "cardSearch";
     }
+
+    @GetMapping("/card/card_compare_page")
+    public String card_compare(){
+        return "card_compare";
+    }
+
 }
