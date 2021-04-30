@@ -100,6 +100,22 @@
 
 9. 프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
 
+
+
+10 oauth2 순서 
+oauth2  [ https://bamdule.tistory.com/62 ]
+	1. SNS API 신청 
+	2. application-oauth.properties : SNS 클라이언트 정보 입력 
+	3. OAuth2UserService
+		loadUser 재정의 
+		1. 클라이언 정보 id 가져오기
+		2. 요청한 클라이언트의 Attribute 가져오기
+		3. 요청한 클라이언트의 인증키 가져오기 
+ 		4. OauthAttributes :  dto 넣기 
+		6. db에 넣기 		
+		7. 세션에 넣기 
+
+
             		 	       			    
 
 
