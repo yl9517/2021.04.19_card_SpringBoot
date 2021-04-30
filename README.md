@@ -39,16 +39,17 @@
             3. 푸터.html [ 완 ]
             5. 조건 검색.html  [ 완 ]
                   1.카드 리스트 html [ 완 ]
-            7. 카드 비교.html
+            7. 카드 비교.html  [ 완 ]
             8. 카드 순위 리스트.html [ 완 ]
             9. 로고.PNG [ 완 ]
             10. favicon.ico [ 완 ]
+            11. 카드 상세페이지 .Html
       2. 일반 : OAUTH2 로그인 페이지 , 로고 [ 제현  ]
             1. 로그인.Html [ 완 ]
             2. 에러페이지.Html  [ 완 ]
             3. 카드사.Html 
                   1. 카드사 상세페이지 .Html [ 1.카드 리스트 html [ 완 ] 참고 ]     
-                  2. 카드 상세페이지 .Html
+                
       4. 관리자 ,  1:1상담 게시판 [ 강현 ]
             1. 문의게시판 목록.html [ 완 ]
             2. 문의게시판 작성.html [ 완 ]
@@ -102,8 +103,7 @@
 
 
 
-10 oauth2 순서 
-oauth2  [ https://bamdule.tistory.com/62 ]
+10 oauth2 순서  oauth2  [ https://bamdule.tistory.com/62 ]
 	1. SNS API 신청 
 	2. application-oauth.properties : SNS 클라이언트 정보 입력 
 	3. OAuth2UserService
