@@ -26,32 +26,47 @@
                        <p class="rank"> 1 </p>
                        <img src="../static/images/카드1.png"> <!--사진-->
                        <div class="text">
-                           <p class="name">신한 DEEP MAKING</p> <!--카드이름-->
+                           <p class="name" for="a">신한 DEEP MAKING</p> <!--카드이름-->
                            <p>신한카드</p> <!--카드사-->
                        </div>
                        <div id="ex">
                            <a href="#" class="more"> 상세 보기</a>
-                           <a href="#" class="cart"> 비교함 담기</a>
+                           <a href="card_compare.html" th:href="@{/card/card_compare_page}" class="cart" onclick='getRadioText(event)' id='a'> 비교함 담기</a>
                        </div>
                    </li>
                    <li id="onechart">
                        <p class="rank"> 1 </p>
                        <img src="../static/images/카드2.png"> <!--사진-->
                        <div class="text">
-                           <p class="name">신한 DEEP MAKING</p> <!--카드이름-->
+                           <p class="name" for="b">신한 DEEP MAKING2</p> <!--카드이름-->
                            <p>신한카드</p> <!--카드사-->
                        </div>
                        <div id="ex">
                            <a href="#" class="more"> 상세 보기</a>
-                           <a href="#" class="cart"> 비교함 담기</a>
+                           <a href="card_compare.html" th:href="@{/card/card_compare_page}" class="cart" onclick='getRadioText(event)' id='b'> 비교함 담기</a>
                        </div>
                    </li>
                </ul>
-
            </div>
-
     </div>
 
+        <div id="result"></div>
+        <div id="result2"></div>
+    <script type="text/javascript">
+        function getRadioText(event){
+            const radioId = event.target.id;
+            const query = 'p[for="'+radioId+'"]'
+
+            const text = document.querySelector(query).innerText;
+
+            if(document.getElementById('result').innerText==""){
+                document.getElementById('result').innerText = text;
+            }else{
+                document.getElementById('result2').innerText = text;
+            }
+        }
+
+    </script>
 
     <th:block th:replace = "/footer :: footer"></th:block>
 
