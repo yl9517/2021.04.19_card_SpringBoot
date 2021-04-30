@@ -102,8 +102,7 @@
 9. 프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
 
 
-
-10 oauth2 순서  oauth2  [ https://bamdule.tistory.com/62 ]
+10. oauth2 순서  oauth2  [ https://bamdule.tistory.com/62 ]
 	1. SNS API 신청 
 	2. application-oauth.properties : SNS 클라이언트 정보 입력 
 	3. OAuth2UserService
