@@ -25,7 +25,8 @@
                     <li> <a href="#"> 카드사 </a></li>
                     <li>  <a href="boardlist.html" th:href="@{/board/boardlist_page}"> 문의 </a></li>
                     <li class="loginBtn"> <a href="login.html" th:href="@{/user/login_page}"> <img src="../static/images/login.png">  </a></li>
-
+                    <li th:text="${logName}"></li>
+                    <li class="logoutBtn"><a th:href="@{/user/logout}"> 로그아웃 </a> </li>
                 </ul>
             </div>
         </div>

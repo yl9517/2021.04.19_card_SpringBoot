@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class CardService {
-
+/*
     private final CardRepository cardRepository;
 
     //생성
@@ -30,5 +30,5 @@ public class CardService {
     //개별조회(조건조회)
     public void getCard(){
 
-    }
+    }*/
 }

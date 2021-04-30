@@ -34,6 +34,13 @@ public class User extends BaseTimeEntity {
         this.role = role;
 
     }
+    //회원 업데이트
+    public User update(String name){ //네이버,카카오 상에서 이름 바뀌면 해당 사이트에서도 바뀌어야 하기 때문
+        this.name = name;
+        return this;
+    }
+
+
     public String getRolekey(){
         return this.role.getKey();
     }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class CardCompanyService {
+/*
 
     private final CardCompanyRepository cardCompanyRepository;
 
@@ -30,5 +31,6 @@ public class CardCompanyService {
     public void getCardCompany(){
 
     }
+*/
 
 }

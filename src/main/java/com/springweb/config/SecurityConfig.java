@@ -1,6 +1,8 @@
 package com.springweb.config;
 
+import com.springweb.service.OauthService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
             //시큐리티[보안] 설정
-
+    private final OauthService oauthService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -52,7 +54,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .invalidateHttpSession(true)
                 .and()
                     .exceptionHandling()
-                    .accessDeniedPage("/error"); //에러페이지 url
-
+                    .accessDeniedPage("/error") //에러페이지 url
+                .and()
+                    .oauth2Login()
+                    .userInfoEndpoint()
+                    .userService(oauthService);
     }
 }
