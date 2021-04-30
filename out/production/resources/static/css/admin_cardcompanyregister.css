@@ -1,0 +1,68 @@
+*{
+    padding:0;
+    margin:0;
+
+}
+
+.register{
+    border-bottom:3px solid black;
+
+}
+
+
+
+
+div.imageinfo{
+
+text-align:center;
+    width:1100px;
+    margin:auto;
+
+}
+
+
+
+#companyinfo{
+
+             float: left;
+             margin: 40px 40px 40px 0;
+             padding: 15px 30px;
+             width: 1100px;
+             height:500px;
+             border: 3px solid #8282ff ;
+             border-radius: 10px;
+
+}
+
+#companyinfo,#companyLogo,#companyName,#CardNum{
+
+        margin:auto;
+
+
+}
+
+#cardbenefits{
+
+                 text-align: center;
+                 float: right;
+                 margin: 40px 0 40px 0px;
+                 padding: 15px;
+                 width: 600px;
+                 height:970px;
+                 border: 3px solid  #8282ff ;
+                 border-radius: 10px;
+
+
+}
+
+
+#registerbutton, #resetbutton{
+
+    margin: 30px 100px 30px 100px;
+    width:80px;
+    height:50px;
+    background-color:pink;
+    border:1px solid black;
+    border-radius:5px;
+
+}

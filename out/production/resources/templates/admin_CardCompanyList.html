@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inquire board</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
+    <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+    <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+
+
+    <link rel="stylesheet" th:href="@{/static/css/header.css}" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+    <link rel="stylesheet" href="../static/css/admin_cardcompanylist.css"/>
+
+</head>
+<body>
+<section>
+
+    <div class="container">
+
+
+        <p><h1 class="title">카드사 목록</h1></p>
+
+
+        <ul class="nav nav-pills justify-content-end" style="margin-bottom:20px; margin-top:70px;">
+            <li><a href="#"><h3 id="links1">카드 목록</h3></a></li>
+               <li><a href="#"><h3 id="links2">카드사 등록</h3></a></li>
+               <li><a href="#"><h3 id="links3">카드 등록</h3></a></li>
+
+        </ul>
+
+        <table class="table table-hover" id="table1">
+
+            <tr id="head">
+                <th width="200">카드사 명</th>
+                <th width="200">등록 카드갯수</th>
+                <th width="200">카드사 로고</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+
+
+
+
+
+            <tr class="tr">
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td><button id="after1">수정</button></td>
+                <td>
+                    <button id="after2">삭제</button>
+                </td>
+            </tr>
+
+
+
+        </table>
+    </div>
+</section>
+
+
+
+</body>
+</html>
