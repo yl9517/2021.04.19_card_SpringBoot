@@ -73,13 +73,11 @@ a{
   #compareInfo .benefits dl{
     padding: 20px 0;
   }
-
-
   #compareInfo td{
     padding: 40px;
   }
  #compareInfo td:nth-child(2){
-    border-left: 1px solid #ccc
+    border-left: 1px solid #ccc;
   }
 #compareInfo .intitle{
     padding : 10px;
