@@ -1,0 +1,90 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
+/*카드 검색 전체 div*/
+ #compareWrap{
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 30px;
+    background-color : #e6ecf7;
+ }
+
+ /*소제목*/
+ #subtitle{
+    width: 100%;
+    height : auto;
+    background-color : #fff;
+ }
+ #subtitle h1{
+    margin: 0px auto;
+    width : 1300px;
+    display: flex; /*align-items와 함께 세로 센터만들기*/
+    align-items: center;
+    padding: 40px;
+   font-size : 35px;
+ }
+
+/*비교*/
+ #compareInfo{
+    width:1300px;
+    margin: 60px auto;
+    font-size : 20px;
+    height:auto;
+    text-align:center;
+    background-color : #fff;
+        border-collapse: collapse;
+ }
+
+/*비교 - 사진,이름, 상세보기*/
+ #compareInfo .mainInfo dt{
+    padding: 20px 0;
+ }
+ #compareInfo img{
+    width : 350px;
+ }
+#compareInfo .name{
+  font-size : 25px;
+ }
+#compareInfo .cardCom{
+    font-size : 15px;
+    margin: 5px 0 30px;
+    color : #787878;
+}
+  #compareInfo .more{
+    padding: 20px 30px;
+      background-color:  rgba(204,153,255, 0.5);
+      border-radius: 10px;
+  }
+  #compareInfo .more:hover{
+      background-color:  rgba(204,153,255, 1);
+      transition: 0.3s;
+  }
+
+/*비교 - 혜택*/
+  #compareInfo .benefits dl{
+    padding: 20px 0;
+  }
+
+
+  #compareInfo td{
+    padding: 40px;
+  }
+ #compareInfo td:nth-child(2){
+    border-left: 1px solid #ccc
+  }
+#compareInfo .intitle{
+    padding : 10px;
+    height: 50px;
+    background-color :  #e6ecf7;
+    font-size : 20px;
+    line-height: 50px;
+}
