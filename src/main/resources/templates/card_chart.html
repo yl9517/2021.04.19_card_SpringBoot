@@ -49,9 +49,19 @@
                </ul>
            </div>
     </div>
-
-        <div id="result"></div>
-        <div id="result2"></div>
+       <div id="comparebox">
+           <ul>
+               <li>
+                   <label id="result"></label>
+                   <a class="delete_btn"></a>
+               </li>
+               <li>
+                   <label id="result2"></label>
+                   <a class="delete_btn"><i data-v-b96a19f8>삭제</i></a>
+               </li>
+           </ul>
+           <a class="compare_go" href="#">비교하기</a>
+       </div>
     <script type="text/javascript">
         function getRadioText(event){
             const radioId = event.target.id;
@@ -59,11 +69,22 @@
 
             const text = document.querySelector(query).innerText;
 
+            if(document.getElementById('result').innerText==text || document.getElementById('result2').innerText==text){
+                alert('이미 비교함에 있는 카드입니다.');
+                return false;
+            }
+            if(document.getElementById('result').innerText!="" && document.getElementById('result2').innerText!=""){
+                alert('비교함이 가득 차있습니다. 비교함을 비우고 다시 담아주세요.');
+                return false;
+            }
+
             if(document.getElementById('result').innerText==""){
                 document.getElementById('result').innerText = text;
             }else{
                 document.getElementById('result2').innerText = text;
             }
+
+
         }
 
     </script>
