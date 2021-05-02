@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inquire board</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
+  <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+  <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+
+
+  <link rel="stylesheet" th:href="@{/static/css/header.css}" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static/css/admin_cardcompanyregister.css"/>
+
+</head>
+
+<body>
+    <section>
+
+      <div class="imageinfo">
+        <p></p>
+        <h1 class="register">카드사 등록</h1>
+        <br><br>
+        <form method="post" action="/post" id="form">
+
+        <div class="container" id="companyinfo">
+
+          <label>카드사 로고</label><br>
+          <input type="file" id="companyLogo">
+          <hr>
+          <br><br>
+          <label>카드사 명</label> <br>
+          <input type="text" id="companydName" placeholder="카드사 명">
+          <br><br><br>
+
+          <label>등록카드 갯수</label> <br>
+
+          <input type="text" id="CardNum" placeholder="카드사">
+
+
+
+        </div>
+
+
+
+
+        <input type="reset" value="다시 작성" id="resetbutton">
+
+        <input type="submit" value="등록" id="registerbutton">
+
+        <br><br>
+
+        </form>
+      </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
