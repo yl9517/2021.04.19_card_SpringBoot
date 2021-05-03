@@ -11,7 +11,7 @@ import javax.persistence.Column;
 @NoArgsConstructor
 public class CardDto {
     //필드
-    private int cardCode; //카드 코드
+    private Long cardCode; //카드 코드
     private String cardName; //카드 명
     private String cardPhoto; //카드사진
     private String cardCompany; //카드사
@@ -28,8 +28,8 @@ public class CardDto {
     private int count; //순위에 쓰일 카운트
 
     //생성자
-    @Builder
-    public CardDto(int cardCode, String cardName, String cardPhoto, String cardCompany, int annualFee, int beforePay, String cardType, String benefit1, String benefit1_detail, String benefit2, String benefit2_detail, String benefit3, String benefit3_detail, String cardLink, int count) {
+    @Builder //엔티티 통째로 넣어도 됨
+    public CardDto(Long cardCode, String cardName, String cardPhoto, String cardCompany, int annualFee, int beforePay, String cardType, String benefit1, String benefit1_detail, String benefit2, String benefit2_detail, String benefit3, String benefit3_detail, String cardLink, int count) {
         this.cardCode = cardCode;
         this.cardName = cardName;
         this.cardPhoto = cardPhoto;
@@ -44,11 +44,11 @@ public class CardDto {
         this.benefit3 = benefit3;
         this.benefit3_detail = benefit3_detail;
         this.cardLink = cardLink;
-        this.count = count;
+        this.count=count;
     }
 
 
-    //엔티티 빌더 메소드드
+    //엔티티 빌더 메소드
     public CardEntity toEntity(){
         return CardEntity.builder()
                 .cardCode(cardCode)

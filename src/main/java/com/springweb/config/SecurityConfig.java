@@ -59,5 +59,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .oauth2Login()
                     .userInfoEndpoint()
                     .userService(oauthService);
+
+        http.headers().frameOptions().disable();
+
     }
 }

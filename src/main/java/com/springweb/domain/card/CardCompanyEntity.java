@@ -13,7 +13,7 @@ public class CardCompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int companyCord; //회사코드
+    private Long companyCord; //회사코드
 
     @Column(nullable = false)
     private String companyName; //카드사
@@ -25,7 +25,7 @@ public class CardCompanyEntity {
     private int haveCardNum; //등록카드 갯수
 
     @Builder
-    public CardCompanyEntity(int companyCord, String companyName, String companyLogo, int haveCardNum) {
+    public CardCompanyEntity(Long companyCord, String companyName, String companyLogo, int haveCardNum) {
         this.companyCord = companyCord;
         this.companyName = companyName;
         this.companyLogo = companyLogo;
