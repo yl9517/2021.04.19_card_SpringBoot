@@ -1,6 +1,6 @@
 package com.springweb.web.dto;
 
-import com.springweb.domain.board.boardEntity;
+import com.springweb.domain.board.BoardEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +11,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-public class boardDto {
+public class BoardDto {
     //필드
+    private Long bbsID;
     private String bbsTitle;
     private String bbsCategory;
     private String bbsContent;
@@ -23,15 +24,17 @@ public class boardDto {
 
 
     //엔티티 빌더 메소드 : dto -> entity
-    public boardEntity boardEntity(){
+    public BoardEntity boardEntity(){
 
-        return boardEntity.builder().bbsTitle(bbsTitle).bbsCategory(bbsCategory).bbsContent(bbsContent).bbsReply(bbsReply).userID(userID).build();
+        return BoardEntity.builder().bbsTitle(bbsTitle).bbsCategory(bbsCategory).bbsContent(bbsContent).bbsReply(bbsReply).userID(userID).build();
 
     }
 
 
     //생성자
-    public boardDto(String bbsTitle, String bbsCategory, String bbsContent, String bbsReply, String userID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    @Builder
+    public BoardDto(Long bbsID, String bbsTitle, String bbsCategory, String bbsContent, String bbsReply, String userID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+        this.bbsID=bbsID;
         this.bbsTitle = bbsTitle;
         this.bbsCategory = bbsCategory;
         this.bbsContent = bbsContent;

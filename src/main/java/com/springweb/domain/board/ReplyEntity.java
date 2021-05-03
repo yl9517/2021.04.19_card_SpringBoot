@@ -25,11 +25,11 @@ public class ReplyEntity extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "bbsID",nullable = false)
-    private boardEntity bbsID;
+    private BoardEntity bbsID;
 
 
     @Builder
-    public ReplyEntity(Long id, String reply_writer, String reply_content, boardEntity bbsID) {
+    public ReplyEntity(Long id, String reply_writer, String reply_content, BoardEntity bbsID) {
         this.id = id;
         this.reply_writer = reply_writer;
         this.reply_content = reply_content;
