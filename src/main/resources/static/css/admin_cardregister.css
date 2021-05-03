@@ -149,6 +149,20 @@ textarea{
 
 }
 
+#transportation, #mart, #shopping, #movie, #gasoline, #cafe, #phone{
+
+    width:50px;
+    height:50px;
+    background-color:white;
+
+
+}
+#transportation2, #mart2, #shopping2, #movie2, #gasoline2, #cafe2, #phone2{
+ width:45px;
+    height:45px;
+    display:center;
+}
+
 #registerbutton, #resetbutton{
 
     margin: 10px 130px 30px 80px;
