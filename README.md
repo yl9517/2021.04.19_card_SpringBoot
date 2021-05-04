@@ -97,6 +97,7 @@
 8. 참고 사이트 
       1. 로고PNG  [ https://hatchful.shopify.com/ ]
       2. ico 변환 [ https://www.hipdf.com/kr/png-to-ico ]
+      3. 스프링부트 파일 업로드 [ https://velog.io/@2yeseul/Spring-Boot-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C ]
 
 
 9. 프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
