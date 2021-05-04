@@ -62,7 +62,7 @@ public class CardService {
 
     }
 
-    //전체조회
+    //전체조회 (관리자)
     @Transactional
     public List<CardDto> getAllCard(){
 

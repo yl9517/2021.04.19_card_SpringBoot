@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>admin cardList</title>
+    <title>Inquire board</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
@@ -15,23 +15,24 @@
     <link rel="stylesheet" href="../static/css/footer.css" />
     <link rel="stylesheet" href="../static/css/admin_cardlist.css"/>
 
+    <script th:src="@{/static/js/cardDetail.js}"></script>
 </head>
 <body>
 <section>
     <nav id="side_menu">
-        <h4>Menu</h4>
+        <h3>관리자 페이지</h3>
 
-        <ul class="nav nav-pills justify-content-end">
+        <ul class="nav nav-pills justify-content-end" style="margin-bottom:20px; margin-top:70px;">
             <li>
-                <a href="#"><p >┖ 카드사 목록</p></a>
+                <a href="#"><h4 id="links1">┖ 카드사 목록</h4></a>
             </li>
 
             <li>
-                <a href="#"><p>┖ 카드사 등록</p></a>
+                <a href="#"><h4 id="links2">┖ 카드사 등록</h4></a>
             </li>
 
             <li>
-                <a href="#"><p>┖ 카드 &nbsp; &nbsp;등록</p></a>
+                <a href="admin_CardRegister.html" th:href="@{/admin/card_regist_page}"><h4 id="links3">┖ 카드 등록</h4></a>
             </li>
 
         </ul>
@@ -49,30 +50,31 @@
         <table class="table table-hover" id="table1">
 
             <tr id="head">
+                <th width="200">카드코드</th>
                 <th width="200">카드명</th>
                 <th width="200">카드사</th>
                 <th width="200">카드 사진</th>
+                <th> 카드사 방문수 </th>
                 <th></th>
                 <th></th>
 
             </tr>
 
+            <tr class="tr" th:each="card : ${cardlist}">
+                <!-- list반복문 : th:each="변수명 : ${받은 모델명}" -->
+                <input type="hidden" id="code" value="${card.cardCode}">
 
-
-
-
-            <tr class="tr">
-                <td></td>
-                <td></td>
-                <td></td>
-
-                <td><button id="after1">수정</button></td>
+                <td><span th:text="${card.cardCode}"></span></td>
+                <td><span th:text="${card.cardName}"></span></td>
+                <td><span th:text="${card.cardCompany}"></span></td>
+                <td><span th:text="${card.cardPhoto}"></span></td>
+                <td><span th:text="${card.count}"></span></td>
+                <td><button id="updateBtn">수정</button></td>
                 <td>
-                    <button id="after2">삭제</button>
+                    <button id="deleteBtn">삭제</button>
                 </td>
+
             </tr>
-
-
 
         </table>
     </div>

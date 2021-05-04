@@ -1,20 +1,22 @@
 package com.springweb.service;
 
 import com.springweb.domain.card.CardCompanyRepository;
+import com.springweb.web.dto.CardCompanyDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
 public class CardCompanyService {
-/*
+
 
     private final CardCompanyRepository cardCompanyRepository;
 
     //생성
-    public void SaveCardCompany(){
-
+    public Long SaveCardCompany(CardCompanyDto cardCompanyDto){
+        return cardCompanyRepository.save(cardCompanyDto.toEntity()).getCompanyCord();
     }
+    /*
     //수정
     public void UpdateCardCompany(){
 

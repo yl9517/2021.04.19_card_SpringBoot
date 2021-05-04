@@ -15,43 +15,43 @@ public class CardEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardCode; //카드 코드
 
-    @Column (nullable = false)
+    @Column (nullable = true) //잠시 true
     private String cardName; //카드 명
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String cardPhoto; //카드사진
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String cardCompany; //카드사
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private int annualFee; //연회비
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private int beforePay; //전월 실적
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String cardType; //카드 타입
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String benefit1; //혜택1
 
-    @Column (columnDefinition = "TEXT", nullable = false)
+    @Column (columnDefinition = "TEXT", nullable = true)
     private String benefit1_detail; //혜택1 상세
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String benefit2; //혜택2
 
-    @Column (columnDefinition = "TEXT", nullable = false)
+    @Column (columnDefinition = "TEXT", nullable = true)
     private String benefit2_detail; //혜택2 상세
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String benefit3; //혜택3
 
-    @Column (columnDefinition = "TEXT", nullable = false)
+    @Column (columnDefinition = "TEXT", nullable = true)
     private String benefit3_detail; //혜택3 상세
 
-    @Column (nullable = false)
+    @Column (nullable = true)
     private String cardLink; //카드사 링크
 
     @Column

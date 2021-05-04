@@ -43,8 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .defaultSuccessUrl("/")
                     .permitAll()
                 .and()
-                    .csrf()
-                    .ignoringAntMatchers("/h2-console/**")
+                    .csrf() //아래 특정 url 들은 CSRF 방지 처리 적용X
+                    .ignoringAntMatchers("/h2-console/**") //해지해놓아서 우리가 h2에서 정보 변경할수 있음
                     .ignoringAntMatchers("/post/**")
                     .ignoringAntMatchers("/admin/**")
                 .and()
@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .userInfoEndpoint()
                     .userService(oauthService);
 
-        http.headers().frameOptions().disable();
+        http.headers().frameOptions().disable(); //csrf 사용 시 X-frame 자동 사용되는것을 비활성화시키기
 
     }
 }

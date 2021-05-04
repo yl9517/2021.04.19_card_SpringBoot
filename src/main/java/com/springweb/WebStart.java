@@ -2,7 +2,9 @@ package com.springweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing
 @SpringBootApplication //해당 클래스에게 스프링 부트 데이터 제공
 public class WebStart {
 

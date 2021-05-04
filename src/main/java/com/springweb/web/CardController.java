@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Controller
 @AllArgsConstructor //빈 생성자
@@ -32,7 +35,10 @@ public class CardController {
     
     //카드 리스트 이동 (조건검색 후)
     @GetMapping("/card/card_list_page")
-    public String card_list(){
+    public String card_list(Model model){
+
+        List<CardDto> cardlist = cardService.getAllCard();
+        model.addAttribute("cardlist",cardlist);
         return "card_list";
     }
 
@@ -43,10 +49,9 @@ public class CardController {
     }
 
     //카드 상세보기 이동
-    @GetMapping("/card/card_detail_page")
-    public String card_detail(Long code, Model model){
-        
-        //해당 게시물 번호를 찾기
+    @GetMapping("/card/card_detail_page/{code}")
+    public String card_detail(@PathVariable("code") Long code, Model model){
+         //해당 게시물 번호를 찾기
         CardDto cardDto = cardService.getCard(code);
         
         //찾았으면 model 담아서 프론트엔드에게 전달
