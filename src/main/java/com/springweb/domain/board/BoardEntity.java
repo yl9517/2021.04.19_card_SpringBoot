@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity(name="board")
-public class boardEntity extends BaseTimeEntity {
+public class BoardEntity extends BaseTimeEntity {
 
     @Id //@Id= 기본키 부여
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class boardEntity extends BaseTimeEntity {
     private String userID;
 
     @Builder
-    public boardEntity(Long bbsID, String bbsTitle, String bbsCategory, String bbsContent, String bbsReply, String userID){
+    public BoardEntity(Long bbsID, String bbsTitle, String bbsCategory, String bbsContent, String bbsReply, String userID){
 
         this.bbsID=bbsID;
         this.bbsTitle=bbsTitle;

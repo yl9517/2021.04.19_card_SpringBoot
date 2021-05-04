@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inquire board</title>
+  <title>admin_card register</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
   <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
@@ -15,10 +15,38 @@
   <link rel="stylesheet" href="../static/css/footer.css" />
   <link rel="stylesheet" href="../static/css/admin_cardregister.css"/>
 
+  <script>
+
+
+
+  </script>
+
+
+
 </head>
 
 <body>
     <section>
+
+      <nav id="side_menu">
+        <h4>Menu</h4>
+
+        <ul class="nav nav-pills justify-content-end">
+          <li>
+            <a href="#"><p >┖ 카드사 목록</p></a>
+          </li>
+
+          <li>
+            <a href="#"><p>┖ 카드사 등록</p></a>
+          </li>
+
+          <li>
+            <a href="#"><p>┖ 카드 &nbsp; &nbsp;등록</p></a>
+          </li>
+
+        </ul>
+
+      </nav>
 
       <div class="imageinfo">
         <p></p>
@@ -28,9 +56,10 @@
 
         <div class="container" id="cardinfo">
 
+          <br>
           <label>카드 이미지</label><br>
           <input type="file" id="cardPhoto">
-          <hr>
+
           <br><br><br><br>
           <label>카드 명</label> <br>
           <input type="text" id="cardName" placeholder="카드명">
@@ -54,36 +83,91 @@
           <label>카드 링크</label> <br>
           <input type="text" id="cardLink" name="cardLink" placeholder="카드 링크"> <br><br><br>
 
-          <label>순위</label> <br>
-          <input type="text" id="count" name="count" placeholder="순위"> <br><br><br>
+
 
 
         </div>
 
         <div id="cardbenefits">
 
-          <label id="1">혜택1</label> <br>
-          <input type="text" id="benefit1" name="benefit1" placeholder="혜택1"> <br>
-          <label>혜택 1 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
-          <br><br>
-          <label>혜택2</label> <br>
-          <input type="text" id="benefit2" name="benefit2" placeholder="혜택2"> <br>
-          <label>혜택 2 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
-          <br><br>
-          <label>혜택3</label> <br>
-          <input type="text" id="benefit3" name="benefit3" placeholder="혜택3"> <br>
-          <label>혜택 3 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
 
 
-        </div>
 
+          <div id="benefit1">
+
+            <p id="ggg"> 혜택 1,2,3 (필수 3개)</p>
+
+            <button type="button" onclick="A()" id="transportation"><img src="../static/images/교통.png" id="transportation2">교통</button>
+            <button type="button" id="mart"><img src="../static/images/마트편의점.png" id="mart2">마트</button>
+            <button type="button" id="shopping"><img src="../static/images/쇼핑.png" id="shopping2">쇼핑</button>
+            <button type="button" id="movie"><img src="../static/images/영화문화.png" id="movie2">영화</button>
+            <button type="button" id="gasoline"><img src="../static/images/주유.png" id="gasoline2">주유</button>
+            <button type="button" id="cafe"><img src="../static/images/카페디저트.png" id="cafe2">카페</button>
+            <button type="button" id="phone"><img src="../static/images/통신2.png" id="phone2">통신</button>
+
+            <br>
+
+
+            <br><br><br>
+            <label>혜택 1</label>
+
+            <select id="a">
+              <option>선택</option>
+              <option>교통</option>
+              <option>마트편의점</option>
+              <option>쇼핑</option>
+              <option>영화문화</option>
+              <option>주유</option>
+              <option>카페</option>
+              <option>통신</option>
+            </select> <br>
+
+              <label>혜택 1 상세</label> <br>
+              <textarea cols="70" maxlength="300"></textarea>
+              <br><br>
+            <label>혜택 2</label>
+
+            <select id="b">
+              <option>선택</option>
+              <option>교통</option>
+              <option>마트편의점</option>
+              <option>쇼핑</option>
+              <option>영화문화</option>
+              <option>주유</option>
+              <option>카페</option>
+              <option>통신</option>
+            </select>  <br>
+
+                <label>혜택 2 상세</label> <br>
+                <textarea cols="70" maxlength="300"></textarea>
+                <br><br>
+            <label>혜택 3</label>
+
+            <select id="c">
+              <option>선택</option>
+              <option>교통</option>
+              <option>마트편의점</option>
+              <option>쇼핑</option>
+              <option>영화문화</option>
+              <option>주유</option>
+              <option>카페</option>
+              <option>통신</option>
+            </select> <br>
+
+                  <label>혜택 3 상세</label> <br>
+                  <textarea cols="70" maxlength="300"></textarea>
+                  <br><br>
+
+          </div>
+
+
+
+
+      </div>
 
         <input type="reset" value="다시 작성" id="resetbutton">
 
-        <input type="submit" value="등록" id="registerbutton">
+        <input type="submit" value="등록" id="registerbutton" onclick="check()">
 
         <br><br>
 
@@ -93,11 +177,6 @@
 
 
     </section>
-
-
-
-
-
 
 
 

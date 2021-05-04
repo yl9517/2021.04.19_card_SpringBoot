@@ -8,13 +8,13 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-public class boardUpdateRequestDto {
+public class BoardUpdateRequestDto {
 
     private String bbsTitle;
     private String bbsContent;
 
 
-    public boardUpdateRequestDto(String bbsTitle, String bbsContent){
+    public BoardUpdateRequestDto(String bbsTitle, String bbsContent){
 
         this.bbsTitle=bbsTitle;
         this.bbsContent=bbsContent;

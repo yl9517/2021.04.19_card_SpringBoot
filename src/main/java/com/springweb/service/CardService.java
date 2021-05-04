@@ -1,9 +1,18 @@
 package com.springweb.service;
 
 
+import com.springweb.domain.card.CardEntity;
 import com.springweb.domain.card.CardRepository;
+import com.springweb.web.dto.CardDto;
+import com.springweb.web.dto.CardUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -12,23 +21,106 @@ public class CardService {
     private final CardRepository cardRepository;
 
     //생성
-    public void SaveCard(){
+    @Transactional
+    public Long SaveCard(CardDto cardDto){
 
+        return cardRepository.save(cardDto.toEntity()).getCardCode();
     }
+
     //수정
-    public void UpdateCard(){
+    @Transactional
+    public Long UpdateCard(Long code, CardUpdateDto requestDto){ //카드코드와 수정할 값 받아오기
 
+        //수정할 대상 찾기 [카드코드, 업데이트 내용]
+        Optional<CardEntity> cardEntityOptional = cardRepository.findById(code);
+        CardEntity cardEntity = cardEntityOptional.get();
+            //못찾았으면 null 예외처리 (Optional)
+
+        //찾았으면 업데이트
+        cardEntity.update(
+                requestDto.getCardName(),requestDto.getCardPhoto()
+                ,requestDto.getCardCompany(),requestDto.getAnnualFee()
+                ,requestDto.getBeforePay(),requestDto.getCardType()
+                ,requestDto.getBenefit1(),requestDto.getBenefit1_detail()
+                ,requestDto.getBenefit2(),requestDto.getBenefit2_detail()
+                ,requestDto.getBenefit3(),requestDto.getBenefit3_detail()
+                ,requestDto.getCardLink());
+        return code;
     }
+    //Optional 쓰는 이유 : 널값으로 인해 발생하는 에러를 예외처리를 해줌
+
     //삭제
-    public void DeleteCard(){
+    @Transactional
+    public void DeleteCard(Long code) {
+
+        //삭제할 대상 찾기
+        Optional<CardEntity> cardEntityOptional = cardRepository.findById(code);
+        CardEntity cardEntity = cardEntityOptional.get();
+
+        //찾았으면 삭제
+        cardRepository.delete(cardEntity);
 
     }
+
     //전체조회
-    public void getAllCard(){
+    @Transactional
+    public List<CardDto> getAllCard(){
 
+        //1. 모든 엔티티 가져오기
+        List<CardEntity> cardEntities = cardRepository.findAll();
+
+        //2. 가져온 엔티티 빼오기
+        List<CardDto> cardDtoList = new ArrayList<>();
+
+        for(CardEntity entity : cardEntities){ //모든(가져온) 엔티티 만큼 반복
+            CardDto cardDto = CardDto.builder()
+                    .cardCode(entity.getCardCode())
+                    .cardName(entity.getCardName())
+                    .cardPhoto(entity.getCardPhoto())
+                    .cardCompany(entity.getCardCompany())
+                    .annualFee(entity.getAnnualFee())
+                    .beforePay(entity.getBeforePay())
+                    .cardType(entity.getCardType())
+                    .benefit1(entity.getBenefit1())
+                    .benefit1_detail(entity.getBenefit1_detail())
+                    .benefit2(entity.getBenefit2())
+                    .benefit2_detail(entity.getBenefit2_detail())
+                    .benefit3(entity.getBenefit3())
+                    .benefit3_detail(entity.getBenefit3_detail())
+                    .cardLink(entity.getCardLink())
+                    .build();
+            cardDtoList.add(cardDto);
+
+        }
+        return cardDtoList;
     }
-    //개별조회(조건조회)
-    public void getCard(){
 
+    //조건 전체조회 (순위 별)
+
+    //개별조회(조건조회)
+    @Transactional
+    public CardDto getCard(Long code){
+        //검색할 대상 찾기
+        Optional<CardEntity> cardEntityOptional = cardRepository.findById(code);
+        CardEntity cardEntity = cardEntityOptional.get();
+
+        CardDto cardDto = CardDto.builder()
+                .cardCode(cardEntity.getCardCode())
+                .cardName(cardEntity.getCardName())
+                .cardPhoto(cardEntity.getCardPhoto())
+                .cardCompany(cardEntity.getCardCompany())
+                .annualFee(cardEntity.getAnnualFee())
+                .beforePay(cardEntity.getBeforePay())
+                .cardType(cardEntity.getCardType())
+                .benefit1(cardEntity.getBenefit1())
+                .benefit1_detail(cardEntity.getBenefit1_detail())
+                .benefit2(cardEntity.getBenefit2())
+                .benefit2_detail(cardEntity.getBenefit2_detail())
+                .benefit3(cardEntity.getBenefit3())
+                .benefit3_detail(cardEntity.getBenefit3_detail())
+                .cardLink(cardEntity.getCardLink())
+                .build();
+
+        return cardDto;
     }
 }

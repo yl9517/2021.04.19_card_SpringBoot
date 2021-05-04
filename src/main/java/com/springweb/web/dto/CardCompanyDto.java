@@ -11,14 +11,14 @@ import javax.persistence.Column;
 @NoArgsConstructor
 public class CardCompanyDto {
     //빌드
-    private int companyCord; //회사코드
+    private Long companyCord; //회사코드
     private String companyName; //카드사
     private String companyLogo; //회사로고
     private int haveCardNum; //등록카드 갯수
 
     //생성자
     @Builder
-    public CardCompanyDto(int companyCord, String companyName, String companyLogo, int haveCardNum) {
+    public CardCompanyDto(Long companyCord, String companyName, String companyLogo, int haveCardNum) {
         this.companyCord = companyCord;
         this.companyName = companyName;
         this.companyLogo = companyLogo;

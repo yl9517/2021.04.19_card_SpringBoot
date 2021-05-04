@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/card_compare.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
+    <div id="compareWrap">
+        <div id="subtitle">
+            <h1> 카드 비교 </h1>
+        </div>
+
+        <table id="compareInfo">
+            <tr class="mainInfo">
+                <td>
+                    <dl>
+                        <dt> <img src="../static/images/카드1.png"> </dt>
+                        <dt>
+                            <p class="name">신한 DEEP MAKING</p>
+                            <p class="cardCom">신한카드</p>
+                        </dt>
+                        <dt> <a href="#" class="more"> 상세 보기</a> </dt>
+                    </dl>
+                </td>
+                <td>
+                    <dl>
+                        <dt> <img src="../static/images/카드2.png"> </dt>
+                        <dt>
+                            <p class="name">신한 DEEP MAKING2</p>
+                            <p class="cardCom">신한카드</p>
+                        </dt>
+                        <dt>  <a href="#" class="more"> 상세 보기</a> </dt>
+                    </dl>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="intitle"> 카드 종류 </td>
+            </tr>
+
+            <tr>
+                <td> 신용카드 / 포인트형 </td>
+                <td> 신용카드 / 할인형 </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="intitle"> 연회비 </td>
+            </tr>
+            <tr>
+                <td> 10,000원 </td>
+                <td> 20,000원 </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="intitle"> 전월실적 </td>
+            </tr>
+            <tr>
+                <td> 100,000원 </td>
+                <td> 300,000원 </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="intitle"> 혜택 </td>
+            </tr>
+            <tr class="benefits">
+                <td>
+                    <dl>
+                        <dt>혜택1 이름</dt>
+                        <dd>혜택1 상세</dd>
+                    </dl>
+                    <dl>
+                        <dt>혜택2 이름</dt>
+                        <dd>혜택2 상세</dd>
+                    </dl>
+                    <dl>
+                        <dt>혜택3 이름</dt>
+                        <dd>혜택3 상세</dd>
+                    </dl>
+                </td>
+                <td>
+                    <dl>
+                        <dt>혜택1 이름</dt>
+                        <dd>혜택1 상세</dd>
+                    </dl>
+                    <dl>
+                        <dt>혜택2 이름</dt>
+                        <dd>혜택2 상세</dd>
+                    </dl>
+                    <dl>
+                        <dt>혜택3 이름</dt>
+                        <dd>혜택3 상세</dd>
+                    </dl>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+</body>
+</html>

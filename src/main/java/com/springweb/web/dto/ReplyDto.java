@@ -1,6 +1,6 @@
 package com.springweb.web.dto;
 
-import com.springweb.domain.board.boardEntity;
+import com.springweb.domain.board.BoardEntity;
 import com.springweb.domain.board.ReplyEntity;
 import lombok.*;
 
@@ -17,7 +17,7 @@ public class ReplyDto {
     private Long id;
     private String reply_writer;
     private String reply_content;
-    private boardEntity bbsID;
+    private BoardEntity bbsID;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
@@ -35,7 +35,7 @@ public class ReplyDto {
 
 
     //생성자
-    public ReplyDto(Long id, String reply_writer, boardEntity bbsID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public ReplyDto(Long id, String reply_writer, BoardEntity bbsID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.reply_writer = reply_writer;
         this.bbsID = bbsID;

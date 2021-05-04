@@ -1,0 +1,138 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
+/*카드 검색 전체 div*/
+ #detailWrap{
+    margin: 0 auto;
+    height: auto;
+    background-color : #e6ecf7;
+ }
+
+ /*소제목*/
+ #subtitle{
+    margin: 0 auto;
+    width: 100%;
+    height : auto;
+    background-color : #fff;
+ }
+ #subtitle h1{
+    margin: 0 auto;
+    width : 1300px;
+    display: flex; /*align-items와 함께 세로 센터만들기*/
+    align-items: center;
+    padding: 40px;
+   font-size : 35px;
+ }
+
+/* 상세 */
+ #detailInfo{
+    width:1300px;
+    margin: 0 auto;
+    padding : 60px;
+    text-align:center;
+    font-size: 17px;
+ }
+
+#detailInfo .cardimg{
+    display: inline-block;
+}
+#detailInfo .cardimg img{
+    width:300px;
+}
+
+#detailInfo .cardInfo{
+    margin-top: -60px;
+    padding: 85px 40px 40px;
+    background: #fff;
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 10%);
+    min-height:470px;
+}
+#detailInfo .name{
+    font-size:35px;
+    margin-bottom: 5px;
+}
+/*혜택 아이콘*/
+#benefits{
+    height:180px;
+    padding: 40px 0 0px 250px;
+}
+#benefits .icon{
+  float:left;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #f8efed;
+  margin: 0 50px;
+}
+#benefits .icon img{
+    width:140px;
+}
+
+/*연회비,전월실적*/
+.sub{
+    margin: 20px 0 70px;
+}
+.sub span{
+    padding: 20px 40px;
+}
+
+#detailInfo #application a{
+    font-size : 30px;
+    padding: 25px 80px;
+    background-color:  rgba(204,153,255, 0.5);
+    border-radius: 10px;
+}
+#detailInfo #application a:hover{
+    background-color:  rgba(204,153,255, 1);
+    transition: 0.3s;
+}
+
+
+/*혜택 상세*/
+#beneInfo{
+    width:100%;
+    height: auto;
+    background-color : #fff;
+    margin: 0 auto;
+    font-size:20px;
+    padding-bottom:70px;
+}
+#beneInfo #smallTitle{
+    width:1300px;
+    text-align:center;
+    margin: 0 auto;
+    padding:40px;
+    font-size:25px;
+}
+#beneInfo #benefitDetail{
+    width:1300px;
+    margin: 0px auto;
+}
+#beneInfo #benefitDetail li{
+    padding:40px 0;
+    min-height:145px;
+    border-bottom: 1px solid #ccc;
+}
+#beneInfo #benefitDetail li:nth-child(1){
+    border-top: 1px solid #ccc;
+
+}
+#beneInfo #benefitDetail img{
+    width:140px;
+    margin: 0 100px 0 30px;
+    vertical-align:middle;
+    float:left;
+}
+#beneInfo #benefitDetail h3{
+    padding:10px 0;
+    font-size:25px;
+}

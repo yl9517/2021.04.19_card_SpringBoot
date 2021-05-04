@@ -46,7 +46,7 @@ a{
     height:220px;
     padding : 40px 50px;
     margin-bottom: 30px;
-        position : relative;
+    position : relative;
  }
  #listInfo img{
     width : 230px;
@@ -83,7 +83,7 @@ a{
    #listInfo .more{
     position: absolute;
     right: 3%;
-    float: right;카
+    float: right;
     font-size : 20px;
     padding: 98px 13px;
     background-color:  rgba(204,153,255, 0.5);

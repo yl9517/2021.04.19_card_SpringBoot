@@ -39,16 +39,17 @@
             3. 푸터.html [ 완 ]
             5. 조건 검색.html  [ 완 ]
                   1.카드 리스트 html [ 완 ]
-            7. 카드 비교.html
+            7. 카드 비교.html  [ 완 ]
             8. 카드 순위 리스트.html [ 완 ]
             9. 로고.PNG [ 완 ]
             10. favicon.ico [ 완 ]
+            11. 카드 상세페이지 .Html [ 완 ]
       2. 일반 : OAUTH2 로그인 페이지 , 로고 [ 제현  ]
             1. 로그인.Html [ 완 ]
             2. 에러페이지.Html  [ 완 ]
             3. 카드사.Html 
                   1. 카드사 상세페이지 .Html [ 1.카드 리스트 html [ 완 ] 참고 ]     
-                  2. 카드 상세페이지 .Html
+                
       4. 관리자 ,  1:1상담 게시판 [ 강현 ]
             1. 문의게시판 목록.html [ 완 ]
             2. 문의게시판 작성.html [ 완 ]
@@ -56,11 +57,11 @@
             4. 문의게시판 수정.html [ 완 ]
             5. 관리자 페이지 / 카드목록.HTML [ 완 ] 
             6. 관리자 : 카드사 목록.Html [ 완 ]
-            7. 관리자 : 카드사 등록.Html  
-            8. 관리자 : 카드사 수정.Html 
+            7. 관리자 : 카드사 등록.Html  [ 완 ]
+            8. 관리자 : 카드사 수정.Html [ 완 ]
             9. 관리자 : 카드 목록.Html  [ 완 ]
-            10. 관리자 : 카드등록 .html 
-            11. 관리자 : 카드수정 .html 
+            10. 관리자 : 카드등록 .html [ 완 ]
+            11. 관리자 : 카드수정 .html [ 완 ]
 
             
 7. 백엔드[ spring 구현 ] 
@@ -99,6 +100,20 @@
 
 
 9. 프론트엔드(HTML) <---[Dto]---> controller(제어) <---[Dto]----> service(로직)  <---[Dto]---> Repository(JPA) <---[entity]---> DB[h2]
+
+
+10. oauth2 순서  oauth2  [ https://bamdule.tistory.com/62 ]
+	1. SNS API 신청 
+	2. application-oauth.properties : SNS 클라이언트 정보 입력 
+	3. OAuth2UserService
+		loadUser 재정의 
+		1. 클라이언 정보 id 가져오기
+		2. 요청한 클라이언트의 Attribute 가져오기
+		3. 요청한 클라이언트의 인증키 가져오기 
+ 		4. OauthAttributes :  dto 넣기 
+		6. db에 넣기 		
+		7. 세션에 넣기 
+
 
             		 	       			    
 
