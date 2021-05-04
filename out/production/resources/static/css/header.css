@@ -11,7 +11,13 @@
     margin : 0px;
 
 }
-
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
 #head{
     width:100%;
     margin: 0 auto;
@@ -35,15 +41,16 @@
 
 #menu_bar{
     background-color: #fff;
+	text-align: center;
     width: 100%;
-    box-shadow: 0px 15px 15px -15px rgb(0 0 0 / 15%);
-    z-index : 99; /*우선순위*/
 }
 
 #menu_inner{
-    width:1300px;
-	text-align: center;
-    padding : 15px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 15px 15px -15px rgb(0 0 0 / 15%);
+    z-index : 99; /*우선순위*/
+    padding : 14px 0;
     margin : 0 auto;
 }
 #menu_inner .loginBtn img{
@@ -52,18 +59,33 @@
 }
 
 #menu_bar li{
-		list-style-type: none;
- 		display: inline-block;
- 		padding: 0 70px;
- 		font-size : 20px;
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 70px;
+    font-size : 20px;
 }
 #menu_bar li a{
- 		text-decoration: none;
- 		color : black;
+    text-decoration: none;
+    color : black;
 }
 .jbFixed {
         position: fixed;
         top: 0px;
       }
 
-
+#menu_bar .log{
+    position:absolute;
+    top:60px;
+    right: 10%;
+    font-size: 15px;
+    color:#8f8378;
+}
+#menu_bar .log a{
+    color:#8f8378;
+}
+#menu_bar .log td{
+    width:100px;
+}
+#menu_bar .log .userName{
+    border-right: 1px solid #ccc;
+}
