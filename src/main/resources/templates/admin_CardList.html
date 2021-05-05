@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../static/css/footer.css" />
     <link rel="stylesheet" href="../static/css/admin_cardlist.css"/>
 
-    <script th:src="@{/static/js/cardDetail.js}"></script>
+    <script th:src="@{/static/js/cardDelete.js}"></script>
 </head>
 <body>
 <section>
@@ -62,7 +62,7 @@
 
             <tr class="tr" th:each="card : ${cardlist}">
                 <!-- list반복문 : th:each="변수명 : ${받은 모델명}" -->
-                <input type="hidden" id="code" value="${card.cardCode}">
+                <input type="hidden" id="id" th:value="${card.cardCode}">
 
                 <td><span th:text="${card.cardCode}"></span></td>
                 <td><span th:text="${card.cardName}"></span></td>
@@ -70,9 +70,7 @@
                 <td><span th:text="${card.cardPhoto}"></span></td>
                 <td><span th:text="${card.count}"></span></td>
                 <td><button id="updateBtn">수정</button></td>
-                <td>
-                    <button id="deleteBtn">삭제</button>
-                </td>
+                <td><button id="deleteBtn">삭제</button></td>
 
             </tr>
 

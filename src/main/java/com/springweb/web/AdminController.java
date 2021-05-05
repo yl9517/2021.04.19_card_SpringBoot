@@ -3,11 +3,15 @@ package com.springweb.web;
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardDto;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.smartcardio.Card;
+import java.io.File;
 import java.util.List;
 
 @Controller
@@ -37,12 +41,25 @@ public class AdminController {
 
     //카드 등록 기능
     @PostMapping("/admin/card_register")
-    public String register(CardDto cardDto){
-        //권한 가진 사람이 멤버라면 에러페이지로 돌리기
+    public String register( CardDto cardDto){
+//        try{
+//            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\Files";
+//            String filePath = baseDir+"\\"+files.getOriginalFilename();
+//            files.transferTo(new File(filePath));
+//            Authentication card = SecurityContextHolder.getContext().getAuthentication();
+//            // String registCard = card.getName();
+//            cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
+//            cardService.SaveCard(cardDto);
+//
+//            return "redirect:/admin";//다 쓰면 리스트로 돌리기
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
+        //권한 가진 사람이 멤버라면 에러페이지로 돌리기
         cardService.SaveCard(cardDto);
         return "redirect:/admin"; //다 쓰면 리스트로 돌리기
-
     }
 
     //카드 수정 기능
@@ -50,8 +67,8 @@ public class AdminController {
     //카드 삭제 기능
     @DeleteMapping("/admin/delete/{id}")
     @ResponseBody
-    public boolean delete(@PathVariable("code") Long code){
-        cardService.DeleteCard(code);
+    public boolean delete(@PathVariable("id") Long id){
+        cardService.DeleteCard(id);
 
         return true;
     }

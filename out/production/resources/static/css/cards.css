@@ -3,9 +3,6 @@
     text-color:blue;
 }
 .cardss:hover{
-
-    background-image: url("../images/maamin.jpg");
-    background-size: cover;
     transform: translate( 20px, 10% )
 
 }
@@ -15,4 +12,7 @@
 }
 .cards-back{
     background-image: url("../images/maamin.jpg");
+}
+.cards1{
+    background-image: url("../images/cardsBack.png");
 }

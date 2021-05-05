@@ -37,7 +37,7 @@
                     </div>
                     <a href="card_detail.html" th:href="@{'/card/card_detail_page/'+${card.cardCode}}" class="more"> 상세 보기</a>
                     <div class="condition">
-                       <p>연회비 <span th:text="${card.annualFee}"></span>원 | 전월 실적<span th:text="${card.beforePay}"></span>원</p>
+                       <p>연회비 <span th:text="${card.annualFee}"></span>원 | 전월 실적 <span th:text="${card.beforePay}"></span>원</p>
                         <a href="card_compare.html" th:href="@{/card/card_compare_page}">  <img src="../static/images/add.png">  <p class="cart"> 비교함 담기</p></a>
                     </div>
                 </li>

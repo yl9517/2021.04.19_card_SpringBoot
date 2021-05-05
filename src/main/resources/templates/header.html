@@ -32,7 +32,7 @@
                 <tr>
                     <td class="userName" th:text="${logName}"></td>
                     <td th:if="${logName == null}" class="loginBtn"> <a href="login.html" th:href="@{/user/login_page}"> 로그인 </a></td>
-                    <td th:if="${logName != null}" class="logoutBtn"><a th:href="@{/user/logout}"> 로그아웃 </a> </td>
+                    <td th:if="${logName != null}" class="logoutBtn"> <a th:href="@{/user/logout}"> 로그아웃 </a> </td>
                 </tr>
                 <tr>
                     <td></td>
