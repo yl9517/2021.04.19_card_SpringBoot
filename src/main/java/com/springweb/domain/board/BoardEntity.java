@@ -25,10 +25,10 @@ public class BoardEntity extends BaseTimeEntity {
     @Column(nullable = false)
     private String bbsContent;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String bbsReply;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String userID;
 
     @Builder
@@ -40,26 +40,26 @@ public class BoardEntity extends BaseTimeEntity {
         this.bbsContent=bbsContent;
         this.bbsReply=bbsReply;
         this.userID=userID;
-        
+
     }
 
     public void update(String bbsTitle, String bbsContent){
-        
+
         this.bbsTitle=bbsTitle;
         this.bbsContent=bbsContent;
 
     }
-    
+
     public void doneReply(){
-        
+
         this.bbsReply="답변 완료";
     }
 
 
     public void undoReply(){
-        
+
         this.bbsReply="답변 대기중";
-        
+
     }
 
 

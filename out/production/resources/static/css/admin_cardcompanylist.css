@@ -17,15 +17,15 @@ div.container{
 }
 
 #side_menu{
-			text-align: center;
-			float: left;
-			margin:300px 0 0 30px;
-			padding: 10px;
-			width: 180px;
-            height: 300px;
-            background-color:#FFF8DC;
-			border: 2px solid black;
-			border-radius: 15px;
+        text-align: center;
+        float: left;
+        margin:300px 0 0 10px;
+        padding: 10px;
+        width: 165px;
+        height: 300px;
+        background-color:#FFF8DC;
+        border: 2px solid black;
+        border-radius: 15px;
 		}
 
 #side_menu h4{
@@ -73,16 +73,6 @@ div.container{
 
 
 
-li {
-    float:left;
-    margin: 0px 50px 30px 0px;
-    padding: 0 0 0 0;
-
-
-}
-
-
-
 #after1{
 			background-color:#dcdcdc;
         	color :black;
@@ -107,7 +97,7 @@ li {
 #table1{
 
     text-align:center;
-
+    width:1100px;
 
 }
 

@@ -38,14 +38,14 @@ text-align:center;
 
 #side_menu{
 			text-align: center;
-			float: left;
-			margin:200px 0 0 30px;
-			padding: 10px;
-			width: 180px;
-            height: 300px;
-            background-color:#FFF8DC;
-			border: 2px solid black;
-			border-radius: 15px;
+        			float: left;
+        			margin:300px 0 0 10px;
+        			padding: 10px;
+        			width: 165px;
+                    height: 300px;
+                    background-color:#FFF8DC;
+        			border: 2px solid black;
+        			border-radius: 15px;
 		}
 
 #side_menu h4{
@@ -80,6 +80,10 @@ text-align:center;
     list-style-type: none;
     padding: 5px 0;
     font-size: 14px;
+    float:left;
+    margin: 0px 50px 30px 0px;
+    padding: 0 0 0 0;
+
 }
 #side_menu li a{
     text-decoration: none;
@@ -92,19 +96,15 @@ text-align:center;
     font-weight: bold;
 }
 
+#companyLogo{
 
-
-li{
-    float:left;
-    margin: 0px 50px 30px 0px;
-    padding: 0 0 0 0;
-
+    width:250px;
+    border:2px solid black;
 
 }
 
 
-
-#companyLogo,#companyName,#CardNum{
+#companyName,#CardNum{
 
         margin:auto;
         border:2px solid black;
