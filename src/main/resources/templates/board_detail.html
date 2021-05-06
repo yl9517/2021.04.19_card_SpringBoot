@@ -3,86 +3,90 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>board detail</title>
+    <title>Inquire board</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-    <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-    <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
 
     <link rel="stylesheet" href="../static/css/header.css" />
-    <link rel="stylesheet" href="../static/css/board_detail.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+
+
+    <script th:src="@{/static/js/inquiry_view.js}"></script>
+
 </head>
 
 
 <body>
-<th:block th:replace="header:: header"></th:block>
+
+<th:block th:replace = "/header :: header"></th:block>
 <div class="container">
 
-    <input type="hidden" id="id">
-    <input type="hidden" id="writer_id" name="writer_id">
+    <input type="hidden" id="id" th:value="${postDto.bbsID}">
+    <input type="hidden" id="writer_id" name="writer_id" th:value="${postDto.userID}">
     <div class="title" style="border-bottom: 1px solid #dddddd; margin-top: 100px;">
-        <h4 id="title"></h4>
+        <h4 id="title" th:text="${postDto.bbsTitle}"></h4>
         <span style="display:inline-block; margin-top:3px">
-                    <p>
-                        [[${#temporals.format(postDto.createdDate,'yyyy-MM-dd HH:mm')}]]
+                    <p th:inline="text">
+
                     </p>
                 </span>
     </div>
 
     <div class="content shadow-sm p-3 mb-5 bg-white rounded" style="font-size: 24px; margin-top: 30px; margin-bottom: 20px !important;">
-        <p id="content" class="text-break"></p>
+        <p id="content" class="text-break" th:utext="${#strings.replace( #strings.escapeXml( postDto.bbsContent ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" th:inline="text"></p>
     </div>
 
-    <div class="text-right">
-        <input id="deleteBtn" class="btn btn-outline-secondary" type="button" value="삭제"/>
-        <input id="updateBtnf" class="btn btn-outline-secondary" type="button" value="수정"/>
-        <input id="replyBtn" class="btn btn-outline-secondary" type="button" value="답글"/>
+    <div class="text-right" th:if="${user != null}">
+        <input id="deleteBtn" class="btn btn-outline-secondary" type="button" value="삭제" th:if="${user.name == postDto.userID}"/>
+        <input th:onclick="|window.location.href='/post/update/${postDto.bbsID}'|" id="updateBtnf" class="btn btn-outline-secondary" type="button" value="수정" th:if="${user.name == postDto.userID}" />
+        <input sec:authorize="hasRole('ROLE_ADMIN')" id="replyBtn" class="btn btn-outline-secondary" type="button" value="답글" th:if="${user.role.toString().equals('ADMIN')}"/>
     </div>
 
 
-    <div th:if="${replyDto != null}" style="margin-top: 3px">
-        <input type="hidden" id="reply_id">
-        <label style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">답글</label>
-        <span>
-                    <p>
-                        [[${#temporals.format(replyDto.createdDate,'yyyy-MM-dd HH:mm')}]]
-                    </p>
-                </span>
+    <!--    <div th:if="${replyDto != null}" style="margin-top: 3px">-->
+    <!--        <input type="hidden" id="reply_id" th:value="${replyDto.id}">-->
+    <!--        <label style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">답글</label>-->
+    <!--        <span>-->
+    <!--                    <p th:inline="text">-->
+    <!--                    </p>-->
+    <!--                </span>-->
 
-        <div id="reply_content_div" class="content shadow-sm p-3 mb-5 bg-white rounded" style="font-size: 24px; margin-top: 30px; margin-bottom: 20px !important;" >
-            <p id="reply_content" class="text-break">
+    <!--        <div id="reply_content_div" class="content shadow-sm p-3 mb-5 bg-white rounded" style="font-size: 24px; margin-top: 30px; margin-bottom: 20px !important;" th:if="${replyDto != null}">-->
+    <!--            <p id="reply_content" class="text-break"-->
+    <!--               th:utext="${#strings.replace( #strings.escapeXml( replyDto.reply_content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}"-->
+    <!--               th:inline="text">-->
 
-            </p>
-        </div>
+    <!--            </p>-->
+    <!--        </div>-->
 
-        <div id="reply_update_div" class="form-group">
-            <textarea id="reply_content_update" class="form-control"rows="10"></textarea>
-        </div>
+    <!--        <div id="reply_update_div" class="form-group">-->
+    <!--            <textarea id="reply_content_update" class="form-control"rows="10"></textarea>-->
+    <!--        </div>-->
 
-        <div class="text-right">
-            <input id="reply_deleteBtn" class="btn btn-outline-secondary" type="button" value="삭제" />
-            <input id="reply_updateBtn" class="btn btn-outline-secondary" type="button" value="수정" />
-            <input id="do_reply_updateBtn" class="btn btn-outline-secondary" type="button" value="수정하기" />
-        </div>
-    </div>
-    <!-- reply area -->
+    <!--        <div class="text-right">-->
+    <!--            <input sec:authorize="hasRole('ROLE_ADMIN')" id="reply_deleteBtn" class="btn btn-outline-secondary" type="button" value="삭제" />-->
+    <!--            <input sec:authorize="hasRole('ROLE_ADMIN')" id="reply_updateBtn" class="btn btn-outline-secondary" type="button" value="수정" />-->
+    <!--            <input sec:authorize="hasRole('ROLE_ADMIN')" id="do_reply_updateBtn" class="btn btn-outline-secondary" type="button" value="수정하기" />-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    &lt;!&ndash; reply area &ndash;&gt;-->
 
-    <div class="form-group" id="reply" style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">
-        <label>답글</label>
-        <textarea id="send_reply" class="form-control" rows="10"></textarea>
-    </div>
+    <!--    <div class="form-group" id="reply" style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">-->
+    <!--        <label>답글</label>-->
+    <!--        <textarea id="send_reply" class="form-control" rows="10"></textarea>-->
+    <!--    </div>-->
 
-    <div class="text-right spc" style="margin-bottom: 100px;">
-        <input id="reply_submit" class="btn btn-outline-secondary" type="button" value="Submit" />
-        <input class="btn btn-outline-secondary" type="reset" value="Reset" />
-    </div>
+    <!--    <div class="text-right spc" style="margin-bottom: 100px;">-->
+    <!--        <input id="reply_submit" class="btn btn-outline-secondary" type="button" value="Submit" />-->
+    <!--        <input class="btn btn-outline-secondary" type="reset" value="Reset" />-->
+    <!--    </div>-->
 </div>
-
+<th:block th:replace = "/footer :: footer"></th:block>
 </body>
 </html>
