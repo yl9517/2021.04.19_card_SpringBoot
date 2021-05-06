@@ -10,8 +10,8 @@ $(document).ready(function () {
             contentType: 'application/json; charset=utf-8',
             data: id,
         }).done(function(data) {
-            alert('글이 삭제되었습니다.');
-            window.location.href="/boardlist_page";
+            alert('카드 삭제되었습니다.');
+            window.location.href="/admin";
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });

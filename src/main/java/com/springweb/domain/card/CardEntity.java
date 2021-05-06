@@ -18,7 +18,7 @@ public class CardEntity {
     @Column (nullable = true) //잠시 true
     private String cardName; //카드 명
 
-    @Column (nullable = true)
+    @Column(columnDefinition = "TEXT")
     private String cardPhoto; //카드사진
 
     @Column (nullable = true)

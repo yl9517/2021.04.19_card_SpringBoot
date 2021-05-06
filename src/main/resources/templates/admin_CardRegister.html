@@ -56,14 +56,14 @@
     <p></p>
     <h1 class="register">카드 등록</h1>
     <br><br>
-    <form method="post" action="/admin/card_register" id="form" > <!--enctype="multipart/form-data"-->
+    <form method="post" action="/admin/card_register" id="form" enctype="multipart/form-data">
 
       <div class="container" id="cardinfo">
+        <!--name은 db(dto)랑 맞추는것, id는 스크립트랑 맞추는것 -->
 
         <br>
-        <label>카드 이미지</label><br>
-        <input type="file" id="cardPhoto" name="cardPhoto">
-        <!--name은 db(dto)랑 맞추는것, id는 스크립트랑 맞추는것 -->
+          <label>카드 이미지</label> <br>
+          <input type="file" id="cardPhoto" name="cardPhoto">
 
         <br><br><br><br>
         <label>카드 명</label> <br>

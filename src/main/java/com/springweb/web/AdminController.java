@@ -2,6 +2,7 @@ package com.springweb.web;
 
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardDto;
+import com.springweb.web.dto.CardUpdateDto;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -41,24 +42,23 @@ public class AdminController {
 
     //카드 등록 기능
     @PostMapping("/admin/card_register")
-    public String register(CardDto cardDto){ //@RequestParam("cardPhoto") MultipartFile files
-//        try{
-//            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images";
-//            String filePath = baseDir+"\\"+files.getOriginalFilename();
-//            files.transferTo(new File(filePath));
-//             Authentication card = SecurityContextHolder.getContext().getAuthentication();
-//            String registCard = card.getName();
-//            cardDto.setCardPhoto(registCard); //이미지 이름 저장
-//           // cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
-//            cardService.SaveCard(cardDto);
-//
-//            return "redirect:/admin";//다 쓰면 리스트로 돌리기
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+    public String register(@RequestParam("cardPhoto") MultipartFile files, CardDto cardDto){
+        try{
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images";
+            String filePath = baseDir+"\\"+files.getOriginalFilename();
+            files.transferTo(new File(filePath));
+            Authentication card = SecurityContextHolder.getContext().getAuthentication();
+            String registCard = card.getName();
+            cardDto.setCardPhoto(registCard); //이미지 이름 저장
+          // cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
+            cardService.SaveCard(cardDto);
 
-          cardService.SaveCard(cardDto);
+            return "redirect:/admin";//다 쓰면 리스트로 돌리기
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         return "redirect:/admin"; //다 쓰면 리스트로 돌리기
     }
 
@@ -75,6 +75,13 @@ public class AdminController {
     }
 
     //카드 수정 기능
+//    @PutMapping("/admin/card_update/{id}")
+//    @ResponseBody
+//    public void update(@PathVariable("id") Long id, @ResponseBody CardUpdateDto cardUpdateDto){
+//
+//        cardService.UpdateCard(id, cardUpdateDto);
+//
+//    }
 
     //카드 삭제 기능
     @DeleteMapping("/admin/delete/{id}")
