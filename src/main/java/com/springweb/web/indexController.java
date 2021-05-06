@@ -12,16 +12,9 @@ import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 public class indexController {
 
-    private final HttpSession httpSession; //로그인 했는지 안했는지
 
     @GetMapping("/")
-    public String index(Model model){ //모델 = 백과 프론트 사이의 정보이동?
-
-        SesstionUser user = (SesstionUser) httpSession.getAttribute("user");
-
-        if(user !=null){
-            model.addAttribute("logName",user.getName());
-        }
+    public String index(){ //모델 = 백과 프론트 사이의 정보이동?
 
         return "main";
     }

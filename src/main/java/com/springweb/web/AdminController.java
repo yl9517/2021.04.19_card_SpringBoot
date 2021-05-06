@@ -41,24 +41,37 @@ public class AdminController {
 
     //카드 등록 기능
     @PostMapping("/admin/card_register")
-    public String register(@RequestParam("cardPhoto") MultipartFile files, CardDto cardDto){
-        try{
-            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\Files";
-            String filePath = baseDir+"\\"+files.getOriginalFilename();
-            files.transferTo(new File(filePath));
-            Authentication card = SecurityContextHolder.getContext().getAuthentication();
-            // String registCard = card.getName();
-            cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
-            cardService.SaveCard(cardDto);
+    public String register(CardDto cardDto){ //@RequestParam("cardPhoto") MultipartFile files
+//        try{
+//            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images";
+//            String filePath = baseDir+"\\"+files.getOriginalFilename();
+//            files.transferTo(new File(filePath));
+//             Authentication card = SecurityContextHolder.getContext().getAuthentication();
+//            String registCard = card.getName();
+//            cardDto.setCardPhoto(registCard); //이미지 이름 저장
+//           // cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
+//            cardService.SaveCard(cardDto);
+//
+//            return "redirect:/admin";//다 쓰면 리스트로 돌리기
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
-            return "redirect:/admin";//다 쓰면 리스트로 돌리기
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        //권한 가진 사람이 멤버라면 에러페이지로 돌리기
+          cardService.SaveCard(cardDto);
         return "redirect:/admin"; //다 쓰면 리스트로 돌리기
+    }
+
+    //카드 수정페이지 이동
+    @GetMapping("/admin/card_update/{id}")
+    public String card_update_page(@PathVariable("id") Long id,Model model){
+        //카드코드 넣어서 해당 카드 찾기
+        CardDto cardDto = cardService.getCard(id);
+
+        //카드에게 넘겨주기
+        model.addAttribute("cardDto", cardDto);
+
+        return "admin_CardUpdate";
     }
 
     //카드 수정 기능
