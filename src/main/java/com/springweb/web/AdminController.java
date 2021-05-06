@@ -41,24 +41,23 @@ public class AdminController {
 
     //카드 등록 기능
     @PostMapping("/admin/card_register")
-    public String register( CardDto cardDto){
-//        try{
-//            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\Files";
-//            String filePath = baseDir+"\\"+files.getOriginalFilename();
-//            files.transferTo(new File(filePath));
-//            Authentication card = SecurityContextHolder.getContext().getAuthentication();
-//            // String registCard = card.getName();
-//            cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
-//            cardService.SaveCard(cardDto);
-//
-//            return "redirect:/admin";//다 쓰면 리스트로 돌리기
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+    public String register(@RequestParam("cardPhoto") MultipartFile files, CardDto cardDto){
+        try{
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\Files";
+            String filePath = baseDir+"\\"+files.getOriginalFilename();
+            files.transferTo(new File(filePath));
+            Authentication card = SecurityContextHolder.getContext().getAuthentication();
+            // String registCard = card.getName();
+            cardDto.setCardPhoto(filePath); //이미지 경로 db에 저장
+            cardService.SaveCard(cardDto);
+
+            return "redirect:/admin";//다 쓰면 리스트로 돌리기
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         //권한 가진 사람이 멤버라면 에러페이지로 돌리기
-        cardService.SaveCard(cardDto);
         return "redirect:/admin"; //다 쓰면 리스트로 돌리기
     }
 
