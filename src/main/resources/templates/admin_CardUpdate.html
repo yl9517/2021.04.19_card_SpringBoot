@@ -55,8 +55,7 @@
     <h1 class="register">카드 수정</h1>
     <br><br>
 
-
-    <input type="hidden" th:each="card : ${cardDto}"> <!-- adminController의 수정메소드에서 cardDto 받아오기-->
+   <!-- 반복문은 th:each로 쓰면 되나 한개의 값은 value값에 바로 넣으면 됨 (adminController의 수정메소드에서 cardDto)-->
     <form method="post" action="'/admin/card_update/'+${card.cardCode}" id="form" enctype="multipart/form-data">
 
       <div class="container" id="cardinfo">
@@ -67,12 +66,12 @@
 
         <br><br><br><br>
         <label>카드 명</label> <br>
-        <input type="text" id="cardName" name="cardName" placeholder="카드명" th:value="${card.cardName}">
+        <input type="text" id="cardName" name="cardName" placeholder="카드명" th:value="${cardDto.cardName}">
         <br><br><br>
 
         <label>카드사</label> <br>
 
-        <select id="cardCompany" name="cardCompany" placeholder="카드사 명" th:value="${card.cardCompany}">
+        <select id="cardCompany" name="cardCompany" placeholder="카드사 명" th:value="${cardDto.cardCompany}">
 
           <option value="1">신한카드</option>
           <option value="2">우리카드</option>
@@ -87,14 +86,14 @@
 
         <br><br><br>
         <label>연회비</label> <br>
-        <input type="text" id="annualFee" name="annualFee" placeholder="연 회비" th:value="${card.annualFee}"> <br><br><br>
+        <input type="text" id="annualFee" name="annualFee" placeholder="연 회비" th:value="${cardDto.annualFee}"> <br><br><br>
 
         <label>전월실적</label> <br>
-        <input type="text" id="beforePay" name="beforePay" placeholder= "전월실적" th:value="${card.beforePay}"> <br><br><br>
+        <input type="text" id="beforePay" name="beforePay" placeholder= "전월실적" th:value="${cardDto.beforePay}"> <br><br><br>
 
 
         <label>카드 타입</label> <br>
-        <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${card.cardType}">
+        <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${cardDto.cardType}">
 
           <option value="1">포인트형</option>
           <option value="2">할인형</option>
@@ -104,7 +103,7 @@
         </select> <br><br><br>
 
         <label>카드 링크</label> <br>
-        <input type="text" id="cardLink" name="cardLink" placeholder="카드 링크"> <br><br><br>
+        <input type="text" id="cardLink" name="cardLink" placeholder="카드 링크" th:value="${cardDto.cardLink}"> <br><br><br>
 
 
 
