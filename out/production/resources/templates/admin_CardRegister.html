@@ -6,21 +6,16 @@
   <title>admin_card register</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-  <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-  <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-  <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
   <link rel="stylesheet" href="../static/css/header.css" />
   <link rel="stylesheet" href="../static/css/footer.css" />
   <link rel="stylesheet" href="../static/css/admin_cardregister.css"/>
 
-  <script>
-
-
-
-  </script>
-
+  <script th:src="@{/static/js/imgshow.js}"></script>
 
 
 </head>
@@ -57,6 +52,8 @@
     <h1 class="register">카드 등록</h1>
     <br><br>
     <form method="post" action="/admin/card_register" id="form" enctype="multipart/form-data">
+<!--              controller 메소드 인수의 dto와 form 안에 있는 name 변수 이름과 동일하면 자동주입이 되는데,
+            enctype="multipart/form-data"를 쓰면 자동주입이 안되므로 controller에서 request로 일일이 넣어줘야함.   -->
 
       <div class="container" id="cardinfo">
         <!--name은 db(dto)랑 맞추는것, id는 스크립트랑 맞추는것 -->
@@ -66,8 +63,9 @@
           <input type="file" id="cardPhoto" name="cardPhoto">
 
         <br><br><br><br>
+
         <label>카드 명</label> <br>
-        <input type="text" id="cardName" name="cardName" placeholder="카드명">
+        <input type="text" id="cardName" name="cardName">
         <br><br><br>
 
         <label>카드사</label> <br>

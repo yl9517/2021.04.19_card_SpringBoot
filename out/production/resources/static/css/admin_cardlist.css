@@ -92,25 +92,20 @@ div.container{
 
 }
 
-#after1{
-			background-color:#dcdcdc;
-        	color :black;
-			border-radius: 8px;
-			width: 60px;
+.cardBtn{
+        background-color: #dcdcdc;
+        color : black;
+        border: 1px solid black;
+        border-radius: 8px;
+        width: 60px;
 }
-#after1:hover{
-			background-color : #CDECFA;
-        	color :black;
-}
-#after2{
-                    background-color: #dcdcdc;
-                	color : black;
-        			border-radius: 8px;
-        			width: 60px;
-}
-#after2:hover{
+.cardBtn:hover{
 		background-color : #CDECFA;
                 	color :black;
+}
+
+.cardBtn a{
+    text-decoration:none;
 }
 
 #table1{
