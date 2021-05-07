@@ -54,22 +54,25 @@
     <p></p>
     <h1 class="register">카드 수정</h1>
     <br><br>
-    <form method="post" action="/post" id="form">
+
+
+    <input type="hidden" th:each="card : ${cardDto}"> <!-- adminController의 수정메소드에서 cardDto 받아오기-->
+    <form method="post" action="'/admin/card_update/'+${card.cardCode}" id="form" enctype="multipart/form-data">
 
       <div class="container" id="cardinfo">
 
         <br>
         <label>카드 이미지</label><br>
-        <input type="file" id="cardPhoto">
+        <input type="file" id="cardPhoto" name="cardPhoto">
 
         <br><br><br><br>
         <label>카드 명</label> <br>
-        <input type="text" id="cardName" placeholder="카드명">
+        <input type="text" id="cardName" name="cardName" placeholder="카드명" th:value="${card.cardName}">
         <br><br><br>
 
         <label>카드사</label> <br>
 
-        <select id="cardCompany" placeholder="카드사 명">
+        <select id="cardCompany" name="cardCompany" placeholder="카드사 명" th:value="${card.cardCompany}">
 
           <option value="1">신한카드</option>
           <option value="2">우리카드</option>
@@ -84,14 +87,14 @@
 
         <br><br><br>
         <label>연회비</label> <br>
-        <input type="text" id="annualFee" name="annualFee" placeholder="연 회비"> <br><br><br>
+        <input type="text" id="annualFee" name="annualFee" placeholder="연 회비" th:value="${card.annualFee}"> <br><br><br>
 
         <label>전월실적</label> <br>
-        <input type="text" id="beforePay" name="beforePay" placeholder= "전월실적"> <br><br><br>
+        <input type="text" id="beforePay" name="beforePay" placeholder= "전월실적" th:value="${card.beforePay}"> <br><br><br>
 
 
         <label>카드 타입</label> <br>
-        <select id="cardType" placeholder="카드사 명">
+        <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${card.cardType}">
 
           <option value="1">포인트형</option>
           <option value="2">할인형</option>

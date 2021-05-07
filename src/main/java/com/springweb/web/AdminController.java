@@ -79,7 +79,7 @@ public class AdminController {
     }
 
     //카드 수정페이지 이동
-    @GetMapping("/admin/card_update_page/{id}")
+    @GetMapping("/card_update_page/{id}")
     public String card_update_page(@PathVariable("id") Long id,Model model){
         //카드코드 넣어서 해당 카드 찾기
         CardDto cardDto = cardService.getCard(id);

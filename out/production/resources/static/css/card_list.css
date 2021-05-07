@@ -40,7 +40,6 @@ a{
     padding : 50px;
     font-size : 20px;
  }
-
  #listInfo #onecard{
     background-color : #fff;
     height:220px;
@@ -48,8 +47,9 @@ a{
     margin-bottom: 30px;
     position : relative;
  }
- #listInfo img{
+ #listInfo  img{  /*카드이미지*/
     width : 230px;
+    height: 145px;
     float : left;
  }
 
@@ -62,6 +62,7 @@ a{
     font-size : 35px;
     margin-bottom :10px;
   }
+  /*아이콘*/
   #listInfo .benefits{
       width:830px;
       float:left;
@@ -80,6 +81,7 @@ a{
     width:140px;
   }
 
+/*상세보기*/
    #listInfo .more{
     position: absolute;
     right: 3%;
@@ -94,23 +96,24 @@ a{
     transition: 0.3s;
     }
 
+/*연회비,전월실적*/
     #listInfo .condition{
         font-size : 15px;
-        position : relative;
-        top: 78%;
-        left:-55%;
+        position: absolute;
+        top: 69%;
     }
 
     #listInfo .cart{
         display:inline;
-        padding-left:80px;
+        padding-left:75px;
         line-height: 52px;
         font-size : 20px;
     }
    #listInfo .condition img{
     width: 30px;
+    height:30px;
     position : absolute;
-    left:58%;
+    left:12%;
     padding:10px;
    }
       #listInfo .condition a:hover .cart{

@@ -55,7 +55,7 @@
                 <th width="180">카드코드</th>
                 <th width="180">카드명</th>
                 <th width="180">카드사</th>
-                <th width="180">카드 사진</th>
+                <th>카드 사진</th>
                 <th> 카드사 방문수 </th>
                 <th></th>
                 <th></th>
@@ -69,9 +69,9 @@
                 <td><span th:text="${card.cardCode}"></span></td>
                 <td><span th:text="${card.cardName}"></span></td>
                 <td><span th:text="${card.cardCompany}"></span></td>
-                <td><img th:src="@{../static/images/(i=${card.cardPhoto})}"></td>
+                <td><img th:src="@{../static/images/} + ${card.cardPhoto}" style="width:160px;"/></td>
                 <td><span th:text="${card.count}"></span></td>
-                <td><button  class="cardBtn" id="updateBtn"><a href="admin_CardUpdate" th:href="@{'/admin/card_update_page/'+${card.cardCode}}">수정</a></button></td>
+                <td><button  class="cardBtn" id="updateBtn"><a href="admin_CardUpdate" th:href="@{'/card_update_page/'+${card.cardCode}}">수정</a></button></td>
                 <td><button class="cardBtn" id="deleteBtn">삭제</button></td>
 
             </tr>
