@@ -22,7 +22,7 @@ public class ReplyDto {
     private LocalDateTime modifiedDate;
 
     //엔티티 빌더 메소드
-    public ReplyEntity replyEntity(){
+    public ReplyEntity toEntity(){
         return ReplyEntity.builder()
                 .reply_content(reply_content)
                 .reply_writer(reply_writer)
@@ -35,6 +35,7 @@ public class ReplyDto {
 
 
     //생성자
+    @Builder
     public ReplyDto(Long id, String reply_writer, BoardEntity bbsID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.reply_writer = reply_writer;

@@ -1,6 +1,7 @@
 package com.springweb.service;
 
 import com.springweb.web.dto.BoardUpdateRequestDto;
+import com.springweb.web.dto.ReplyDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.springweb.domain.board.*;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+    private final ReplyRepository replyRepository;
 
     //생성
     @Transactional
@@ -89,4 +91,40 @@ public class BoardService {
                 .build();
         return boardDto;
     }
+
+
+    //  답글
+
+    //1. 게시물아이디, 댓글 dto 인수로 받기
+    //2. 게시물 아이디를 이용하여 해당 엔티티를 찾아 답변완료로 수정
+    //3. 댓글 dto에 게시물 아이디 셋팅
+    //4. 댓글 dto save
+
+
+    // 답글 저장메소드
+    @Transactional
+    public Long save_reply(Long bbsID, ReplyDto replyDto){
+
+        BoardEntity boardEntity=boardRepository.findById(bbsID).orElseThrow(NullPointerException::new);
+
+        boardEntity.doneReply();
+        replyDto.setBbsID(boardEntity);
+
+        return replyRepository.save(replyDto.toEntity()).getId();
+        //toEntity : 엔티티로 만들어주는 메소드
+
+    }
+
+//    public ReplyDto getReply(Long id){
+//
+//        ReplyEntity replyEntity= replyRepository.findBybbsId(id).orEls
+//
+//
+//
+//    }
+
+
+
+
+
 }

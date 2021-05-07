@@ -28,6 +28,7 @@
 <div class="container">
 
     <input type="hidden" id="id" th:value="${postDto.bbsID}">
+
     <input type="hidden" id="writer_id" name="writer_id" th:value="${postDto.userID}">
     <div class="title" style="border-bottom: 1px solid #dddddd; margin-top: 100px;">
         <h4 id="title" th:text="${postDto.bbsTitle}"></h4>
@@ -77,15 +78,15 @@
     <!--    </div>-->
     <!--    &lt;!&ndash; reply area &ndash;&gt;-->
 
-    <!--    <div class="form-group" id="reply" style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">-->
-    <!--        <label>답글</label>-->
-    <!--        <textarea id="send_reply" class="form-control" rows="10"></textarea>-->
-    <!--    </div>-->
+        <div class="form-group" id="reply" style="font-size: 24px; border-bottom: 1px solid #dddddd; margin-top: 60px;">
+            <label>답글</label>
+            <textarea id="send_reply" class="form-control" rows="10"></textarea>
+        </div>
 
-    <!--    <div class="text-right spc" style="margin-bottom: 100px;">-->
-    <!--        <input id="reply_submit" class="btn btn-outline-secondary" type="button" value="Submit" />-->
-    <!--        <input class="btn btn-outline-secondary" type="reset" value="Reset" />-->
-    <!--    </div>-->
+        <div class="text-right spc" style="margin-bottom: 100px;">
+            <input id="reply_submit" class="btn btn-outline-secondary" type="button" value="Submit" />
+            <input class="btn btn-outline-secondary" type="reset" value="Reset" />
+        </div>
 </div>
 <th:block th:replace = "/footer :: footer"></th:block>
 </body>
