@@ -25,7 +25,7 @@
                 <li id="onecard" th:each="card : ${cardlist}">
                     <!-- list반복문 : th:each="변수명 : ${받은 모델명}" -->
 
-                    <img src="'../static/images/'+${card.cardPhoto}"> <!--사진-->
+                    <img th:src="@{../static/images/} + ${card.cardPhoto}"> <!--사진-->
                     <div class="text">
                         <p class="name" th:text="${card.cardName}"></p> <!--카드이름-->
                         <p th:text="${card.cardCompany}">신한카드</p> <!--카드사-->
