@@ -1,5 +1,6 @@
 package com.springweb.web.dto;
 
+import com.springweb.domain.card.CardEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -11,15 +11,15 @@ import javax.persistence.Column;
 @NoArgsConstructor
 public class CardCompanyDto {
     //빌드
-    private Long companyCord; //회사코드
+    private Long companyCode; //회사코드
     private String companyName; //카드사
     private String companyLogo; //회사로고
     private int haveCardNum; //등록카드 갯수
 
     //생성자
     @Builder
-    public CardCompanyDto(Long companyCord, String companyName, String companyLogo, int haveCardNum) {
-        this.companyCord = companyCord;
+    public CardCompanyDto(Long companyCode, String companyName, String companyLogo, int haveCardNum) {
+        this.companyCode = companyCode;
         this.companyName = companyName;
         this.companyLogo = companyLogo;
         this.haveCardNum = haveCardNum;
@@ -27,7 +27,7 @@ public class CardCompanyDto {
 
     public CardCompanyEntity toEntity(){
         return CardCompanyEntity.builder()
-                .companyCord(companyCord)
+                .companyCode(companyCode)
                 .companyName(companyName)
                 .companyLogo(companyLogo)
                 .haveCardNum(haveCardNum)
