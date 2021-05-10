@@ -100,15 +100,17 @@ public class CardService {
         return cardDtoList;
     }
 
-    //조건 전체조회 (순위 별)
+    //조건 전체조회 (차트순위 별)
     public List<CardDto> getRankCard(){
         List<CardEntity> cardEntities = cardRepository.findAll(Sort.by(Sort.Direction.DESC,"count"));
 
         //가져온 엔티티 빼오기
         List<CardDto> cardRankList = new ArrayList<>();
 
+        //  for (CardEntity entity : cardEntities) {
+        for(int i=0; i<10; i++){ //10번 반복
 
-        for(CardEntity entity : cardEntities){ //모든(가져온) 엔티티 만큼 반복
+            CardEntity entity = cardEntities.get(i);
             CardDto cardDto = CardDto.builder()
                     .cardCode(entity.getCardCode())
                     .cardName(entity.getCardName())
