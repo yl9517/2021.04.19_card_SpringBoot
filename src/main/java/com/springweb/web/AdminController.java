@@ -3,6 +3,7 @@ package com.springweb.web;
 import com.springweb.service.CardCompanyService;
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardCompanyDto;
+import com.springweb.web.dto.CardCompanyUpdateDto;
 import com.springweb.web.dto.CardDto;
 import com.springweb.web.dto.CardUpdateDto;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.smartcardio.Card;
@@ -38,6 +40,8 @@ public class AdminController {
 
         return "admin_CardList"; //card_chart.html 연결 (헤더의 해당 링크에 html 연결, th로 http 주소 연결)
     }
+
+
 
     //카드 등록페이지 이동
     @GetMapping("/admin/card_regist_page")
@@ -94,9 +98,11 @@ public class AdminController {
     }
 
     //카드 수정 기능
-    @PutMapping("/admin/card_update/{id}")
+    @PutMapping("/admin/card_update")
     @ResponseBody
-    public String update(@PathVariable("id") Long id, @RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){ /* ajax로 받을때 requestbody로 받음*/
+    @RequestMapping(value = "/admin/card_update", method= { RequestMethod.POST})
+    public String update(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){ /* ajax로 받을때 requestbody로 받음*/
+        //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
         try{
             String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
             String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
@@ -104,24 +110,24 @@ public class AdminController {
 
             CardUpdateDto cardDto = new CardUpdateDto();
 
-//            cardDto.setCardPhoto(files.getOriginalFilename());
-//            cardDto.setCardName( request.getParameter("cardName"));
-//            cardDto.setCardCompany(request.getParameter("cardCompany"));
-//            cardDto.setAnnualFee( Integer.parseInt(request.getParameter("annualFee")));
-//            cardDto.setBeforePay(Integer.parseInt(request.getParameter("beforePay")));
-//            cardDto.setCardType(request.getParameter("cardType"));
-//            cardDto.setBenefit1("benefit1");
-//            cardDto.setBenefit1_detail("benefit1_detail");
-//            cardDto.setBenefit2("benefit2");
-//            cardDto.setBenefit2_detail("benefit2_detail");
-//            cardDto.setBenefit3("benefit3");
-//            cardDto.setBenefit3_detail("benefit3_detail");
-//            cardDto.setCardLink(request.getParameter("cardLink"));
-//            cardDto.setCount(0);
-
+            Long id = Long.valueOf(request.getParameter(("cardCode")));
+            cardDto.setCardPhoto(files.getOriginalFilename());
+            cardDto.setCardName( request.getParameter("cardName"));
+            cardDto.setCardCompany(request.getParameter("cardCompany"));
+            cardDto.setAnnualFee( Integer.parseInt(request.getParameter("annualFee")));
+            cardDto.setBeforePay(Integer.parseInt(request.getParameter("beforePay")));
+            cardDto.setCardType(request.getParameter("cardType"));
+            cardDto.setBenefit1("benefit1");
+            cardDto.setBenefit1_detail("benefit1_detail");
+            cardDto.setBenefit2("benefit2");
+            cardDto.setBenefit2_detail("benefit2_detail");
+            cardDto.setBenefit3("benefit3");
+            cardDto.setBenefit3_detail("benefit3_detail");
+            cardDto.setCardLink(request.getParameter("cardLink"));
 
             cardService.UpdateCard(id, cardDto);
-            return "redirect:/admin";//다 쓰면 리스트로 돌리기
+
+            return "admin_CardList";//다 쓰면 리스트로 돌리기
 
         }catch (Exception e){
             e.printStackTrace();
@@ -183,10 +189,10 @@ public class AdminController {
         return "redirect:/admin/cardCompany_list_page"; //다 쓰면 리스트로 돌리기
     }
 
-    //카드 수정페이지 이동
+    //카드사 수정페이지 이동
     @GetMapping("/company_update_page/{id}")
     public String company_update_page(@PathVariable("id") Long id,Model model){
-        //카드코드 넣어서 해당 카드 찾기
+        //카드사코드 넣어서 해당 카드 찾기
         CardCompanyDto companyDto = cardCompanyService.getCardCompany(id);
 
         //카드에게 넘겨주기
@@ -195,6 +201,31 @@ public class AdminController {
         return "admin_CardCompanyUpdate";
     }
 
+    //카드사 수정
+    @PutMapping("/admin/company_update/{id}")
+    @ResponseBody
+    public String companyUpdate(@PathVariable("id") Long id, @RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){
+        //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
+        try{
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
+            String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
+            files.transferTo(new File(filePath));       //파일 저장!!!
+
+            CardCompanyUpdateDto companyDto = new CardCompanyUpdateDto();
+
+            companyDto.setCompanyLogo(files.getOriginalFilename());
+            companyDto.setCompanyName(request.getParameter("companyName"));
+
+            cardCompanyService.UpdateCardCompany(id, companyDto);
+
+            return "redirect:/admin/cardCompany_list_page";//다 쓰면 리스트로 돌리기
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return "redirect:/admin/cardCompany_list_page"; //다 쓰면 리스트로 돌리기
+    }
     //카드사 삭제
     @DeleteMapping("/admin/companyDelete/{id}")
     @ResponseBody

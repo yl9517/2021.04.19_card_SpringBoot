@@ -48,34 +48,22 @@
         <p></p>
         <h1 class="register">카드사 수정</h1>
         <br><br>
-        <form method="post" action="/post" id="form">
+        <form method="post" action="'/admin/card_update/'+" id="form" enctype="multipart/form-data">
 
         <div class="container" id="companyinfo">
 
 
           <div id="logodiv">
-          <label id="Clogo">카드사 로고 : </label>
+            <label id="Clogo">카드사 로고 : </label>
 
-              <input type="file" id="companyLogo">
+            <input type="file" id="companyLogo" name="companyLogo">
           </div>
 
           <div id="namediv">
 
-          <label id="Cname">카드사 명 : </label>
+            <label id="Cname">카드사 명 : </label>
 
-            <select id="companyName" placeholder="카드사 명">
-
-            <option value="1">신한카드</option>
-            <option value="2">우리카드</option>
-            <option value="3">하나카드</option>
-            <option value="4">KB국민카드</option>
-            <option value="5">롯데카드</option>
-            <option value="6">삼성카드</option>
-            <option value="7">새마을카드</option>
-
-
-          </select>
-
+            <input type="text" id="companyName" name="companyName" th:value="${companyDto.companyName}">
           </div>
 
           <br><br><br>

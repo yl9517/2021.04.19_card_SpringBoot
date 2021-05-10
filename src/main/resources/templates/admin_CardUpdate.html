@@ -56,14 +56,14 @@
     <br><br>
 
    <!-- 반복문은 th:each로 쓰면 되나 한개의 값은 value값에 바로 넣으면 됨 (adminController의 수정메소드에서 cardDto)-->
-    <form method="post" action="'/admin/card_update/'+${card.cardCode}" id="form" enctype="multipart/form-data">
+    <form method="post" action="/admin/card_update" id="form" enctype="multipart/form-data">
 
       <div class="container" id="cardinfo">
 
+        <input type="hidden" name="cardCode" th:value="${cardDto.cardCode}">
         <br>
         <label>카드 이미지</label><br>
         <input type="file" id="cardPhoto" name="cardPhoto">
-
         <br><br><br><br>
         <label>카드 명</label> <br>
         <input type="text" id="cardName" name="cardName" placeholder="카드명" th:value="${cardDto.cardName}">

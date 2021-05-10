@@ -6,12 +6,15 @@ import com.springweb.domain.card.CardRepository;
 import com.springweb.web.dto.CardDto;
 import com.springweb.web.dto.CardUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.smartcardio.Card;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.SortedSet;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -96,8 +99,18 @@ public class CardService {
         }
         return cardDtoList;
     }
-
     //조건 전체조회 (순위 별)
+//    public List<Card> getRankCard(){
+//        List<CardEntity> cardEntities = cardRepository.findAll(Sort.by(Sort.Direction.DESC,"count"));
+//
+//        //가져온 엔티티 빼오기
+//        List<CardDto> cardDtoList = new ArrayList<>();
+//
+//        for(CardEntity entity : cardEntities) { //가져온 엔티티만큼 반족
+//
+//        }
+//
+//    }
 
     //개별조회(조건조회)
     @Transactional

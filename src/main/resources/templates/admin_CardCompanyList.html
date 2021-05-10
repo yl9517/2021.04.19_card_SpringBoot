@@ -68,7 +68,7 @@
              <input type="hidden" id="id" th:value="${company.companyCode}">
 
                 <td><span th:text="${company.companyCode}"></span></td>
-                <td><img src="@{../static/images/}+${company.companyLogo}" style="width:120px;"/> </td>
+                <td><img th:src="@{../static/images/}+${company.companyLogo}" style="width:120px;"/> </td>
                 <td><span th:text="${company.companyName}"></span></td>
                 <td><span th:text="${company.haveCardNum}"></span></td>
                 <td><button class="cardBtn" id="updateBtn"><a href="admin_CardCompanyUpdate" th:href="@{'/company_update_page/'+${company.companyCode}}">수정</a></button></td>

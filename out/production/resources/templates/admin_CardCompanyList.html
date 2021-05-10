@@ -6,15 +6,16 @@
     <title>admin cardcompanylist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-    <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-    <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+        <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
     <link rel="stylesheet" href="../static/css/admin_cardcompanylist.css"/>
 
+    <script th:src="@{/static/js/companyDelete.js}"></script>
 </head>
 <body>
 
@@ -67,14 +68,12 @@
              <input type="hidden" id="id" th:value="${company.companyCode}">
 
                 <td><span th:text="${company.companyCode}"></span></td>
-                <td><img src="@{../static/images/}+${company.companyLogo}" style="width:120px;"/> </td>
+                <td><img th:src="@{../static/images/}+${company.companyLogo}" style="width:120px;"/> </td>
                 <td><span th:text="${company.companyName}"></span></td>
                 <td><span th:text="${company.haveCardNum}"></span></td>
                 <td><button class="cardBtn" id="updateBtn"><a href="admin_CardCompanyUpdate" th:href="@{'/company_update_page/'+${company.companyCode}}">수정</a></button></td>
                 <td><button class="cardBtn" id="deleteBtn">삭제</button></td>
             </tr>
-
-
 
         </table>
     </div>

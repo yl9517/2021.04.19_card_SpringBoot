@@ -4,8 +4,10 @@ import com.springweb.domain.card.CardEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class CardUpdateDto {
     //필드
