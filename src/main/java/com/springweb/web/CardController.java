@@ -2,6 +2,7 @@ package com.springweb.web;
 
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardDto;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,10 @@ public class CardController {
     //html 연결
     //카드 차트 이동
     @GetMapping("/card/card_chart_page") // http 주소 설정
-    public String card_chart(){
+    public String card_chart(Model model){
 
+        List<CardDto> cardRankList = cardService.getRankCard();
+        model.addAttribute("rankList",cardRankList);
         return "card_chart"; //card_chart.html 연결 (헤더의 해당 링크에 html 연결, th로 http 주소 연결)
     }
 

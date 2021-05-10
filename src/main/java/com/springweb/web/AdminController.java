@@ -111,6 +111,7 @@ public class AdminController {
             CardUpdateDto cardDto = new CardUpdateDto();
 
             Long id = Long.valueOf(request.getParameter(("cardCode")));
+
             cardDto.setCardPhoto(files.getOriginalFilename());
             cardDto.setCardName( request.getParameter("cardName"));
             cardDto.setCardCompany(request.getParameter("cardCompany"));
@@ -202,9 +203,8 @@ public class AdminController {
     }
 
     //카드사 수정
-    @PutMapping("/admin/company_update/{id}")
-    @ResponseBody
-    public String companyUpdate(@PathVariable("id") Long id, @RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){
+    @RequestMapping("/admin/company_update")
+    public String companyUpdate(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){
         //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
         try{
             String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
@@ -213,6 +213,7 @@ public class AdminController {
 
             CardCompanyUpdateDto companyDto = new CardCompanyUpdateDto();
 
+            Long id = Long.valueOf(request.getParameter("companyCode"));
             companyDto.setCompanyLogo(files.getOriginalFilename());
             companyDto.setCompanyName(request.getParameter("companyName"));
 

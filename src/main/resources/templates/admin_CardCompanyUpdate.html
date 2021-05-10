@@ -48,10 +48,12 @@
         <p></p>
         <h1 class="register">카드사 수정</h1>
         <br><br>
-        <form method="post" action="'/admin/card_update/'+" id="form" enctype="multipart/form-data">
+        <form method="post" action="/admin/company_update" id="form" enctype="multipart/form-data">
 
         <div class="container" id="companyinfo">
 
+
+          <input type="hidden" name="companyCode" th:value="${companyDto.companyCode}">
 
           <div id="logodiv">
             <label id="Clogo">카드사 로고 : </label>

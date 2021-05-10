@@ -99,18 +99,38 @@ public class CardService {
         }
         return cardDtoList;
     }
+
     //조건 전체조회 (순위 별)
-//    public List<Card> getRankCard(){
-//        List<CardEntity> cardEntities = cardRepository.findAll(Sort.by(Sort.Direction.DESC,"count"));
-//
-//        //가져온 엔티티 빼오기
-//        List<CardDto> cardDtoList = new ArrayList<>();
-//
-//        for(CardEntity entity : cardEntities) { //가져온 엔티티만큼 반족
-//
-//        }
-//
-//    }
+    public List<CardDto> getRankCard(){
+        List<CardEntity> cardEntities = cardRepository.findAll(Sort.by(Sort.Direction.DESC,"count"));
+
+        //가져온 엔티티 빼오기
+        List<CardDto> cardRankList = new ArrayList<>();
+
+
+        for(CardEntity entity : cardEntities){ //모든(가져온) 엔티티 만큼 반복
+            CardDto cardDto = CardDto.builder()
+                    .cardCode(entity.getCardCode())
+                    .cardName(entity.getCardName())
+                    .cardPhoto(entity.getCardPhoto())
+                    .cardCompany(entity.getCardCompany())
+                    .annualFee(entity.getAnnualFee())
+                    .beforePay(entity.getBeforePay())
+                    .cardType(entity.getCardType())
+                    .benefit1(entity.getBenefit1())
+                    .benefit1_detail(entity.getBenefit1_detail())
+                    .benefit2(entity.getBenefit2())
+                    .benefit2_detail(entity.getBenefit2_detail())
+                    .benefit3(entity.getBenefit3())
+                    .benefit3_detail(entity.getBenefit3_detail())
+                    .cardLink(entity.getCardLink())
+                    .build();
+            cardRankList.add(cardDto);
+
+        }
+        return cardRankList;
+
+    }
 
     //개별조회(조건조회)
     @Transactional
