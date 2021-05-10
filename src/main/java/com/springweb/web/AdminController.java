@@ -98,9 +98,9 @@ public class AdminController {
     }
 
     //카드 수정 기능
-    @PutMapping("/admin/card_update")
-    @ResponseBody
-    @RequestMapping(value = "/admin/card_update", method= { RequestMethod.POST})
+    //@ResponseBody -> 스크립트에서 끌어올때
+    //@PutMapping("/admin/card_update") // requestMapping에서 썼으므로 put안써도됨  --> requestMapping는 기본
+    @RequestMapping("/admin/card_update")
     public String update(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){ /* ajax로 받을때 requestbody로 받음*/
         //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
         try{
@@ -127,7 +127,7 @@ public class AdminController {
 
             cardService.UpdateCard(id, cardDto);
 
-            return "admin_CardList";//다 쓰면 리스트로 돌리기
+            return "redirect:/admin"; //다 쓰면 리스트로 돌리기
 
         }catch (Exception e){
             e.printStackTrace();
