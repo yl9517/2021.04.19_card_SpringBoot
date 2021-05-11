@@ -83,29 +83,29 @@
                     th:with="start=${T(Math).floor(postList.number/10)*10 + 1},
                         last=(${start + 9 < postList.totalPages ? start + 9 : postList.totalPages})">
                     <li class="page-item">
-                        <a class="page-link" th:href="@{/inquire_board(page=1)}" aria-label="First">
+                        <a class="page-link" th:href="@{/boardlist(page=1)}" aria-label="First">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
 
                     <li class="page-item" th:class="${postList.first} ? 'disabled'">
-                        <a class="page-link" th:href="${postList.first} ? '#' :@{/inquire_board(page=${postList.number})}" aria-label="Previous">
+                        <a class="page-link" th:href="${postList.first} ? '#' :@{/boardlist_page(page=${postList.number})}" aria-label="Previous">
                             <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
 
                     <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == postList.number + 1} ? 'active'">
-                        <a class="page-link" th:text="${page}" th:href="@{/inquire_board(page=${page})}"></a>
+                        <a class="page-link" th:text="${page}" th:href="@{/boardlist_page(page=${page})}"></a>
                     </li>
 
                     <li class="page-item" th:class="${postList.last} ? 'disabled'">
-                        <a class="page-link" th:href="${postList.last} ? '#' : @{/inquire_board(page=${postList.number + 2})}" aria-label="Next">
+                        <a class="page-link" th:href="${postList.last} ? '#' : @{/boardlist_page(page=${postList.number + 2})}" aria-label="Next">
                             <span aria-hidden="true">&gt;</span>
                         </a>
                     </li>
 
                     <li class="page-item">
-                        <a class="page-link" th:href="@{/inquire_board(page=${postList.totalPages})}" aria-label="Last">
+                        <a class="page-link" th:href="@{/boardlist_page(page=${postList.totalPages})}" aria-label="Last">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
