@@ -115,15 +115,41 @@ public class BoardService {
 
     }
 
-//    public ReplyDto getReply(Long id){
-//
-//        ReplyEntity replyEntity= replyRepository.findBybbsId(id).orEls
-//
-//
-//
-//    }
+    public ReplyDto getReply(Long id) {
+        ReplyEntity replyEntity = replyRepository.findBybbsID(id).orElseThrow(NullPointerException::new);
+
+        return ReplyDto.builder()
+                .id(replyEntity.getId())
+                .reply_content(replyEntity.getReply_content())
+                .reply_writer(replyEntity.getReply_writer())
+                .bbsID(replyEntity.getBbsID())
+                .createdDate(replyEntity.getCreateDate())
+                .modifiedDate(replyEntity.getModifiedDate())
+                .build();
+    }
+
+    @Transactional
+    public void deleteReply(Long reply_id){
+
+        ReplyEntity replyEntity=replyRepository.findById(reply_id).orElseThrow(NullPointerException::new);
+        BoardEntity bbsID=replyEntity.getBbsID();
+
+        BoardEntity boardEntity=boardRepository.findById(bbsID.getBbsID()).orElseThrow(NullPointerException::new);
+        boardEntity.undoReply();
+
+        replyRepository.deleteById(reply_id);
+
+    }
+
+    @Transactional
+    public void update_reply(Long reply_id, ReplyDto replyDto){
+            Optional<ReplyEntity> optionalReplyEntity=replyRepository.findById(reply_id);
+            ReplyEntity replyEntity=optionalReplyEntity.get();
+
+            replyEntity.update(replyDto.getReply_content());
 
 
+    }
 
 
 
