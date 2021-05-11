@@ -57,5 +57,8 @@ dependencies {  // 프로젝트에 추가될 의존성을 설정
     //oauth2 : 소셜로그인
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 
+    //파일 의존관계 설정
+    compile('org.springframework.boot:spring-boot-devtools')
+
 }
 
