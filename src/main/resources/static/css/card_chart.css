@@ -83,6 +83,8 @@ a{
  #onechart #ex .cart{
     cursor : pointer;
  }
+
+
 /*비교함*/
  #comparebox{
     background-color : rgba(000,000,050, 0.7);
@@ -103,11 +105,12 @@ a{
   }
   #comparebox li .delete_btn{
     position:absolute;
-        left: calc(100% - 8px);
-        top: -9px;
-        height: 18px;
-        text-align: left;
-        background: #ff6e61;
+    right : 12%;
+    background: #969696;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    cursor:pointer;
   }
 
  #comparebox .compare_go{
