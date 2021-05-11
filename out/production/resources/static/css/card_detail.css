@@ -81,8 +81,12 @@ a{
 .sub{
     margin: 20px 0 70px;
 }
+.sub p{
+    display:inline;
+    margin: 0 30px;
+}
 .sub span{
-    padding: 20px 40px;
+    padding: 20px 5px 20px 10px;
 }
 
 #detailInfo #application a{
