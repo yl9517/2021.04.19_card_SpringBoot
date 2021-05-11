@@ -45,8 +45,14 @@ public class BoardService {
         // 삭제할 대상 찾기
         Optional<BoardEntity> boardEntityOptional = boardRepository.findById(id);
         BoardEntity boardEntity = boardEntityOptional.get();
+
+        Optional<ReplyEntity> replyEntityOptional= replyRepository.findBybbsID(id);
+        ReplyEntity replyEntity = replyEntityOptional.get();
+
         // 찾았으면 삭제
+        replyRepository.delete(replyEntity);
         boardRepository.delete( boardEntity );
+
     }
     //전체조회
     @Transactional

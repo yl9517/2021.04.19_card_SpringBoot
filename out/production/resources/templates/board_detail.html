@@ -46,7 +46,7 @@
     <div class="text-right" th:if="${user != null}">
         <input id="deleteBtn" class="btn btn-outline-secondary" type="button" value="삭제" th:if="${user.name == postDto.userID}"/>
         <input th:onclick="|window.location.href='/post/update/${postDto.bbsID}'|" id="updateBtnf" class="btn btn-outline-secondary" type="button" value="수정" th:if="${user.name == postDto.userID}" />
-        <input sec:authorize="hasRole('ROLE_ADMIN')" id="replyBtn" class="btn btn-outline-secondary" type="button" value="답글" th:if="${user.role.toString().equals('ADMIN')}"/>
+        <input sec:authorize="hasRole('ROLE_ADMIN')" id="replyBtn" class="btn btn-outline-secondary" type="button" value="답글" th:if="${user.role.toString().equals('ADMIN')&&replyDto==null}"/>
     </div>
 
 
