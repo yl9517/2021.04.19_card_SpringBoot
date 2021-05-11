@@ -21,6 +21,7 @@ import javax.smartcardio.Card;
 import java.io.File;
 import java.util.List;
 
+//여름 이미지폴더 경로 -> C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"
 @Controller
 @AllArgsConstructor //빈 생성자
 public class AdminController {
@@ -40,6 +41,7 @@ public class AdminController {
 
         return "admin_CardList"; //card_chart.html 연결 (헤더의 해당 링크에 html 연결, th로 http 주소 연결)
     }
+
 
 
 
@@ -65,12 +67,12 @@ public class AdminController {
             cardDto.setAnnualFee( Integer.parseInt(request.getParameter("annualFee")));
             cardDto.setBeforePay(Integer.parseInt(request.getParameter("beforePay")));
             cardDto.setCardType(request.getParameter("cardType"));
-//            cardDto.setBenefit1("benefit1");
-//            cardDto.setBenefit1_detail("benefit1_detail");
-//            cardDto.setBenefit2("benefit2");
-//            cardDto.setBenefit2_detail("benefit2_detail");
-//            cardDto.setBenefit3("benefit3");
-//            cardDto.setBenefit3_detail("benefit3_detail");
+            cardDto.setBenefit1(request.getParameter("benefit1"));
+            cardDto.setBenefit1_detail(request.getParameter("benefit1_detail"));
+            cardDto.setBenefit2(request.getParameter("benefit2"));
+            cardDto.setBenefit2_detail(request.getParameter("benefit2_detail"));
+            cardDto.setBenefit3(request.getParameter("benefit3"));
+            cardDto.setBenefit3_detail(request.getParameter("benefit3_detail"));
             cardDto.setCardLink(request.getParameter("cardLink"));
             cardDto.setCount(0);
 

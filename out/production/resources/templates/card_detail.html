@@ -15,27 +15,28 @@
     <th:block th:replace = "/header :: header"></th:block>
 
 
-    <div id="detailWrap" th:each="card : ${cardDto}">
+    <div id="detailWrap">
         <input type="hidden" id="code">
             <div id="subtitle">
                 <h1> 카드 상세안내 </h1>
             </div>
 
+
            <div id="detailInfo">
                <div class="cardimg">
-                   <img src="'../static/images/'+${card.cardPhoto}'">
+                   <img th:src="@{../static/images/} + ${cardDto.cardPhoto}"> <!-- $는 값, @는 이미지링크 -->
                </div>
                <div class="cardInfo">
-                   <p class="name" for="a" th:text="${card.cardName}"></p> <!--카드이름-->
+                   <p class="name" for="a" th:text="${cardDto.cardName}"></p> <!--카드이름-->
                    <p>신한카드</p> <!--카드사-->
                    <div id="benefits">
-                       <div class="icon"><img src="../static/images/마트편의점.png"> </div>   <!--혜택1 아이콘-->
-                       <div class="icon"><img src="../static/images/영화문화.png"> </div>
-                       <div class="icon"><img src="../static/images/카페디저트.png"> </div>
+                       <div class="icon"><img th:src="@{../static/images/} + ${cardDto.benefit1}"> </div>   <!--혜택1 아이콘-->
+                       <div class="icon"><img th:src="@{../static/images/} + ${cardDto.benefit2}"> </div>
+                       <div class="icon"><img th:src="@{../static/images/} + ${cardDto.benefit3}"> </div>
                    </div>
                    <div class="sub">
-                       연회비 :<span th:text="${card.annualFee}"> </span> 원
-                       전월실적 :<span th:text="${card.beforePay}"></span> 원
+                       <p>연회비 :<span th:text="${cardDto.annualFee}"></span>원</p>
+                       <p>전월실적 :<span th:text="${cardDto.beforePay}"></span> 원</p>
                    </div>
                    <div id="application">
                        <a href="#">카드 신청 </a>
@@ -49,19 +50,20 @@
                <div id="benefitDetail">
                    <ul>
                        <li>
-                           <img src="../static/images/마트편의점.png">  <!--혜택1 아이콘-->
-                           <h3 th:text="${card.benefit1}"> </h3>
-                           <p th:text="${card.benefit1_detail}"></p>
+
+                           <img th:src="@{../static/images/} + ${cardDto.benefit1}">  <!--혜택1 아이콘-->
+                           <h3> ㅇㅇ </h3>
+                           <p th:text="${cardDto.benefit1_detail}"></p>
                        </li>
                        <li>
-                           <img src="../static/images/마트편의점.png">  <!--혜택1 아이콘-->
+                           <img th:src="@{../static/images/} + ${cardDto.benefit2}">  <!--혜택1 아이콘-->
                            <h3> 마트 / 편의점</h3>
-                           <p th:text="${card.benefit2_detail}"> 혜택상세내용 어쩌구저쩌구 </p>
+                           <p th:text="${cardDto.benefit2_detail}"> </p>
                        </li>
                        <li>
-                           <img src="../static/images/마트편의점.png">  <!--혜택1 아이콘-->
+                           <img th:src="@{../static/images/} + ${cardDto.benefit3}">  <!--혜택1 아이콘-->
                            <h3> 마트 / 편의점</h3>
-                           <p th:text="${card.benefit3_detail}"> 혜택상세내용 어쩌구저쩌구 </p>
+                           <p th:text="${cardDto.benefit3_detail}"> </p>
                        </li>
                    </ul>
                </div>

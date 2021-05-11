@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -46,15 +47,24 @@ public class CardController {
     }
 
     //카드 비교함 이동
-    @GetMapping("/card/card_compare_page")
-    public String card_compare(){
+    @GetMapping("/card_compare_page")
+    public String card_compare(HttpServletRequest request , Model model){
+
+        //해당 카드 찾기
+//        card1 = cardService.getCard();
+//        card2 = cardService.getCard();
+//
+//        //찾았으면 model 담아서 전달
+//        model.addAttribute("card1",card1);
+//        model.addAttribute("card2",card2);
+
         return "card_compare";
     }
 
     //카드 상세보기 이동
-    @GetMapping("/card/card_detail_page/{code}")
+    @GetMapping("/card_detail_page/{code}")
     public String card_detail(@PathVariable("code") Long code, Model model){
-         //해당 게시물 번호를 찾기
+         //해당 카드를 찾기
         CardDto cardDto = cardService.getCard(code);
         
         //찾았으면 model 담아서 프론트엔드에게 전달
@@ -64,13 +74,6 @@ public class CardController {
         return "card_detail";
     }
 
-    //카드 등록페이지 이동
-
-    //카드 등록 기능
-
-    //카드 수정 기능
-
-    //카드 삭제 기능
 
 
 
