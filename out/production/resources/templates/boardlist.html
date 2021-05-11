@@ -34,9 +34,12 @@
     </div>
 
     <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px">
+
         <li class="nav-item">
+<!--            <a href="/" style="margin-right:1000px; border-bottom:1px solid pink;">내 작성글</a>-->
             <a sec:authorize="isAuthenticated()" class="nav-link active" href="board_write.html" th:href="@{/boardwrite_page}">글쓰기</a>
         </li>
+
     </ul>
     <table class="table">
         <thead>
@@ -67,7 +70,7 @@
                 <span th:text="${board.bbsCategory}" ></span>
             </td>
             <td>
-                <span th:text="${board.modifiedDate}"></span>
+                <span th:text="${#temporals.format(board.modifiedDate,'yyyy-MM-dd    HH:mm')}"></span>
             </td>
             <td>
                 <span th:text="${board.bbsReply}"></span>
@@ -83,7 +86,7 @@
                     th:with="start=${T(Math).floor(postList.number/10)*10 + 1},
                         last=(${start + 9 < postList.totalPages ? start + 9 : postList.totalPages})">
                     <li class="page-item">
-                        <a class="page-link" th:href="@{/boardlist(page=1)}" aria-label="First">
+                        <a class="page-link" th:href="@{/boardlist_page(page=1)}" aria-label="First">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
