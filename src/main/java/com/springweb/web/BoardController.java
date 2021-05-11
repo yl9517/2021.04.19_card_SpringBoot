@@ -68,8 +68,20 @@ public class BoardController {
 
         // 해당 게시물 번호를 찾기
         BoardDto boardDto = boardService.getBoard(id);
+        ReplyDto replyDto;
+
+        try{
+
+            replyDto=boardService.getReply(id);
+
+        }catch (NullPointerException e){
+
+            replyDto=null;
+        }
+
         // 찾았으면 model 담아서 프론트엔드에게 전달
         model.addAttribute("postDto" , boardDto);
+        model.addAttribute("replyDto",replyDto);
         // html 페이지 열기
         return "board_detail";
     }
@@ -156,6 +168,25 @@ public class BoardController {
 
     }
 
+    //관리자-답장 조회기능 ==> 위의 게시물 불러오는곳에서 한번에 처리. (개별 게시물이동페이지 메소드의 replyDto....)
+
+    //관리자-답장 삭제기능
+    @DeleteMapping("/post/reply/{reply_id}")
+    @ResponseBody
+    public Boolean reply_delete(@PathVariable("reply_id") Long reply_id){
+
+        boardService.deleteReply(reply_id);
+        return true;
+    }
+
+    //관리자-답장수정기능
+    //답글 수정 기능
+    @PutMapping("/post/reply/{reply_id}")
+    @ResponseBody
+    public Long update_reply(@PathVariable("reply_id") Long reply_id, @RequestBody ReplyDto replyDto) {
+        boardService.update_reply(reply_id, replyDto);
+        return reply_id;
+    }
 
 
 

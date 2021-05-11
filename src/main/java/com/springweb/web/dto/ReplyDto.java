@@ -36,9 +36,10 @@ public class ReplyDto {
 
     //생성자
     @Builder
-    public ReplyDto(Long id, String reply_writer, BoardEntity bbsID, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public ReplyDto(Long id, String reply_writer, BoardEntity bbsID, String reply_content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.reply_writer = reply_writer;
+        this.reply_content=reply_content;
         this.bbsID = bbsID;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
