@@ -72,7 +72,7 @@ public class CardService {
         //1. 모든 엔티티 가져오기
         List<CardEntity> cardEntities = cardRepository.findAll();
             //정렬할거면 findAll(Sort.by(Sort.Direction.DESC,"count"));로 넣기
-            //페이지로 잘라서 출력할거면 findAll(pageable
+            //페이지로 잘라서 출력할거면 findAll(Pageable
 
         //2. 가져온 엔티티 빼오기
         List<CardDto> cardDtoList = new ArrayList<>();
@@ -108,7 +108,9 @@ public class CardService {
         List<CardDto> cardRankList = new ArrayList<>();
 
         //  for (CardEntity entity : cardEntities) {
-        for(int i=0; i<10; i++){ //10번 반복
+        for(int i=0; i<cardEntities.size(); i++){ //사이즈만큼 반복
+
+            if(i==10) break; //10이면 끝내기
 
             CardEntity entity = cardEntities.get(i);
             CardDto cardDto = CardDto.builder()

@@ -34,18 +34,7 @@
                            <a class="cart" onclick='getRadioText(event)' th:id="${i.index+1}"> 비교함 담기</a>
                        </div>
                    </li>
-                   <li id="onechart" th:each="rank, i : ${rankList}"> <!--반복문-->
-                       <p class="rank"> </p>
-                       <img th:src="@{../static/images/} + ${rank.cardPhoto}"/><!--사진-->
-                       <div class="text">
-                           <p class="name" for="a" th:text="${rank.cardName}">dsfsdf</p> <!--카드이름-->
-                           <p th:text="${rank.cardCompany}"></p> <!--카드사-->
-                       </div>
-                       <div id="ex">
-                           <a href="card_detail.html" th:href="@{/card/card_detail_page}" class="more"> 상세 보기</a>
-                           <a class="cart" onclick='getRadioText(event)' id="a"> 비교함 담기</a>
-                       </div>
-                   </li>
+
                </ul>
                <!--★★★★★★★★비교함에 담길 for이랑 id 값 수정하기★★★★★★★★-->
 
