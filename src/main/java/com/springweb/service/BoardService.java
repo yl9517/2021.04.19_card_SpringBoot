@@ -3,6 +3,10 @@ package com.springweb.service;
 import com.springweb.web.dto.BoardUpdateRequestDto;
 import com.springweb.web.dto.ReplyDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.springweb.domain.board.*;
 import com.springweb.web.dto.BoardDto;
@@ -56,26 +60,13 @@ public class BoardService {
     }
     //전체조회
     @Transactional
-    public List<BoardDto> getAllBoard(){
-        // 1. 모든 엔티티 가져오기
-        List<BoardEntity> boardEntities = boardRepository.findAll();
-        List<BoardDto> boardDtoList = new ArrayList<>();
+    public Page<BoardEntity> getAllBoard(Pageable pageable){
 
-        // 2. 반복문을 사용하여 검색된 엔티티를 dto 담아서 리스트에 담기
-        for( BoardEntity boardEntity : boardEntities ){ // 모든 엔티티 만큼 반복
-            BoardDto boardDto = BoardDto.builder()
-                    .bbsID( boardEntity.getBbsID() )
-                    .bbsTitle( boardEntity.getBbsTitle() )
-                    .bbsCategory(boardEntity.getBbsCategory())
-                    .bbsContent(boardEntity.getBbsContent())
-                    .bbsReply(boardEntity.getBbsReply())
-                    .userID(boardEntity.getUserID())
-                    .createdDate(boardEntity.getCreateDate())
-                    .modifiedDate(boardEntity.getModifiedDate())
-                    .build();
-            boardDtoList.add(boardDto);
-        }
-        return boardDtoList;
+        int page=(pageable.getPageNumber()==0)?0:(pageable.getPageNumber()-1);
+        pageable= PageRequest.of(page,5,new Sort(Sort.Direction.DESC,"bbsID"));
+
+
+        return boardRepository.findAll(pageable);
     }
 
     //개별조회(조건조회)

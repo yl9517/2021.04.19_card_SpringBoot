@@ -37,11 +37,10 @@ public class BoardController {
 
     // 게시판 페이지로 이동
     @GetMapping("/boardlist_page")
-    public String boardlist_page( Model model){
+    public String boardlist_page( Model model,@PageableDefault Pageable pageable){
 
-        List<BoardDto> postList = boardService.getAllBoard();
+        Page<BoardEntity> postList=boardService.getAllBoard(pageable);
         model.addAttribute("postList", postList);
-
 
         return "boardlist";
     }

@@ -78,39 +78,39 @@
 
     </table>
 
-    <!--        <nav id="pag" style="text-align: center;">-->
-    <!--            <ul class="pagination justify-content-center"-->
-    <!--                th:with="start=${T(Math).floor(postList.number/10)*10 + 1},-->
-    <!--                    last=(${start + 9 < postList.totalPages ? start + 9 : postList.totalPages})">-->
-    <!--                <li class="page-item">-->
-    <!--                    <a class="page-link" th:href="@{/inquire_board(page=1)}" aria-label="First">-->
-    <!--                        <span aria-hidden="true">&laquo;</span>-->
-    <!--                    </a>-->
-    <!--                </li>-->
+            <nav id="pag" style="text-align: center;">
+                <ul class="pagination justify-content-center"
+                    th:with="start=${T(Math).floor(postList.number/10)*10 + 1},
+                        last=(${start + 9 < postList.totalPages ? start + 9 : postList.totalPages})">
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{/inquire_board(page=1)}" aria-label="First">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
 
-    <!--                <li class="page-item" th:class="${postList.first} ? 'disabled'">-->
-    <!--                    <a class="page-link" th:href="${postList.first} ? '#' :@{/inquire_board(page=${postList.number})}" aria-label="Previous">-->
-    <!--                        <span aria-hidden="true">&lt;</span>-->
-    <!--                    </a>-->
-    <!--                </li>-->
+                    <li class="page-item" th:class="${postList.first} ? 'disabled'">
+                        <a class="page-link" th:href="${postList.first} ? '#' :@{/inquire_board(page=${postList.number})}" aria-label="Previous">
+                            <span aria-hidden="true">&lt;</span>
+                        </a>
+                    </li>
 
-    <!--                <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == postList.number + 1} ? 'active'">-->
-    <!--                    <a class="page-link" th:text="${page}" th:href="@{/inquire_board(page=${page})}"></a>-->
-    <!--                </li>-->
+                    <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == postList.number + 1} ? 'active'">
+                        <a class="page-link" th:text="${page}" th:href="@{/inquire_board(page=${page})}"></a>
+                    </li>
 
-    <!--                <li class="page-item" th:class="${postList.last} ? 'disabled'">-->
-    <!--                    <a class="page-link" th:href="${postList.last} ? '#' : @{/inquire_board(page=${postList.number + 2})}" aria-label="Next">-->
-    <!--                        <span aria-hidden="true">&gt;</span>-->
-    <!--                    </a>-->
-    <!--                </li>-->
+                    <li class="page-item" th:class="${postList.last} ? 'disabled'">
+                        <a class="page-link" th:href="${postList.last} ? '#' : @{/inquire_board(page=${postList.number + 2})}" aria-label="Next">
+                            <span aria-hidden="true">&gt;</span>
+                        </a>
+                    </li>
 
-    <!--                <li class="page-item">-->
-    <!--                    <a class="page-link" th:href="@{/inquire_board(page=${postList.totalPages})}" aria-label="Last">-->
-    <!--                        <span aria-hidden="true">&raquo;</span>-->
-    <!--                    </a>-->
-    <!--                </li>-->
-    <!--            </ul>-->
-    <!--        </nav>-->
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{/inquire_board(page=${postList.totalPages})}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
 </div>
 <br><br><br><br><br><br>
