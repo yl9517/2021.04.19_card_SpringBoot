@@ -25,7 +25,8 @@ a{
 }
 
 #head #logo{
-    margin:5px 0;
+    width:1300px;
+    margin:5px auto;
 	text-align: center;
 }
 #logo img{
