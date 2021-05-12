@@ -52,6 +52,22 @@ public class CardService {
     }
     //Optional 쓰는 이유 : 널값으로 인해 발생하는 에러를 예외처리를 해줌
 
+
+    //카드사 카운트 수정
+    @Transactional
+    public Long UpdateCount(Long code){
+
+        //수정할 대상찾기
+        Optional<CardEntity> cardEntityOptional = cardRepository.findById(code);
+        CardEntity cardEntity = cardEntityOptional.get();
+
+        //찾았으면 업데이트
+        cardEntity.countUp();
+
+        return code;
+
+    }
+
     //삭제
     @Transactional
     public void DeleteCard(Long code) {

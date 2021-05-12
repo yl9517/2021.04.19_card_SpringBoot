@@ -28,20 +28,20 @@
                 <div id="searchInfo">
                     <div>
                         <p>성별</p>
-                        <input type="button" value="여자" id="woman" class="gender">
-                        <input type="button" value="남자" id="man" class="gender">
+                        <input type="button" value="여자" id="woman" class="gender" onclick="first(event)">
+                        <input type="button" value="남자" id="man" class="gender" onclick="first(event)">
                     </div>
                      <div>
                          <p>연령대</p>
-                        <input type="button" value="20대" class="age">
-                        <input type="button" value="30대" class="age">
-                        <input type="button" value="40대 이상" class="age">
+                        <input type="button" value="20대" class="age" onclick="first(event)">
+                        <input type="button" value="30대" class="age" onclick="first(event)">
+                        <input type="button" value="40대 이상" class="age" onclick="first(event)">
                     </div>
                     <div>
                         <p>카드 타입</p>
-                        <input type="button" value="전체" class="type">
-                        <input type="button" value="할인" class="type">
-                        <input type="button" value="포인트" class="type">
+                        <input type="button" value="전체" class="type" onclick="first(event)">
+                        <input type="button" value="할인" class="type" onclick="first(event)">
+                        <input type="button" value="포인트" class="type" onclick="first(event)">
                     </div>
                     <div>
                         <p>카드 혜택</p>
@@ -76,7 +76,7 @@
 
 <!--         var things = $('searchInfo').attr('class');-->
 
-        $('.gender').click(function(){
+<!--        $('.gender').click(function(){-->
 <!--        if($(event.target).is('.gender')){-->
             var things = document.getElementsByClassName("gender");
 <!--        }-->
@@ -89,22 +89,24 @@
 <!--        if($(event.target).is('.bene')){-->
 <!--            var things = document.getElementsByClassName("bene");-->
 <!--        }-->
+<!--     });-->
 
-     });
-
-<!--            var things ="";-->
+<!--         var things;-->
 <!--           $('.gender').click(function(){-->
-<!--            things = document.getElementsByClassName("gender");-->
+<!--               things = document.getElementsByClassName("gender");-->
 <!--           });-->
+
 <!--           $('.age').click(function(){-->
-<!--            things = document.getElementsByClassName("age");-->
+<!--              things = document.getElementsByClassName("age");-->
 <!--           });-->
-<!--           $('.type').click(function(){-->
-<!--            things = document.getElementsByClassName("type");-->
+
+<!--           $('.type').click(function(event){-->
+<!--              things = document.getElementsByClassName("type");-->
 <!--           });-->
-<!--           $('.bene').click(function(){-->
-<!--            things = document.getElementsByClassName("bene");-->
-<!--           });-->
+
+        function first(event){
+            var things = $(this).attr("class");
+        }
 
          init();
 
@@ -122,6 +124,7 @@
               }
               event.target.classList.add("clicked"); //타켓에 clicked 추가
          }
+
 
     </script>
 </body>
