@@ -50,13 +50,17 @@ public class CardController {
     @GetMapping("/card_compare_page")
     public String card_compare(HttpServletRequest request , Model model){
 
+        //카드가져오기
+       Long one = Long.valueOf(request.getParameter("one"));
+       Long two = Long.valueOf(request.getParameter("two"));
+
         //해당 카드 찾기
-//        card1 = cardService.getCard();
-//        card2 = cardService.getCard();
-//
-//        //찾았으면 model 담아서 전달
-//        model.addAttribute("card1",card1);
-//        model.addAttribute("card2",card2);
+        CardDto card1 = cardService.getCard(one);
+        CardDto card2 = cardService.getCard(two);
+
+        //찾았으면 model 담아서 전달
+        model.addAttribute("card1",card1);
+        model.addAttribute("card2",card2);
 
         return "card_compare";
     }

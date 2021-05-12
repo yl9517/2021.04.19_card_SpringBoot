@@ -92,7 +92,9 @@ a{
     height: 300px;
     width: 200px;
     padding: 20px;
-    position:absolute;
+    position:fixed;
+    right : 50px;
+    top :30%;
  }
  #comparebox li{
     padding: 10px;
@@ -100,12 +102,9 @@ a{
     text-align : center;
     border-left:5px solid pink;
  }
-  #comparebox li input{
+  #comparebox li label{
    color : white;
-    width:70%;
-    background-color : rgba(000,000,050, 0.7);
-    font-size : 15px;
-    border: none;
+    width:100%;
   }
   #comparebox li .delete_btn{
     position:absolute;
@@ -117,12 +116,13 @@ a{
     cursor:pointer;
   }
 
- #comparebox .compare_go{
+ #comparebox #submit{
     font-size: 18px;
     position:absolute;
     top: 73%;
     left:27%;
     padding: 15px 20px;
     background-color : yellow;
-    border-radius : 5px;
+    border-radius : 10px;
+    cursor:pointer;
 }

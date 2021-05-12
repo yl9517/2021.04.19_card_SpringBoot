@@ -27,7 +27,7 @@
                         <dt> <img th:src="@{../static/images/} + ${card1.cardPhoto}"> </dt>
                         <dt>
                             <p class="name" th:text="${card1.cardName}"></p>
-                            <p class="cardCom" th:text="${card1.cardCompany}">신한카드</p>
+                            <p class="cardCom" th:text="${card1.cardCompany}"></p>
                         </dt>
                         <dt> <a th:href="@{'/card_detail_page/'+${card1.cardCode}}" class="more"> 상세 보기</a> </dt>
                     </dl>
@@ -36,8 +36,8 @@
                     <dl>
                         <dt> <img th:src="@{../static/images/} + ${card2.cardPhoto}"> </dt>
                         <dt>
-                            <p class="name" th:text="${card2.cardName}">신한 DEEP MAKING2</p>
-                            <p class="cardCom" th:text="${card2.cardName}">신한카드</p>
+                            <p class="name" th:text="${card2.cardName}"></p>
+                            <p class="cardCom" th:text="${card2.cardName}"></p>
                         </dt>
                         <dt>  <a th:href="@{'/card_detail_page/'+${card2.cardCode}}" class="more"> 상세 보기</a> </dt>
                     </dl>

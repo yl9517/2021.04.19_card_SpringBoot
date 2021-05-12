@@ -23,7 +23,8 @@
            <div id="chartInfo">
                <ul>
                    <li id="onechart" th:each="rank, i : ${rankList}"> <!--반복문-->
-                       <p class="rank" th:text="${i.index+1}"> </p>
+                       <input type="hidden" th:value="${rank.cardCode}" class="code">
+                       <p class="rank" th:text="${i.index+1}" style="width:40px;"> </p>
                        <img th:src="@{../static/images/} + ${rank.cardPhoto}"/><!--사진-->
                        <div class="text">
                            <p class="name" th:for="${rank.cardCode}" th:text="${rank.cardName}"></p> <!--카드이름-->
@@ -39,25 +40,36 @@
 
            </div>
     </div>
+
+        <form>
+            <input type="button" onclick='menu(1)' value="비교함 보이기">
+            <input type="button" onclick='menu(2)' value="비교함 감추기">
+        </form>
+
     <form id="comparebox" action="/card_compare_page">
         <ul>
             <li>
-                <input id="result" name="result">
-                <a class="delete_btn">x</a>
+                <label id="result" name="result"></label>
+                <input type="hidden" id="one" name="one">
+                <a class="delete_btn" onclick='cancel(1)'>x</a>
             </li>
             <li>
-                <input id="result2" name="result2">
-                <a class="delete_btn">x</a>
+                <label id="result2" name="result2"></label>
+                <input type="hidden" id="two" name="two">
+                <a class="delete_btn" onclick='cancel(2)'>x</a>
             </li>
         </ul>
-        <input type="submit" class="compare_go" href="card_compare.html" th:href="@{/card_compare_page}" value="비교하기">
+        <input type="submit" id="submit" href="card_compare.html" th:href="@{/card_compare_page}" value="비교하기" disabled="true">
     </form>
+
     <script type="text/javascript">
         function getRadioText(event){
             const radioId = event.target.id;
             const query = 'p[for="'+radioId+'"]' //p태그의 for="아이디" 가져오기 //이때 아이디는 위에서 선언
+            const query2 = 'input[value="'+radioId+'"]' //input 태그의 id가 해당하는 값 가져오기
 
             const text = document.querySelector(query).innerText; //innerText : 태그 사이에 텍스트를 넣겠다.
+            const code = document.querySelector(query2).value;
 
             if(document.getElementById('result').innerText==text || document.getElementById('result2').innerText==text){
                 alert('이미 비교함에 있는 카드입니다.');
@@ -70,15 +82,46 @@
 
             if(document.getElementById('result').innerText==""){
                 document.getElementById('result').innerText = text;
-                document.getElementById('result').value = text;
+               document.getElementById('one').value = code;
+
+
             }else{
                 document.getElementById('result2').innerText = text;
-                document.getElementById('result2').value = text;
+                document.getElementById('two').value = code;
+
+                //비교하기 버튼 활성화
+               document.getElementById('submit').disabled = false;
             }
+        }
+        //비교함 개별삭제
+        function cancel(condition){
 
+            if(condition ==1){ //첫번째꺼 삭제하면 두번째text가 첫번째로 올라오기
+              document.getElementById('result').innerText="";
+              document.getElementById('result').innerText=document.getElementById('result2').innerText;
+              document.getElementById('result2').innerText="";
 
+              //비교하기 버튼 비활성화
+               document.getElementById('submit').disabled = true;
+            }
+            else{
+              document.getElementById('result2').innerText="";
+
+              //비교하기 버튼 비활성화
+               document.getElementById('submit').disabled = true;
+              }
         }
 
+        //비교함 보이기, 숨기기
+        function menu(condition){
+            var menu = document.getElementById("comparebox");
+            if(condition==1){
+              menu.style.display="block";
+            }
+            else{
+              menu.style.display="none";
+          }
+        }
     </script>
 
     <th:block th:replace = "/footer :: footer"></th:block>
