@@ -33,16 +33,24 @@
         <br>
     </div>
 
-    <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px">
+    <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px; width: 500px; float:left;" >
+
+        <li> <a href="/" style="margin-right:400px; border-bottom:3px solid blue">내 작성글</a> </li>
+
+    </ul>
+
+
+    <ul class="nav nav-pills justify-content-end" style="margin-bottom:5px; width: 500px; float:right;" >
 
         <li class="nav-item">
-<!--            <a href="/" style="margin-right:1000px; border-bottom:1px solid pink;">내 작성글</a>-->
+
             <a sec:authorize="isAuthenticated()" class="nav-link active" href="board_write.html" th:href="@{/boardwrite_page}">글쓰기</a>
         </li>
 
     </ul>
     <table class="table">
         <thead>
+
         <tr style="text-align: center">
             <th scope="col">#</th>
             <th id="title" scope="col">제목</th>
@@ -51,6 +59,7 @@
             <th scope="col">작성일</th>
             <th scope="col">답변 여부</th>
         </tr>
+
         </thead>
 
         <tbody>

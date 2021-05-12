@@ -1,4 +1,4 @@
-${document}.ready(function(){ //해당 문서
+$(document).ready(function(){ //해당 문서
     $("#registerbutton").on('click', dosubmit);
 
     function dosubmit(){

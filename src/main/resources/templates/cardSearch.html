@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="../static/css/cardSearch.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script th:src="@{/static/js/cardSearchBtn.js}"></script>
 </head>
 
 <body>
@@ -22,46 +26,103 @@
 
             <form>
                 <div id="searchInfo">
-                    <div id="gender">
+                    <div>
                         <p>성별</p>
-                        <input type="button" value="여자" name = "gender">
-                        <input type="button" value="남자">
+                        <input type="button" value="여자" id="woman" class="gender">
+                        <input type="button" value="남자" id="man" class="gender">
                     </div>
-                     <div id="age">
+                     <div>
                          <p>연령대</p>
-                        <input type="button" value="20대">
-                        <input type="button" value="30대">
-                        <input type="button" value="40대 이상">
+                        <input type="button" value="20대" class="age">
+                        <input type="button" value="30대" class="age">
+                        <input type="button" value="40대 이상" class="age">
                     </div>
-                    <div id="type">
+                    <div>
                         <p>카드 타입</p>
-                        <input type="button" value="전체">
-                        <input type="button" value="할인">
-                        <input type="button" value="포인트">
+                        <input type="button" value="전체" class="type">
+                        <input type="button" value="할인" class="type">
+                        <input type="button" value="포인트" class="type">
                     </div>
-                    <div id="benefit">
+                    <div>
                         <p>카드 혜택</p>
-                        <input type="button" value="교통">
-                        <input type="button" value="주유">
-                        <input type="button" value="통신">
-                        <input type="button" value="마트/편의점">
-                        <input type="button" value="쇼핑">
-                        <input type="button" value="카페/디저트">
-                        <input type="button" value="영화/문화">
+                        <input type="button" value="교통" class="bene">
+                        <input type="button" value="주유" class="bene">
+                        <input type="button" value="통신" class="bene">
+                        <input type="button" value="마트/편의점" class="bene">
+                        <input type="button" value="쇼핑" class="bene">
+                        <input type="button" value="카페/디저트" class="bene">
+                        <input type="button" value="영화/문화" class="bene">
                     </div>
 
                     <div id="submit">
                         <a href="card_list.html" th:href="@{/card/card_list_page}">  <input type="button" value="검색"> </a>
                         <input type="button" value="초기화">
                     </div>
+                    <input type="text" name="ingender">
 
                 </div>
+
             </form>
 
     </div>
 
 
     <th:block th:replace = "/footer :: footer"></th:block>
+    <script>
+<!--             var things = document.getElementsByClassName("gender");-->
+<!--         var age = document.getElementsByClassName("age");-->
+<!--         var type = document.getElementsByClassName("type");-->
+<!--         var bene = document.getElementsByClassName("bene");-->
 
+<!--         var things = $('searchInfo').attr('class');-->
+
+        $('.gender').click(function(){
+<!--        if($(event.target).is('.gender')){-->
+            var things = document.getElementsByClassName("gender");
+<!--        }-->
+<!--        if($(event.target).is('.age')){-->
+<!--            var things = document.getElementsByClassName("age");-->
+<!--        }-->
+<!--        if($(event.target).is('.type')){-->
+<!--            var things = document.getElementsByClassName("type");-->
+<!--        }-->
+<!--        if($(event.target).is('.bene')){-->
+<!--            var things = document.getElementsByClassName("bene");-->
+<!--        }-->
+
+     });
+
+<!--            var things ="";-->
+<!--           $('.gender').click(function(){-->
+<!--            things = document.getElementsByClassName("gender");-->
+<!--           });-->
+<!--           $('.age').click(function(){-->
+<!--            things = document.getElementsByClassName("age");-->
+<!--           });-->
+<!--           $('.type').click(function(){-->
+<!--            things = document.getElementsByClassName("type");-->
+<!--           });-->
+<!--           $('.bene').click(function(){-->
+<!--            things = document.getElementsByClassName("bene");-->
+<!--           });-->
+
+         init();
+
+         function init() {
+            for (var i = 0; i < things.length; i++) {
+              things[i].addEventListener("click", handleClick);
+                 //addEventListener : 이벤트 등록. 특정이벤트가 발생했을 시 특정함수를 실행할수 있도록함
+                                        //즉, 클릭시 handleClick 함수 실행
+            }
+         }
+
+         function handleClick(event) {
+              for (var i = 0; i < things.length; i++) {
+                things[i].classList.remove("clicked"); //전체 clicked 삭제
+              }
+              event.target.classList.add("clicked"); //타켓에 clicked 추가
+         }
+
+    </script>
 </body>
 </html>

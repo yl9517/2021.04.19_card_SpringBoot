@@ -55,9 +55,6 @@ a{
     margin-right : 10px;
     border-radius : 10px;
 }
-#searchInfo input:hover {
-    background-color : #cccccc;
-}
 
 #searchInfo #submit{
    text-align : center;
@@ -77,5 +74,7 @@ a{
 }
 
 /*클릭 후*/
-#searchInfo #gender input:selected{
+.clicked{
+    background-color : rgba(204,153,255, 0.5);
+
 }
