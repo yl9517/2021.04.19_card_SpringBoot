@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+a.mine{
+
+    color:white;
+    background-color:#b4c3ff;
+    margin-right:400px;
+    width:70px;
+    height:25px;
+    padding:5 5 5 5;
+    border:2px solid black;
+    border-radius:.25rem;
+
+
+}
+
+a.mine:hover{
+
+     color:black;
+
+
+}

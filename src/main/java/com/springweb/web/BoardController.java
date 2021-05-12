@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -185,6 +186,25 @@ public class BoardController {
     public Long update_reply(@PathVariable("reply_id") Long reply_id, @RequestBody ReplyDto replyDto) {
         boardService.update_reply(reply_id, replyDto);
         return reply_id;
+    }
+
+
+
+    //내가쓴글 빼오기
+
+    @GetMapping("/my_post")
+    public String my_post(Model model, @PathVariable("userID") String userID){
+
+        SesstionUser user= (SesstionUser) httpSession.getAttribute("user");
+        userID = user.getName();
+
+        List<BoardDto> mylist= boardService.getMine(userID);
+        model.addAttribute("myList", mylist);
+
+        return "mylist";
+
+
+
     }
 
 

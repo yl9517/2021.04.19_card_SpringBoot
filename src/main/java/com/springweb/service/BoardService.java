@@ -1,5 +1,6 @@
 package com.springweb.service;
 
+import com.springweb.domain.card.CardEntity;
 import com.springweb.web.dto.BoardUpdateRequestDto;
 import com.springweb.web.dto.ReplyDto;
 import lombok.RequiredArgsConstructor;
@@ -138,6 +139,7 @@ public class BoardService {
 
     }
 
+    //답글 수정
     @Transactional
     public void update_reply(Long reply_id, ReplyDto replyDto){
             Optional<ReplyEntity> optionalReplyEntity=replyRepository.findById(reply_id);
@@ -146,6 +148,42 @@ public class BoardService {
             replyEntity.update(replyDto.getReply_content());
 
 
+    }
+
+
+
+
+
+
+
+    //내가 쓴 글 불러오기
+    @Transactional
+    public List<BoardDto> getMine(String userID){
+
+        List<BoardEntity> getmines = boardRepository.findByuserID(userID);
+
+        List<BoardDto> getmyList= new ArrayList<>();
+
+        for(BoardEntity boardEntity: getmines){
+
+
+
+            BoardDto boardDto= BoardDto.builder()
+                    .bbsID( boardEntity.getBbsID() )
+                    .bbsTitle( boardEntity.getBbsTitle() )
+                    .bbsCategory(boardEntity.getBbsCategory())
+                    .bbsContent(boardEntity.getBbsContent())
+                    .bbsReply(boardEntity.getBbsReply())
+                    .userID(boardEntity.getUserID())
+                    .createdDate(boardEntity.getCreateDate())
+                    .modifiedDate(boardEntity.getModifiedDate())
+                    .build();
+
+            getmyList.add(boardDto);
+
+        }
+
+        return getmyList;
     }
 
 
