@@ -87,7 +87,7 @@ public class BoardController {
     }
 
     // 수정 게시물 이동 페이지
-    @GetMapping("/post/update/{id}")
+    @GetMapping("/post_update/{id}")
     public String board_update(@PathVariable("id")Long id, Model model){
 
         //게시물 번호를 넣어서 해당 게시물찾기
@@ -191,22 +191,19 @@ public class BoardController {
 
 
     //내가쓴글 빼오기
-
     @GetMapping("/my_post")
-    public String my_post(Model model, @PathVariable("userID") String userID){
+    public String my_post( Model model,@PageableDefault Pageable pageable){
 
-        SesstionUser user= (SesstionUser) httpSession.getAttribute("user");
-        userID = user.getName();
+        SesstionUser user=(SesstionUser)httpSession.getAttribute("user");
 
-        List<BoardDto> mylist= boardService.getMine(userID);
-        model.addAttribute("myList", mylist);
-
-        return "mylist";
+        String userID=user.getName();
 
 
+        Page<BoardEntity> postList=boardService.getMine(pageable, userID);
+        model.addAttribute("postList", postList);
 
+        return "boardlist";
     }
-
 
 
 
