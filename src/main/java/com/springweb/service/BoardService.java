@@ -1,5 +1,6 @@
 package com.springweb.service;
 
+import com.springweb.domain.card.CardEntity;
 import com.springweb.web.dto.BoardUpdateRequestDto;
 import com.springweb.web.dto.ReplyDto;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import com.springweb.domain.board.*;
 import com.springweb.web.dto.BoardDto;
 
 import javax.transaction.Transactional;
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -51,13 +53,24 @@ public class BoardService {
         BoardEntity boardEntity = boardEntityOptional.get();
 
         Optional<ReplyEntity> replyEntityOptional= replyRepository.findBybbsID(id);
-        ReplyEntity replyEntity = replyEntityOptional.get();
 
-        // 찾았으면 삭제
-        replyRepository.delete(replyEntity);
-        boardRepository.delete( boardEntity );
+        if(replyEntityOptional.isPresent()){
+
+            ReplyEntity replyEntity = replyEntityOptional.get();
+            replyRepository.delete(replyEntity);
+            boardRepository.delete(boardEntity);
+
+        }else{
+
+            boardRepository.delete(boardEntity);
+
+        }
+
 
     }
+
+
+
     //전체조회
     @Transactional
     public Page<BoardEntity> getAllBoard(Pageable pageable){
@@ -138,6 +151,7 @@ public class BoardService {
 
     }
 
+    //답글 수정
     @Transactional
     public void update_reply(Long reply_id, ReplyDto replyDto){
             Optional<ReplyEntity> optionalReplyEntity=replyRepository.findById(reply_id);
@@ -146,6 +160,24 @@ public class BoardService {
             replyEntity.update(replyDto.getReply_content());
 
 
+    }
+
+
+
+
+
+
+
+
+    //내가 쓴 글 불러오기
+    @Transactional
+    public Page<BoardEntity> getMine(Pageable pageable, String userID){
+
+        int page=(pageable.getPageNumber()==0)?0:(pageable.getPageNumber()-1);
+        pageable= PageRequest.of(page,5,new Sort(Sort.Direction.DESC,"bbsID"));
+
+
+        return boardRepository.findByuserID(userID, pageable);
     }
 
 
