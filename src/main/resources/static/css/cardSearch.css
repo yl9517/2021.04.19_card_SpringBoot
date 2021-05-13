@@ -64,7 +64,7 @@ a{
     width: 150px;
     height: 80px;
     margin-right : 90px;
-    background-color : rgba(204,153,255, 0.5);
+    background-color : rgba(204,153,255, 0.2);
 
 }
 #searchInfo #submit input:hover{

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.smartcardio.Card;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,11 +41,52 @@ public class CardController {
     }
     
     //카드 리스트 이동 (조건검색 후)
-    @GetMapping("/card/card_list_page")
-    public String card_list(Model model){
+    @GetMapping("/card_list_page")
+    public String card_list(HttpServletRequest request ,Model model){
+
+        //값가져오기
+        String foundType = request.getParameter("intype"); //카드타입
+        String foundBene1 = request.getParameter("inbene0"); //혜택 3개
+        String foundBene2 = request.getParameter("inbene1");
+        String foundBene3 = request.getParameter("inbene2");
+
+        System.out.println("타입"+foundType);
+
+        String[] foundBene = {foundBene1,foundBene2,foundBene3};
+        String[] thisBene = {"교통","마트/편의점","쇼핑","영화/문화","주유","카페/디저트","통신"};
+        String[] changeBene = {"benefit_traffic.png","benefit_mart.png","benefit_shopping.png","benefit_movie.png","benefit_gas.png","benefit_cafe.png","benefit_phone.png"};
+
+        for(int i=0; i<foundBene.length; i++){
+
+            System.out.println("혜택 한글"+foundBene[i]);
+
+            for(int j=0; j< thisBene.length; j++) {
+                foundBene[i].replace(thisBene[j], changeBene[j]);
+            }
+
+            System.out.println(foundBene[i]);
+        }
+////////////////
+
 
         List<CardDto> cardlist = cardService.getAllCard();
-        model.addAttribute("cardlist",cardlist);
+        List<CardDto> foundList = new ArrayList<>();
+
+        //혜택값이 널이라면..??
+
+        for(int i=0; i<cardlist.size(); i++){
+            for(int j=0; j< thisBene.length; j++) {
+
+                if(cardlist.get(i).getCardType().equals(foundType)){
+                    if(cardlist.get(i).getBenefit1().equals(changeBene[j]) && cardlist.get(i).getBenefit2().equals(changeBene[j]) && cardlist.get(i).getBenefit3().equals(changeBene[j])) {
+                        foundList.add(cardlist.get(i));
+                    }
+                }
+
+            }
+        }
+
+        model.addAttribute("cardlist",foundList);
         return "card_list";
     }
 
