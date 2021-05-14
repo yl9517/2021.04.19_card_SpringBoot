@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +42,7 @@ public class CardController {
     }
     
     //카드 리스트 이동 (조건검색 후)
-    @GetMapping("/card_list_page")
+    @PostMapping("/card_list_page")
     public String card_list(HttpServletRequest request ,Model model){
 
         //값가져오기
@@ -64,7 +65,7 @@ public class CardController {
                 foundBene[i].replace(thisBene[j], changeBene[j]);
             }
 
-            System.out.println(foundBene[i]);
+            System.out.println("혜택영어"+changeBene[i]);
         }
 ////////////////
 

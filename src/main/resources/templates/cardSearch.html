@@ -24,7 +24,7 @@
                 <h1>카드 검색</h1>
             </div>
 
-            <form method="post" action="/card_list_page">
+            <form method="post"  th:action="@{/card_list_page}" > <!--th:action="/card_list_page" 는 왜 안될까-->
                 <div id="searchInfo">
                     <!--필수선택-->
                     <div>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div id="submit">
-                        <input type="submit" href="card_list.html" th:href="@{/card_list_page}" value="검색">
+                        <input type="submit" value="검색">
                         <input type="button" value="초기화">
                     </div>
 
