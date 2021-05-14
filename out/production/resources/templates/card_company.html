@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/card_company.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
+    <div id="companyWrap">
+        <div id="subtitle">
+            <h1> 카드사 </h1>
+        </div>
+
+        <div id="companys">
+            <ul>
+                <li>
+                    <a href="#">
+                    <img class="cardss" src="../static/images/company_shinhan.png" width="140px">
+                    <p>신한 카드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="cardss" src="../static/images/company_shinhan.png" width="130px">
+                        <p>신한 카드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="cardss" src="../static/images/company_shinhan.png" width="130px">
+                        <p>신한 카드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="cardss" src="../static/images/company_shinhan.png" width="130px">
+                        <p>신한 카드</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+
+    </div>
+
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+</body>
+</html>

@@ -6,9 +6,9 @@
   <title>admin_card register</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-  <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-  <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-  <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
   <link rel="stylesheet" href="../static/css/header.css" />
@@ -147,7 +147,7 @@
           </select> <br>
 
           <label>혜택 1 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
+          <textarea cols="70" maxlength="300" name="benefit1_detail" >[[${cardDto.benefit1_detail}]]</textarea>
           <br><br>
           <label>혜택 2</label>
 
@@ -163,7 +163,7 @@
           </select>  <br>
 
           <label>혜택 2 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
+          <textarea cols="70" maxlength="300" name="benefit2_detail"></textarea>
           <br><br>
           <label>혜택 3</label>
 
@@ -179,7 +179,7 @@
           </select> <br>
 
           <label>혜택 3 상세</label> <br>
-          <textarea cols="70" maxlength="300"></textarea>
+          <textarea cols="70" maxlength="300" name="benefit3_detail"></textarea>
           <br><br>
 
         </div>

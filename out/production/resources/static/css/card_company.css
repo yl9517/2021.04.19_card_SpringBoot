@@ -1,0 +1,94 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol,li{
+		list-style-type: none;
+}
+a{
+    text-decoration: none;
+ 		color : black;
+ }
+/*카드 검색 전체 div*/
+ #companyWrap{
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 30px;
+    background-color : #e6ecf7;
+ }
+
+ /*소제목*/
+ #subtitle{
+    width: 100%;
+    height : auto;
+    background-color : #fff;
+ }
+ #subtitle h1{
+    margin: 0px auto;
+    width : 1300px;
+    display: flex; /*align-items와 함께 세로 센터만들기*/
+    align-items: center;
+    padding: 40px;
+   font-size : 35px;
+ }
+
+/*카드사 li*/
+#companys{
+    box-sizing : border-box;
+    width: 1300px;
+    margin:50px auto;
+    padding: 20px 5px;
+}
+#companys li{
+    box-sizing : border-box; /*박스크기 300px로 고정*/
+    width: 330px;
+    background-color : #fff;
+    padding:20px;
+    height: 198px;
+    border-radius: 10px;
+    position: relative;
+    overflow:hidden;
+    cursor: pointer;
+    float:left;
+
+    margin:0 150px 100px 0;
+}
+#companys li:nth-child(3n){
+
+    margin:0 0 100px 0;
+}
+#companys a{
+    display:inline-block;
+    width: 300px;
+    height: 180px;
+}
+
+#companys li p{
+    margin: 10px;
+    font-size : 22px;
+    transition : 0.2s;
+}
+/*호버 시*/
+#companys li:hover {
+    background-color : rgba(204,153,255, 0.5);
+    transition : 0.2s;
+}
+#companys li:hover p{
+    font-size : 25px;
+}
+
+.clear{
+    clear:both;
+}
+/*#companys li:first-child:before{
+   content:'';
+   background : url(../images/카드1.png) no-repeat;
+    position: absolute;
+    background-size: cover;
+    width:60%;
+    height: 60%;
+    top: 55px;
+    right: -80px;
+    filter: blur(3px);
+}*/

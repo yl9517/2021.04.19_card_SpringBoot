@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../static/css/header.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script th:src="@{/static/js/menubar.js}"></script>
 </head>
 
 <body>
@@ -19,7 +23,7 @@
                 <ul>
                     <li> <a href="card_chart.html" th:href="@{/card/card_chart_page}"> 차트 </a></li>
                     <li> <a href="cardSearch.html" th:href="@{/card/card_search_page}"> 조건검색 </a></li>
-                    <li> <a href="#"> 카드사 </a></li>
+                    <li> <a href="card_company.html" th:href="@{/card/card_company_page}"> 카드사 </a></li>
                     <li> <a href="boardlist.html" th:href="@{/boardlist_page}"> 문의 </a></li>
 
                     <li class="userName log" th:if="${session.user != null}" th:text="${session.user.name}"></li>

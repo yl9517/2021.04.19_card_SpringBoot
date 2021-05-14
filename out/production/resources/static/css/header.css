@@ -19,6 +19,7 @@ a{
  	color : black;
  }
 #head{
+    box-sizing: border-box;
     width:100%;
     margin: 0 auto;
     height:auto;
@@ -42,7 +43,7 @@ a{
 
 #menu_inner{
     background-color: #fff;
-    width: 1300px;
+    width: 100%;
     box-shadow: 0px 15px 15px -15px rgb(0 0 0 / 15%);
     z-index : 99; /*우선순위*/
     padding : 15px 0;

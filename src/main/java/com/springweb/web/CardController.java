@@ -40,7 +40,12 @@ public class CardController {
 
         return "cardSearch";
     }
-    
+    //카드사 페이지
+    @GetMapping("/card/card_company_page")
+    public String card_company(){
+        return "card_company";
+    }
+
     //카드 리스트 이동 (조건검색 후)
     @PostMapping("/card_list_page")
     public String card_list(HttpServletRequest request ,Model model){
@@ -78,9 +83,18 @@ public class CardController {
         for(int i=0; i<cardlist.size(); i++){
             for(int j=0; j< thisBene.length; j++) {
 
-                if(cardlist.get(i).getCardType().equals(foundType)){
-                    if(cardlist.get(i).getBenefit1().equals(changeBene[j]) && cardlist.get(i).getBenefit2().equals(changeBene[j]) && cardlist.get(i).getBenefit3().equals(changeBene[j])) {
-                        foundList.add(cardlist.get(i));
+                if(cardlist.get(i).getCardType().equals(foundType)){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
+                    if(cardlist.get(i).getBenefit1().equals(changeBene[j]) || cardlist.get(i).getBenefit2().equals(changeBene[j]) || cardlist.get(i).getBenefit3().equals(changeBene[j])) {
+
+                        if(foundList.size()==0){
+                            foundList.add(cardlist.get(i));
+                        }
+                        for(int x=0; x< foundList.size(); x++){
+                            if(foundList.get(x).getCardCode() != cardlist.get(i).getCardCode()) { //같은코드가 들어가있지 않으면 넣기
+                                foundList.add(cardlist.get(i));
+                            }
+                        }
+
                     }
                 }
 
