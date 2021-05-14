@@ -34,6 +34,11 @@
 
 
     <ul class="nav nav-pills justify-content-end">
+
+      <li>
+        <a href="admin_CardList" th:href="@{/admin}"><p >┖ 카드 목록</p></a>
+      </li>
+
       <li>
         <a href="admin_CardCompanyList" th:href="@{/admin/cardCompany_list_page}"><p >┖ 카드사 목록</p></a>
       </li>
@@ -66,18 +71,22 @@
         <br><br><br><br>
 
         <label>카드 명</label> <br>
-        <input type="text" id="cardName" name="cardName">
+        <input type="text" id="cardName" name="cardName" placeholder="카드 명">
         <br><br><br>
 
         <label>카드사</label> <br>
 
         <select id="cardCompany" name="cardCompany" placeholder="카드사 명">
 
+
           <option value="0">선택</option>
           <option value="신한카드">신한카드</option>
           <option value="우리카드">우리카드</option>
           <option value="하나카드">하나카드</option>
           <option value="KB국민카드">KB국민카드</option>
+          <option value="롯데카드">롯데카드</option>
+          <option value="삼성카드">삼성카드</option>
+          <option value="새마을카드">새마을카드</option>
 
 
         </select>

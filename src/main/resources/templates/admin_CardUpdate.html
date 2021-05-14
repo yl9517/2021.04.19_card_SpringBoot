@@ -39,6 +39,11 @@
 
 
     <ul class="nav nav-pills justify-content-end">
+
+      <li>
+        <a href="admin_CardList" th:href="@{/admin}"><p >┖ 카드 목록</p></a>
+      </li>
+
       <li>
         <a href="admin_CardCompanyList" th:href="@{/admin/cardCompany_list_page}"><p >┖ 카드사 목록</p></a>
       </li>
@@ -76,13 +81,14 @@
 
         <select id="cardCompany" name="cardCompany" placeholder="카드사 명" th:value="${cardDto.cardCompany}">
 
-          <option value="1">신한카드</option>
-          <option value="2">우리카드</option>
-          <option value="3">하나카드</option>
-          <option value="4">KB국민카드</option>
-          <option value="5">롯데카드</option>
-          <option value="6">삼성카드</option>
-          <option value="7">새마을카드</option>
+          <option value="0">선택</option>
+          <option value="신한카드">신한카드</option>
+          <option value="우리카드">우리카드</option>
+          <option value="하나카드">하나카드</option>
+          <option value="KB국민카드">KB국민카드</option>
+          <option value="롯데카드">롯데카드</option>
+          <option value="삼성카드">삼성카드</option>
+          <option value="새마을카드">새마을카드</option>
 
 
         </select>
@@ -98,8 +104,10 @@
         <label>카드 타입</label> <br>
         <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${cardDto.cardType}">
 
-          <option value="1">포인트형</option>
-          <option value="2">할인형</option>
+
+          <option value="0">선택</option>
+          <option value="포인트">포인트형</option>
+          <option value="할인">할인형</option>
 
 
 
@@ -135,31 +143,31 @@
           <br><br><br>
           <label>혜택 1</label>
 
-          <select id="a">
-            <option>선택</option>
-            <option>교통</option>
-            <option>마트편의점</option>
-            <option>쇼핑</option>
-            <option>영화문화</option>
-            <option>주유</option>
-            <option>카페</option>
-            <option>통신</option>
+          <select id="a" name="benefit1">
+            <option value="0">선택</option>
+            <option value="benefit_traffic.png">교통</option>
+            <option value="benefit_mart.png">마트편의점</option>
+            <option value="benefit_shopping.png">쇼핑</option>
+            <option value="benefit_movie.png">영화문화</option>
+            <option value="benefit_gas.png">주유</option>
+            <option value="benefit_cafe.png">카페</option>
+            <option value="benefit_phone.png">통신</option>
           </select> <br>
 
           <label>혜택 1 상세</label> <br>
-          <textarea cols="70" maxlength="300" name="benefit1_detail" >[[${cardDto.benefit1_detail}]]</textarea>
+          <textarea cols="70" maxlength="300" name="benefit1_detail"></textarea>
           <br><br>
           <label>혜택 2</label>
 
-          <select id="b">
-            <option>선택</option>
-            <option>교통</option>
-            <option>마트편의점</option>
-            <option>쇼핑</option>
-            <option>영화문화</option>
-            <option>주유</option>
-            <option>카페</option>
-            <option>통신</option>
+          <select id="b" name="benefit2">
+            <option value="0">선택</option>
+            <option value="benefit_traffic.png">교통</option>
+            <option value="benefit_mart.png">마트편의점</option>
+            <option value="benefit_shopping.png">쇼핑</option>
+            <option value="benefit_movie.png">영화문화</option>
+            <option value="benefit_gas.png">주유</option>
+            <option value="benefit_cafe.png">카페</option>
+            <option value="benefit_phone.png">통신</option>
           </select>  <br>
 
           <label>혜택 2 상세</label> <br>
@@ -167,20 +175,21 @@
           <br><br>
           <label>혜택 3</label>
 
-          <select id="c">
-            <option>선택</option>
-            <option>교통</option>
-            <option>마트편의점</option>
-            <option>쇼핑</option>
-            <option>영화문화</option>
-            <option>주유</option>
-            <option>카페</option>
-            <option>통신</option>
+          <select id="c" name="benefit3">
+            <option value="0">선택</option>
+            <option value="benefit_traffic.png">교통</option>
+            <option value="benefit_mart.png">마트편의점</option>
+            <option value="benefit_shopping.png">쇼핑</option>
+            <option value="benefit_movie.png">영화문화</option>
+            <option value="benefit_gas.png">주유</option>
+            <option value="benefit_cafe.png">카페</option>
+            <option value="benefit_phone.png">통신</option>
           </select> <br>
 
           <label>혜택 3 상세</label> <br>
           <textarea cols="70" maxlength="300" name="benefit3_detail"></textarea>
           <br><br>
+
 
         </div>
 
