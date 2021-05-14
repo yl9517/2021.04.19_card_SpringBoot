@@ -8,9 +8,9 @@
   <title>admin cardcompany register</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-  <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-  <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-  <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
   <link rel="stylesheet" href="../static/css/header.css" />
@@ -25,8 +25,15 @@
 
     <section>
 
-      <nav id="side_menu">
-        <h4>Menu</h4>
+
+
+
+      <div class="imageinfo">
+
+
+        <br><br><br>
+
+
 
         <ul class="nav nav-pills justify-content-end">
           <li>
@@ -38,15 +45,12 @@
           </li>
 
           <li>
-            <a href="admin_CardRegister" th:href="@{/admin/card_regist_page}"><p>┖ 카드 &nbsp; &nbsp;등록</p></a>
+            <a href="admin_CardRegister" th:href="@{/admin/card_regist_page}"><p>┖ 카드등록</p></a>
           </li>
 
         </ul>
 
-      </nav>
 
-
-      <div class="imageinfo">
         <p></p>
         <h1 class="register">카드사 등록</h1>
         <br><br>
@@ -65,7 +69,20 @@
 
           <label id="Cname">카드사 명 : </label>
 
-           <input type="text" id="companyName" name="companyName">
+            <select id="companyName" name="companyName" placeholder="카드사 명">
+
+
+              <option value="1">선택</option>
+              <option value="2">신한카드</option>
+              <option value="3">우리카드</option>
+              <option value="4">하나카드</option>
+              <option value="5">KB국민카드</option>
+              <option value="6">롯데카드</option>
+              <option value="7">삼성카드</option>
+              <option value="8">새마을카드</option>
+
+
+            </select>
           </div>
 
           <br><br><br>
