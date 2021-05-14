@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../static/css/card_chart.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
 
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script th:src="@{/static/js/menubar.js}"></script>
 </head>
 
 <body>
@@ -41,12 +43,13 @@
            </div>
     </div>
 
-        <form>
-            <input type="button" onclick='menu(1)' value="비교함 보이기">
-            <input type="button" onclick='menu(2)' value="비교함 감추기">
-        </form>
+
+
+
 
     <form id="comparebox" action="/card_compare_page">
+        <input type="button" onclick='menu(1)' value="<<" id="comShow">
+        <input type="button" onclick='menu(2)' value=">>" id="comClose">
         <ul>
             <li>
                 <label id="result" name="result"></label>
@@ -116,11 +119,12 @@
         //비교함 보이기, 숨기기
         function menu(condition){
             var menu = document.getElementById("comparebox");
-            if(condition==1){
+            if(condition==1){ //보이기 누르면
               menu.style.display="block";
             }
-            else{
+            else{ //숨기기누르면
               menu.style.display="none";
+                $("#comShow").show();
           }
         }
     </script>

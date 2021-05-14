@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
     <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-    <script th:src="@{/static/js/cardSearchBtn.js}"></script>
+    <script th:src="@{/static/js/menubar.js}"></script>
 </head>
 
 <body>
@@ -62,13 +62,13 @@
 
 
                     <!-- 선택값 넘겨주기 -->
-                    <input type="text" name="ingender">
-                    <input type="text" name="inage">
-                    <input type="text" name="intype">
+                    <input type="hidden" name="ingender">
+                    <input type="hidden" name="inage">
+                    <input type="hidden" name="intype">
 
-                    <input type="text" name="inbene0">
-                    <input type="text" name="inbene1">
-                    <input type="text" name="inbene2">
+                    <input type="hidden" name="inbene0">
+                    <input type="hidden" name="inbene1">
+                    <input type="hidden" name="inbene2">
 
                 </div>
 
