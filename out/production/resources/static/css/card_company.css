@@ -32,8 +32,11 @@ a{
     padding: 40px;
    font-size : 35px;
  }
+/*
 
-/*카드사 li*/
+*/
+/*카드사 li*//*
+
 #companys{
     box-sizing : border-box;
     width: 1300px;
@@ -41,7 +44,9 @@ a{
     padding: 20px 5px;
 }
 #companys li{
-    box-sizing : border-box; /*박스크기 300px로 고정*/
+    box-sizing : border-box; */
+/*박스크기 300px로 고정*//*
+
     width: 330px;
     background-color : #fff;
     padding:20px;
@@ -69,7 +74,9 @@ a{
     font-size : 22px;
     transition : 0.2s;
 }
-/*호버 시*/
+*/
+/*호버 시*//*
+
 #companys li:hover {
     background-color : rgba(204,153,255, 0.5);
     transition : 0.2s;
@@ -77,6 +84,7 @@ a{
 #companys li:hover p{
     font-size : 25px;
 }
+*/
 
 .clear{
     clear:both;

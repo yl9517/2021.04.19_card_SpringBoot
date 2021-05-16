@@ -2,17 +2,15 @@ package com.springweb.web;
 
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardDto;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.springweb.web.dto.CardUpdateDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.smartcardio.Card;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,5 +134,18 @@ public class CardController {
         //html 페이지 열기
         return "card_detail";
     }
+
+    //개별카드에서 카드신청 눌렀을때 - 카드사 링크 카운트 수정
+    @PostMapping("/card_countUp")
+    public String countUp(HttpServletRequest request){
+
+        Long code = Long.valueOf(request.getParameter("cardCode"));
+        String link = request.getParameter("cardLink");
+        System.out.println(code+link);
+        cardService.UpdateCount(code);
+        return "redirect:/card_detail_page/"+code;
+    }
+
+
 
 }

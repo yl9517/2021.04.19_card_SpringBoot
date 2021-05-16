@@ -96,7 +96,7 @@ public class CardEntity {
 
     //버튼 누를때마다? 카운트 올라가기
     public void countUp(){
-        this.count=count++;
+        this.count++;
     }
 
 
