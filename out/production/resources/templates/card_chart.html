@@ -43,12 +43,8 @@
            </div>
     </div>
 
-
-
-
-
+    <input type="button" onclick='menu(1)' value="<<" id="comShow">
     <form id="comparebox" action="/card_compare_page">
-        <input type="button" onclick='menu(1)' value="<<" id="comShow">
         <input type="button" onclick='menu(2)' value=">>" id="comClose">
         <ul>
             <li>
@@ -86,11 +82,12 @@
             if(document.getElementById('result').innerText==""){
                 document.getElementById('result').innerText = text;
                document.getElementById('one').value = code;
-
+               menu(1);
 
             }else{
                 document.getElementById('result2').innerText = text;
                 document.getElementById('two').value = code;
+                menu(1);
 
                 //비교하기 버튼 활성화
                document.getElementById('submit').disabled = false;
@@ -116,15 +113,24 @@
               }
         }
 
+
         //비교함 보이기, 숨기기
+              //초기화
+             document.getElementById("comparebox").style.display="block";
+             document.getElementById("comShow").style.display = "none";
+
         function menu(condition){
             var menu = document.getElementById("comparebox");
+            var showBtn = document.getElementById("comShow");
+
             if(condition==1){ //보이기 누르면
               menu.style.display="block";
+              showBtn.style.display = "none";
+
             }
             else{ //숨기기누르면
               menu.style.display="none";
-                $("#comShow").show();
+              showBtn.style.display = "block";
           }
         }
     </script>

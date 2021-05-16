@@ -52,8 +52,8 @@ public class CardController {
 
 
     //해당 카드사의 리스트 (카드사 검색 후)
-    @PostMapping("/find_company/{name}")
-    public String finCompany_list(@PathVariable("code") Long name ,Model model) {
+    @GetMapping("/find_company/{name}")
+    public String finCompany_list(@PathVariable("name") String name ,Model model) {
 
 
         List<CardDto> cardlist = cardService.getAllCard();

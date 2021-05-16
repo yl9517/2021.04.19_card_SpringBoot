@@ -106,25 +106,18 @@
 
 
                     <div class="oneCompany" th:each="company : ${companyList}">
-                        <a th:href="@{'/find_company/'+${company:companyName}">
-                            <input type="hidden" hidden th:value="${card.companyCode}">
-                            <img class="comLogo" th:src="@{../static/images/} + ${card.companyLogo}" width="100%">
-                            <span name="company" th:value="${card.companyName}"></span>
+                        <a th:href="@{'/find_company/'+${company.companyName}}">
+                            <input type="hidden" th:value="${company.companyCode}">
+                            <img class="comLogo" th:src="@{../static/images/} + ${company.companyLogo}" width="100%">
+                            <span name="company" th:value="${company.companyName}"></span>
                             <img class="cardPic" src="../static/images/카드1.png" width="180px">
                             <img class="cardPic" src="../static/images/카드2.png" width="180px">
                             <img class="cardPic" src="../static/images/카드3.png" width="180px">
                         </a>
                     </div>
 
-                    <div class="oneCompany" th:each="company : ${companyList}">
-                        <a th:href="@{'/find_company/'+${company:companyName}">
-                            <input type="hidden" hidden th:value="${card.companyCode}">
-                            <img class="comLogo" th:src="@{../static/images/} + ${card.companyLogo}" width="100%">
-                            <span name="company" th:value="${card.companyName}"></span>
-                            <img class="cardPic" src="../static/images/카드1.png" width="180px">
-                            <img class="cardPic" src="../static/images/카드2.png" width="180px">
-                            <img class="cardPic" src="../static/images/카드3.png" width="180px">
-                        </a>
+                    <div class="oneCompany">
+
                     </div>
 
 

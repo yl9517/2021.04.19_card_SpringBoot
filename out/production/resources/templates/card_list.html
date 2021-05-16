@@ -31,7 +31,7 @@
                     <img th:src="@{../static/images/} + ${card.cardPhoto}"> <!--사진-->
                     <div class="text">
                         <p class="name" th:text="${card.cardName}"></p> <!--카드이름-->
-                        <p th:text="${card.cardCompany}">신한카드</p> <!--카드사-->
+                        <p th:text="${card.cardCompany}"></p> <!--카드사-->
                     </div>
                     <div class="benefits">
                         <div class="icon"><img th:src="@{../static/images/} + ${card.benefit1}"> </div>   <!--혜택1 아이콘-->
