@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/card_chart.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script th:src="@{/static/js/menubar.js}"></script>
+
+    <!--슬릭 소스-->
+    <link rel="stylesheet" type="text/css" href="../static/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/slick-theme.css">
+
+    <!--슬릭 소스-->
+
+
+</head>
+
+<body>
+    <th:block th:replace = "/header :: header"></th:block>
+
+
+    <div id="chartWrap">
+            <div id="subtitle">
+                <h1> 카드 TOP10 </h1>
+            </div>
+
+           <div id="chartInfo">
+
+               <!--슬릭 이미지-->
+               <section class="lazy slider" data-sizes="50vw" >
+
+                   <div id="advertisement1">
+                       <img src="../static/images/광고4.png" >
+                   </div>
+                   <div id="advertisement2">
+                       <img src="../static/images/광고3.png" >
+                   </div>
+
+                   <div id="advertisement3">
+                       <img src="../static/images/광고2.png" >
+                   </div>
+
+                   <div id="advertisement4">
+                       <img src="../static/images/광고1.png" >
+                   </div>
+
+               </section>
+               <!--슬릭 이미지 끝-->
+
+
+               <ul>
+                   <li id="onechart" th:each="rank, i : ${rankList}"> <!--반복문-->
+                       <input type="hidden" th:value="${rank.cardCode}" class="code">
+                       <p class="rank" th:text="${i.index+1}" style="width:40px;"> </p>
+                       <img th:src="@{../static/images/} + ${rank.cardPhoto}"/><!--사진-->
+                       <div class="text">
+                           <p class="name" th:for="${rank.cardCode}" th:text="${rank.cardName}"></p> <!--카드이름-->
+                           <p th:text="${rank.cardCompany}"></p> <!--카드사-->
+                       </div>
+                       <div id="ex">
+                           <a href="card_detail.html" th:href="@{'/card_detail_page/'+${rank.cardCode}}" class="more"> 상세 보기</a>
+                           <a class="cart" onclick='getRadioText(event)' th:id="${rank.cardCode}"> 비교함 담기</a>
+                       </div>
+                   </li>
+
+               </ul>
+
+           </div>
+    </div>
+
+    <input type="button" onclick='menu(1)' value="<<" id="comShow">
+    <form id="comparebox" action="/card_compare_page">
+        <input type="button" onclick='menu(2)' value=">>" id="comClose">
+        <ul>
+            <li>
+                <label id="result" name="result"></label>
+                <input type="hidden" id="one" name="one">
+                <a class="delete_btn" onclick='cancel(1)'>x</a>
+            </li>
+            <li>
+                <label id="result2" name="result2"></label>
+                <input type="hidden" id="two" name="two">
+                <a class="delete_btn" onclick='cancel(2)'>x</a>
+            </li>
+        </ul>
+        <input type="submit" id="submit" href="card_compare.html" th:href="@{/card_compare_page}" value="비교하기" disabled="true">
+    </form>
+
+    <script type="text/javascript">
+        function getRadioText(event){
+            const radioId = event.target.id;
+            const query = 'p[for="'+radioId+'"]' //p태그의 for="아이디" 가져오기 //이때 아이디는 위에서 선언
+            const query2 = 'input[value="'+radioId+'"]' //input 태그의 id가 해당하는 값 가져오기
+
+            const text = document.querySelector(query).innerText; //innerText : 태그 사이에 텍스트를 넣겠다.
+            const code = document.querySelector(query2).value;
+
+            if(document.getElementById('result').innerText==text || document.getElementById('result2').innerText==text){
+                alert('이미 비교함에 있는 카드입니다.');
+                return false;
+            }
+            if(document.getElementById('result').innerText!="" && document.getElementById('result2').innerText!=""){
+                alert('비교함이 가득 차있습니다. 비교함을 비우고 다시 담아주세요.');
+                return false;
+            }
+
+            if(document.getElementById('result').innerText==""){
+                document.getElementById('result').innerText = text;
+               document.getElementById('one').value = code;
+               menu(1);
+
+            }else{
+                document.getElementById('result2').innerText = text;
+                document.getElementById('two').value = code;
+                menu(1);
+
+                //비교하기 버튼 활성화
+               document.getElementById('submit').disabled = false;
+            }
+        }
+
+        //비교함 개별삭제
+        function cancel(condition){
+
+            if(condition ==1){ //첫번째꺼 삭제하면 두번째text가 첫번째로 올라오기
+              document.getElementById('result').innerText="";
+              document.getElementById('result').innerText=document.getElementById('result2').innerText;
+              document.getElementById('result2').innerText="";
+
+              //비교하기 버튼 비활성화
+               document.getElementById('submit').disabled = true;
+            }
+            else{
+              document.getElementById('result2').innerText="";
+
+              //비교하기 버튼 비활성화
+               document.getElementById('submit').disabled = true;
+              }
+        }
+
+
+        //비교함 보이기, 숨기기
+              //초기화
+             document.getElementById("comparebox").style.display="block";
+             document.getElementById("comShow").style.display = "none";
+
+        function menu(condition){
+            var menu = document.getElementById("comparebox");
+            var showBtn = document.getElementById("comShow");
+
+            if(condition==1){ //보이기 누르면
+              menu.style.display="block";
+              showBtn.style.display = "none";
+
+            }
+            else{ //숨기기누르면
+              menu.style.display="none";
+              showBtn.style.display = "block";
+          }
+        }
+    </script>
+
+    <th:block th:replace = "/footer :: footer"></th:block>
+
+    <!--슬릭 스크립트/소스-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="../static/js/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+                $(document).on('ready', function() {
+
+                  $(".lazy").slick({
+                    lazyLoad: 'ondemand', // ondemand progressive anticipated
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000
+                  });
+                });
+    </script>
+    <!--슬릭 스크립트/소스-->
+
+
+</body>
+</html>
