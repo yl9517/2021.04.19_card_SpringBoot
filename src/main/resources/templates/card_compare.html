@@ -76,30 +76,30 @@
             <tr class="benefits">
                 <td>
                     <dl>
-                        <dt th:text="${card1.benefit1}"></dt>
-                        <dd>혜택1 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card1.benefit1}"></dt>
+                        <dd th:text="${card1.benefit1_detail}"></dd>
                     </dl>
                     <dl>
-                        <dt th:text="${card1.benefit2}"></dt>
-                        <dd>혜택2 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card1.benefit2}"></dt>
+                        <dd><img th:text="${card1.benefit2_detail}"></dd>
                     </dl>
                     <dl>
-                        <dt th:text="${card1.benefit3}"></dt>
-                        <dd>혜택3 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card1.benefit3}"></dt>
+                        <dd th:text="${card1.benefit3_detail}"></dd>
                     </dl>
                 </td>
                 <td>
                     <dl>
-                        <dt th:text="${card2.benefit1}"></dt>
-                        <dd>혜택1 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card2.benefit1}"></dt>
+                        <dd th:text="${card1.benefit1_detail}"></dd>
                     </dl>
                     <dl>
-                        <dt th:text="${card2.benefit2}"></dt>
-                        <dd>혜택2 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card2.benefit2}"></dt>
+                        <dd th:text="${card1.benefit2_detail}"></dd>
                     </dl>
                     <dl>
-                        <dt th:text="${card2.benefit3}"></dt>
-                        <dd>혜택3 상세</dd>
+                        <dt><img th:src="@{../static/images/} + ${card2.benefit3}"></dt>
+                        <dd th:text="${card1.benefit3_detail}"></dd>
                     </dl>
                 </td>
 

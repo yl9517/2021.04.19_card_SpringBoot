@@ -69,16 +69,24 @@ a{
       transition: 0.3s;
   }
 
-/*비교 - 혜택*/
-  #compareInfo .benefits dl{
-    padding: 20px 0;
-  }
   #compareInfo td{
     padding: 40px;
+    width:50%;
   }
  #compareInfo td:nth-child(2){
     border-left: 1px solid #ccc;
   }
+
+/*비교 - 혜택*/
+
+  #compareInfo .benefits dl{
+    padding: 30px 0;
+    text-align:center
+  }
+  #compareInfo .benefits dt img{
+      width: 150px;
+  }
+
 #compareInfo .intitle{
     padding : 10px;
     height: 50px;

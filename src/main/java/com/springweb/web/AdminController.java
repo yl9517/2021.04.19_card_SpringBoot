@@ -47,7 +47,11 @@ public class AdminController {
 
     //카드 등록페이지 이동
     @GetMapping("/admin/card_regist_page")
-    public String regist_page(){
+    public String regist_page(Model model){
+
+        List<CardCompanyDto> companyList = cardCompanyService.getAllCardCompany();
+        model.addAttribute("company",companyList);
+
         return "admin_CardRegister";
     }
 
