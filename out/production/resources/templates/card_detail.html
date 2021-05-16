@@ -40,9 +40,11 @@
                        <p>연회비 :<span th:text="${cardDto.annualFee}"></span>원</p>
                        <p>전월실적 :<span th:text="${cardDto.beforePay}"></span> 원</p>
                    </div>
-                   <div id="application">
-                       <a href="#" >카드 신청 </a>
-                   </div>
+                   <form method="post" th:action="@{/card_countUp}" id="application">
+                       <input type="hidden" th:value="${cardDto.cardCode}" name="cardCode">
+                       <input type="hidden" th:value="${cardDto.cardLink}" name="cardLink">
+                       <a th:href="${cardDto.cardLink}"><input type="submit" value="카드 신청"> </a>
+                   </form>
                </div>
            </div>
            <div id="beneInfo">
@@ -54,17 +56,17 @@
                        <li>
 
                            <img th:src="@{../static/images/} + ${cardDto.benefit1}">  <!--혜택1 아이콘-->
-                           <h3> ㅇㅇ </h3>
+
                            <p th:text="${cardDto.benefit1_detail}"></p>
                        </li>
                        <li>
                            <img th:src="@{../static/images/} + ${cardDto.benefit2}">  <!--혜택1 아이콘-->
-                           <h3> 마트 / 편의점</h3>
+
                            <p th:text="${cardDto.benefit2_detail}"> </p>
                        </li>
                        <li>
                            <img th:src="@{../static/images/} + ${cardDto.benefit3}">  <!--혜택1 아이콘-->
-                           <h3> 마트 / 편의점</h3>
+
                            <p th:text="${cardDto.benefit3_detail}"> </p>
                        </li>
                    </ul>

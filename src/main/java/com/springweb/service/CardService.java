@@ -53,7 +53,7 @@ public class CardService {
     //Optional 쓰는 이유 : 널값으로 인해 발생하는 에러를 예외처리를 해줌
 
 
-    //카드사 카운트 수정
+    //카드 링크 카운트 수정
     @Transactional
     public Long UpdateCount(Long code){
 

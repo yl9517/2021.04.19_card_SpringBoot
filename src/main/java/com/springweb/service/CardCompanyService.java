@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -86,5 +87,17 @@ public class CardCompanyService {
         return cardCompanyDto;
     }
 
+    //해당카드사의 등록카드 갯수 수정
+    @Transactional
+    public String addCard(String name){
+        //수정할 대상 찾기
+        Optional<CardCompanyEntity> companyEntityOptional = cardCompanyRepository.findByCardName(name);
+        CardCompanyEntity cardCompanyEntity = companyEntityOptional.get();
+
+        //찾았으면 업데이트
+        cardCompanyEntity.addCard();
+
+        return name;
+    }
 
 }

@@ -78,6 +78,8 @@ public class AdminController {
 
 
             cardService.SaveCard(cardDto);
+            cardCompanyService.addCard(request.getParameter("cardCompany")); //해당 회사 등록카드 +1
+
             return "redirect:/admin";//다 쓰면 리스트로 돌리기
 
         }catch (Exception e){

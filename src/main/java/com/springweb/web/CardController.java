@@ -1,6 +1,8 @@
 package com.springweb.web;
 
+import com.springweb.service.CardCompanyService;
 import com.springweb.service.CardService;
+import com.springweb.web.dto.CardCompanyDto;
 import com.springweb.web.dto.CardDto;
 import com.springweb.web.dto.CardUpdateDto;
 import lombok.AllArgsConstructor;
@@ -19,6 +21,7 @@ import java.util.List;
 public class CardController {
 
     private final CardService cardService;
+    private final CardCompanyService cardCompanyService;
 
     // get 조회 |  post 생성  |  put 수정  |  delete 삭제
 
@@ -39,10 +42,33 @@ public class CardController {
         return "cardSearch";
     }
     //카드사 페이지
-    @GetMapping("/card/card_company_page")
-    public String card_company(){
+    @GetMapping("/card_company_page")
+    public String card_company(Model model){
+        List<CardCompanyDto> cardCompanyList = cardCompanyService.getAllCardCompany();
+
+        model.addAttribute("companyList", cardCompanyList);
         return "card_company";
     }
+
+
+    //해당 카드사의 리스트 (카드사 검색 후)
+    @PostMapping("/find_company/{name}")
+    public String finCompany_list(@PathVariable("code") Long name ,Model model) {
+
+
+        List<CardDto> cardlist = cardService.getAllCard();
+        List<CardDto> foundList = new ArrayList<>();
+
+        for(int i=0; i<cardlist.size(); i++){
+            if(cardlist.get(i).getCardType().equals(name)){ //카드사 골라내기
+                foundList.add(cardlist.get(i));
+            }
+        }
+
+        model.addAttribute("thisCardlist",foundList);
+        return "redirect:/card_company_page";
+    }
+
 
     //카드 리스트 이동 (조건검색 후)
     @PostMapping("/card_list_page")
@@ -54,7 +80,6 @@ public class CardController {
         String foundBene2 = request.getParameter("inbene1");
         String foundBene3 = request.getParameter("inbene2");
 
-        System.out.println("타입"+foundType);
 
         String[] foundBene = {foundBene1,foundBene2,foundBene3};
         String[] thisBene = {"교통","마트/편의점","쇼핑","영화/문화","주유","카페/디저트","통신"};
@@ -62,13 +87,10 @@ public class CardController {
 
         for(int i=0; i<foundBene.length; i++){
 
-            System.out.println("혜택 한글"+foundBene[i]);
-
             for(int j=0; j< thisBene.length; j++) {
                 foundBene[i].replace(thisBene[j], changeBene[j]);
             }
 
-            System.out.println("혜택영어"+changeBene[i]);
         }
 ////////////////
 
@@ -141,9 +163,9 @@ public class CardController {
 
         Long code = Long.valueOf(request.getParameter("cardCode"));
         String link = request.getParameter("cardLink");
-        System.out.println(code+link);
+
         cardService.UpdateCount(code);
-        return "redirect:/card_detail_page/"+code;
+        return "redirect:"+link;
     }
 
 

@@ -42,7 +42,7 @@ public class CardCompanyEntity {
 
     //카드 등록할때마다 등록카드갯수 올라가기
     public void addCard(){
-        this.haveCardNum=haveCardNum++;
+        this.haveCardNum++;
     }
 
 

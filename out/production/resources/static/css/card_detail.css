@@ -89,13 +89,13 @@ a{
     padding: 20px 5px 20px 10px;
 }
 
-#detailInfo #application a{
+#detailInfo #application input{
     font-size : 30px;
     padding: 25px 80px;
     background-color:  rgba(204,153,255, 0.5);
     border-radius: 10px;
 }
-#detailInfo #application a:hover{
+#detailInfo #application input:hover{
     background-color:  rgba(204,153,255, 1);
     transition: 0.3s;
 }
