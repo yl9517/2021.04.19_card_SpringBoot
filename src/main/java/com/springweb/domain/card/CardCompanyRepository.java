@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface CardCompanyRepository extends JpaRepository<CardCompanyEntity,Long> {
 
-   @Query(value = "SELECT * FROM CARD_COMPANY  WHERE companyName = ?1", nativeQuery = true)
+   @Query(value = "SELECT * FROM CARD_COMPANY WHERE COMPANY_NAME = ?1", nativeQuery = true)
     Optional<CardCompanyEntity> findByCardName(String companyName);
 
 }

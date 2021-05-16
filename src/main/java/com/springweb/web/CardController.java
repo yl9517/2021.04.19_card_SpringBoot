@@ -64,6 +64,7 @@ public class CardController {
                 foundList.add(cardlist.get(i));
             }
         }
+        System.out.println("카드리스트 검색"+foundList);
 
         model.addAttribute("thisCardlist",foundList);
         return "redirect:/card_company_page";
@@ -92,18 +93,16 @@ public class CardController {
             }
 
         }
-////////////////
 
 
         List<CardDto> cardlist = cardService.getAllCard();
         List<CardDto> foundList = new ArrayList<>();
 
-        //혜택값이 널이라면..??
 
         for(int i=0; i<cardlist.size(); i++){
             for(int j=0; j< thisBene.length; j++) {
 
-                if(cardlist.get(i).getCardType().equals(foundType)){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
+                if(cardlist.get(i).getCardType().equals(foundType) || foundType.equals("전체")){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
                     if(cardlist.get(i).getBenefit1().equals(changeBene[j]) || cardlist.get(i).getBenefit2().equals(changeBene[j]) || cardlist.get(i).getBenefit3().equals(changeBene[j])) {
 
                         if(foundList.size()==0){
