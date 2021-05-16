@@ -79,15 +79,7 @@
         <select id="cardCompany" name="cardCompany" placeholder="카드사 명">
 
 
-          <option value="">선택</option>
-          <option value="신한카드">신한카드</option>
-          <option value="우리카드">우리카드</option>
-          <option value="하나카드">하나카드</option>
-          <option value="KB국민카드">KB국민카드</option>
-          <option value="롯데카드">롯데카드</option>
-          <option value="삼성카드">삼성카드</option>
-          <option value="새마을카드">새마을카드</option>
-
+          <option th:each="company : ${company}" th:value="${company.companyName}" th:text="${company.companyName}"></option>
 
         </select>
 
