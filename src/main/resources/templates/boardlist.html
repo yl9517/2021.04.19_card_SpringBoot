@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>문의 게시판</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
-    <!--    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-    <!--    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
@@ -91,43 +91,44 @@
 
     </table>
 
-            <nav id="pag" style="text-align: center;">
-                <ul class="pagination justify-content-center"
-                    th:with="start=${T(Math).floor(postList.number/10)*10 + 1},
+    <nav id="pag" style="text-align: center;">
+        <ul class="pagination justify-content-center"
+            th:with="start=${T(Math).floor(postList.number/10)*10 + 1},
                         last=(${start + 9 < postList.totalPages ? start + 9 : postList.totalPages})">
-                    <li class="page-item">
-                        <a class="page-link" th:href="@{/boardlist_page(page=1)}" aria-label="First">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
+            <li class="page-item">
+                <a class="page-link" th:href="@{/boardlist_page(page=1)}" aria-label="First">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
 
-                    <li class="page-item" th:class="${postList.first} ? 'disabled'">
-                        <a class="page-link" th:href="${postList.first} ? '#' :@{/boardlist_page(page=${postList.number})}" aria-label="Previous">
-                            <span aria-hidden="true">&lt;</span>
-                        </a>
-                    </li>
+            <li class="page-item" th:class="${postList.first} ? 'disabled'">
+                <a class="page-link" th:href="${postList.first} ? '#' :@{/boardlist_page(page=${postList.number})}" aria-label="Previous">
+                    <span aria-hidden="true">&lt;</span>
+                </a>
+            </li>
 
-                    <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == postList.number + 1} ? 'active'">
-                        <a class="page-link" th:text="${page}" th:href="@{/boardlist_page(page=${page})}"></a>
-                    </li>
+            <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == postList.number + 1} ? 'active'">
+                <a class="page-link" th:text="${page}" th:href="@{/boardlist_page(page=${page})}"></a>
+            </li>
 
-                    <li class="page-item" th:class="${postList.last} ? 'disabled'">
-                        <a class="page-link" th:href="${postList.last} ? '#' : @{/boardlist_page(page=${postList.number + 2})}" aria-label="Next">
-                            <span aria-hidden="true">&gt;</span>
-                        </a>
-                    </li>
+            <li class="page-item" th:class="${postList.last} ? 'disabled'">
+                <a class="page-link" th:href="${postList.last} ? '#' : @{/boardlist_page(page=${postList.number + 2})}" aria-label="Next">
+                    <span aria-hidden="true">&gt;</span>
+                </a>
+            </li>
 
-                    <li class="page-item">
-                        <a class="page-link" th:href="@{/boardlist_page(page=${postList.totalPages})}" aria-label="Last">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <li class="page-item">
+                <a class="page-link" th:href="@{/boardlist_page(page=${postList.totalPages})}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
 </div>
 <br><br><br><br><br><br>
 <th:block th:replace="footer :: footer"></th:block>
+
 </body>
 </body>
 </html>

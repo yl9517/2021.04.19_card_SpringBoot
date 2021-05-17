@@ -6,14 +6,13 @@
 a.mine{
 
     color:white;
-    background-color:#b4c3ff;
+    background-color:#007bff;
     margin-right:400px;
     width:70px;
     height:25px;
     padding:5 5 5 5;
-    border:2px solid black;
+    border-style:none;
     border-radius:.25rem;
-
 
 }
 
