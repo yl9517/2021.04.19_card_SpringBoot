@@ -55,19 +55,23 @@ public class CardController {
     @GetMapping("/find_company/{name}")
     public String finCompany_list(@PathVariable("name") String name ,Model model) {
 
+        List<CardCompanyDto> cardCompanyList = cardCompanyService.getAllCardCompany();
+        model.addAttribute("companyList", cardCompanyList);
+
 
         List<CardDto> cardlist = cardService.getAllCard();
         List<CardDto> foundList = new ArrayList<>();
 
         for(int i=0; i<cardlist.size(); i++){
-            if(cardlist.get(i).getCardType().equals(name)){ //카드사 골라내기
+            if(cardlist.get(i).getCardCompany().equals(name)){ //카드사 골라내기
                 foundList.add(cardlist.get(i));
             }
         }
-        System.out.println("카드리스트 검색"+foundList);
 
         model.addAttribute("thisCardlist",foundList);
-        return "redirect:/card_company_page";
+        model.addAttribute("thisCompany",name);
+
+        return "card_company";
     }
 
 
@@ -87,31 +91,36 @@ public class CardController {
         String[] changeBene = {"benefit_traffic.png","benefit_mart.png","benefit_shopping.png","benefit_movie.png","benefit_gas.png","benefit_cafe.png","benefit_phone.png"};
 
         for(int i=0; i<foundBene.length; i++){
-
             for(int j=0; j< thisBene.length; j++) {
-                foundBene[i].replace(thisBene[j], changeBene[j]);
+                foundBene[i] = foundBene[i].replace(thisBene[j], changeBene[j]);
             }
-
         }
-
 
         List<CardDto> cardlist = cardService.getAllCard();
         List<CardDto> foundList = new ArrayList<>();
 
 
         for(int i=0; i<cardlist.size(); i++){
-            for(int j=0; j< thisBene.length; j++) {
 
-                if(cardlist.get(i).getCardType().equals(foundType) || foundType.equals("전체")){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
-                    if(cardlist.get(i).getBenefit1().equals(changeBene[j]) || cardlist.get(i).getBenefit2().equals(changeBene[j]) || cardlist.get(i).getBenefit3().equals(changeBene[j])) {
+            if(cardlist.get(i).getCardType().equals(foundType) || foundType.equals("전체")){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
 
-                        if(foundList.size()==0){
-                            foundList.add(cardlist.get(i));
-                        }
-                        for(int x=0; x< foundList.size(); x++){
-                            if(foundList.get(x).getCardCode() != cardlist.get(i).getCardCode()) { //같은코드가 들어가있지 않으면 넣기
+
+                if (foundBene[0].equals("") && foundBene[1].equals("") && foundBene[2].equals("")){ //카드혜택 아무것도 선택 안했을 경우
+                    foundList.add(cardlist.get(i));
+                }
+                else {
+                    for (int j = 0; j < foundBene.length; j++) { //3번 돌기
+
+                        if (cardlist.get(i).getBenefit1().equals(foundBene[j]) || cardlist.get(i).getBenefit2().equals(foundBene[j]) || cardlist.get(i).getBenefit3().equals(foundBene[j])) {
+
+                            if (foundList.size() == 0) {
                                 foundList.add(cardlist.get(i));
+                            } else {
+                                if (!foundList.contains(cardlist.get(i))) { //found리스트 안에 찾는카드의 코드가 없으면
+                                    foundList.add(cardlist.get(i));
+                                }
                             }
+
                         }
 
                     }

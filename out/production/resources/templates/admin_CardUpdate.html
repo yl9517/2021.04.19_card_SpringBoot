@@ -79,17 +79,10 @@
 
         <label>카드사</label> <br>
 
-        <select id="cardCompany" name="cardCompany" placeholder="카드사 명" th:value="${cardDto.cardCompany}">
+        <select id="cardCompany" name="cardCompany" placeholder="카드사 명">
 
-          <option value="0">선택</option>
-          <option value="신한카드">신한카드</option>
-          <option value="우리카드">우리카드</option>
-          <option value="하나카드">하나카드</option>
-          <option value="KB국민카드">KB국민카드</option>
-          <option value="롯데카드">롯데카드</option>
-          <option value="삼성카드">삼성카드</option>
-          <option value="새마을카드">새마을카드</option>
 
+          <option th:value="${cardDto.cardCompany}" th:text="${cardDto.cardCompany}"></option>
 
         </select>
 
@@ -104,8 +97,6 @@
         <label>카드 타입</label> <br>
         <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${cardDto.cardType}">
 
-
-          <option value="">선택</option>
           <option value="포인트">포인트형</option>
           <option value="할인">할인형</option>
 

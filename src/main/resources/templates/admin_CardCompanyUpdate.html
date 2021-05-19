@@ -63,27 +63,14 @@
             <div id="logodiv">
               <label id="Clogo">카드사 로고 : </label>
 
-              <input type="file" id="companyLogo" name="companyLogo" th:value="${companyDto.companyLogo}">
+              <input type="file" id="companyLogo" name="companyLogo">
             </div>
 
             <div id="namediv">
 
               <label id="Cname">카드사 명 : </label>
 
-              <select id="companyName" name="companyName" placeholder="카드사 명"  th:value="${companyDto.companyName}">
-
-
-                <option value="">선택</option>
-                <option value="2">신한카드</option>
-                <option value="3">우리카드</option>
-                <option value="4">하나카드</option>
-                <option value="5">KB국민카드</option>
-                <option value="6">롯데카드</option>
-                <option value="7">삼성카드</option>
-                <option value="8">새마을카드</option>
-
-
-              </select>
+              <input type="text" id="companyName" name="companyName" th:value="${companyDto.companyName}">
             </div>
 
             <br><br><br>
