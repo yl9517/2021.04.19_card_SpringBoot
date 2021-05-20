@@ -102,6 +102,10 @@ public class AdminController {
         //카드에게 넘겨주기
         model.addAttribute("cardDto", cardDto);
 
+        //모든 카드사 넘겨주기
+        List<CardCompanyDto> comList = cardCompanyService.getAllCardCompany();
+        model.addAttribute("companyList", comList);
+
         return "admin_CardUpdate";
     }
 

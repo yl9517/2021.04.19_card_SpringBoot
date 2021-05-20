@@ -79,10 +79,10 @@
 
         <label>카드사</label> <br>
 
-        <select id="cardCompany" name="cardCompany" placeholder="카드사 명">
-
-
-          <option th:value="${cardDto.cardCompany}" th:text="${cardDto.cardCompany}"></option>
+        <select id="cardCompany" name="cardCompany" th:field="${cardDto.cardCompany}">
+          <option th:each="company : ${companyList}"
+                  th:value="${company.companyName}"
+                  th:text="${company.companyName}"></option>
 
         </select>
 
@@ -95,14 +95,14 @@
 
 
         <label>카드 타입</label> <br>
-        <select id="cardType" name="cardType" placeholder="카드사 명" th:value="${cardDto.cardType}">
+        <select id="cardType" name="cardType" th:field="${cardDto.cardType}">
 
           <option value="포인트">포인트형</option>
           <option value="할인">할인형</option>
 
+        </select>
 
-
-        </select> <br><br><br>
+        <br><br><br>
 
         <label>카드 링크</label> <br>
         <input type="text" id="cardLink" name="cardLink" placeholder="카드 링크" th:value="${cardDto.cardLink}"> <br><br><br>
@@ -134,7 +134,7 @@
           <br><br><br>
           <label>혜택 1</label>
 
-          <select id="a" name="benefit1">
+          <select id="a" name="benefit1" th:field="${cardDto.benefit1}">
             <option value="">선택</option>
             <option value="benefit_traffic.png">교통</option>
             <option value="benefit_mart.png">마트편의점</option>
@@ -150,7 +150,7 @@
           <br><br>
           <label>혜택 2</label>
 
-          <select id="b" name="benefit2">
+          <select id="b" name="benefit2" th:field="${cardDto.benefit2}">
             <option value="0">선택</option>
             <option value="benefit_traffic.png">교통</option>
             <option value="benefit_mart.png">마트편의점</option>
@@ -166,7 +166,7 @@
           <br><br>
           <label>혜택 3</label>
 
-          <select id="c" name="benefit3">
+          <select id="c" name="benefit3" th:field="${cardDto.benefit3}">
             <option value="0">선택</option>
             <option value="benefit_traffic.png">교통</option>
             <option value="benefit_mart.png">마트편의점</option>
