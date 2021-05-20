@@ -123,6 +123,7 @@ public class AdminController {
             CardUpdateDto cardDto = new CardUpdateDto();
 
             Long id = Long.valueOf(request.getParameter(("cardCode")));
+            System.out.println("수정할 카드코드"+id);
 
             cardDto.setCardPhoto(files.getOriginalFilename());
             cardDto.setCardName( request.getParameter("cardName"));
