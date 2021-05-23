@@ -78,22 +78,10 @@
             <div id="third_block">
                 <h2> 오늘의 <span>카드 추천</span> </h2>
                 <ul>
-                    <a href="#">
+                    <a th:href="@{'/card_detail_page/'+${random.cardCode}}" th:each=" random : ${randomList}">
                         <li class="randomCard">
-                            <img src="../static/images/카드1.png">
-                            <p>신한 DEEP MAKING</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li class="randomCard">
-                            <img src="../static/images/카드2.png">
-                            <p>신한 DEEP MAKING</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li class="randomCard">
-                            <img src="../static/images/카드3.png">
-                            <p>신한 DEEP MAKING</p>
+                                <img th:src="@{../static/images/} + ${random.cardPhoto}">
+                                <p class="name" th:text="${random.cardName}"></p>
                         </li>
                     </a>
                  </ul>

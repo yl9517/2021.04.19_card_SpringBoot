@@ -11,10 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.smartcardio.Card;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.SortedSet;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -114,6 +111,40 @@ public class CardService {
 
         }
         return cardDtoList;
+    }
+
+    //랜덤 카드조회 (메인)
+    @Transactional
+    public List<CardDto> getMainCard(){
+        List<CardEntity> cardEntities = cardRepository.findAll();
+        Collections.shuffle(cardEntities); //카드 값들을 랜덤으로 순서 재배치
+
+        List<CardDto> mainCardList = new ArrayList<>();
+        for(int i=0; i<cardEntities.size(); i++){ //사이즈만큼 반복
+
+            if(i==3) break; //3이면 끝내기
+
+            CardEntity entity = cardEntities.get(i);
+            CardDto cardDto = CardDto.builder()
+                    .cardCode(entity.getCardCode())
+                    .cardName(entity.getCardName())
+                    .cardPhoto(entity.getCardPhoto())
+                    .cardCompany(entity.getCardCompany())
+                    .annualFee(entity.getAnnualFee())
+                    .beforePay(entity.getBeforePay())
+                    .cardType(entity.getCardType())
+                    .benefit1(entity.getBenefit1())
+                    .benefit1_detail(entity.getBenefit1_detail())
+                    .benefit2(entity.getBenefit2())
+                    .benefit2_detail(entity.getBenefit2_detail())
+                    .benefit3(entity.getBenefit3())
+                    .benefit3_detail(entity.getBenefit3_detail())
+                    .cardLink(entity.getCardLink())
+                    .build();
+            mainCardList.add(cardDto);
+
+        }
+        return mainCardList;
     }
 
     //조건 전체조회 (차트순위 별)

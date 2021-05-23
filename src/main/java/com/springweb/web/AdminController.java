@@ -123,7 +123,6 @@ public class AdminController {
             CardUpdateDto cardDto = new CardUpdateDto();
 
             Long id = Long.valueOf(request.getParameter(("cardCode")));
-            System.out.println("수정할 카드코드"+id);
 
             cardDto.setCardPhoto(files.getOriginalFilename());
             cardDto.setCardName( request.getParameter("cardName"));
@@ -131,12 +130,12 @@ public class AdminController {
             cardDto.setAnnualFee( Integer.parseInt(request.getParameter("annualFee")));
             cardDto.setBeforePay(Integer.parseInt(request.getParameter("beforePay")));
             cardDto.setCardType(request.getParameter("cardType"));
-            cardDto.setBenefit1("benefit1");
-            cardDto.setBenefit1_detail("benefit1_detail");
-            cardDto.setBenefit2("benefit2");
-            cardDto.setBenefit2_detail("benefit2_detail");
-            cardDto.setBenefit3("benefit3");
-            cardDto.setBenefit3_detail("benefit3_detail");
+            cardDto.setBenefit1(request.getParameter("benefit1"));
+            cardDto.setBenefit1_detail(request.getParameter("benefit1_detail"));
+            cardDto.setBenefit2(request.getParameter("benefit2"));
+            cardDto.setBenefit2_detail(request.getParameter("benefit2_detail"));
+            cardDto.setBenefit3(request.getParameter("benefit3"));
+            cardDto.setBenefit3_detail(request.getParameter("benefit3_detail"));
             cardDto.setCardLink(request.getParameter("cardLink"));
 
             cardService.UpdateCard(id, cardDto);
