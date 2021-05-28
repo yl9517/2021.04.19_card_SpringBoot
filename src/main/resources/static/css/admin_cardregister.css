@@ -46,7 +46,7 @@ text-align:center;
              padding: 15px 30px;
              width: 350px;
              height:870px;
-             border: 3px solid #8282ff ;
+             border: 3px solid black;
              border-radius: 10px;
 
 }
@@ -71,7 +71,7 @@ text-align:center;
                  padding: 15px;
                  width: 600px;
                  height:870px;
-                 border: 3px solid  #8282ff ;
+                 border: 3px solid  black;
                  border-radius: 10px;
 
 
@@ -128,4 +128,14 @@ textarea{
     border:1px solid black;
     border-radius:5px;
 
+}
+
+#ula{
+
+    display:block;
+}
+
+#lia,#lib,#lic,#lid,#lie,#lif,#lig,#lia2{
+
+    display:inline-block;
 }
