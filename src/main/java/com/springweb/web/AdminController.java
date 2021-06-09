@@ -21,7 +21,7 @@ import javax.smartcardio.Card;
 import java.io.File;
 import java.util.List;
 
-//여름 이미지폴더 경로 -> C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"
+//여름 이미지폴더 경로 -> C:\Users\yl951\IdeaProjects\springProject\src\main\resources\static\images"
 //강현 이미지폴더 경로 -> C:\springproject\src\main\resources\static\images
 @Controller
 @AllArgsConstructor //빈 생성자
@@ -60,7 +60,7 @@ public class AdminController {
     @PostMapping("/admin/card_register")
     public String register(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){
         try{
-            String baseDir="C:\\springproject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
             String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
             files.transferTo(new File(filePath));       //파일 저장!!!
 
@@ -118,7 +118,7 @@ public class AdminController {
     public String update(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){ /* ajax로 받을때 requestbody로 받음*/
         //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
         try{
-            String baseDir="C:\\springproject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
             String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
             files.transferTo(new File(filePath));       //파일 저장!!!
 
@@ -184,7 +184,7 @@ public class AdminController {
     @PostMapping("/admin/company_register")
     public String companyRegister(@RequestParam("companyLogo") MultipartFile files, HttpServletRequest request){
         try{
-            String baseDir="C:\\springproject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
             String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
             files.transferTo(new File(filePath));       //파일 저장!!!
 
@@ -221,7 +221,7 @@ public class AdminController {
     public String companyUpdate(@RequestParam("cardPhoto") MultipartFile files, HttpServletRequest request){
         //멀티파트로 받아온게 아니면 CardDto로 받아올 수 있음!!!
         try{
-            String baseDir="C:\\springproject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
+            String baseDir="C:\\Users\\yl951\\IdeaProjects\\springProject\\src\\main\\resources\\static\\images"; //파일이 저장되는 위치
             String filePath = baseDir+"\\"+files.getOriginalFilename(); //파일이 저장되는 위치 +파일명
             files.transferTo(new File(filePath));       //파일 저장!!!
 
