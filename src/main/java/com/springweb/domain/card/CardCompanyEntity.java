@@ -9,19 +9,21 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity(name="cardCompany")
+@Table(name="cardCompany")
 public class CardCompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "companyCode", nullable = false)
     private Long companyCode; //회사코드
 
-    @Column(nullable = false)
+    @Column(name = "companyName",nullable = false)
     private String companyName; //카드사
 
-    @Column (nullable = false)
+    @Column (name = "companyLogo",nullable = false)
     private String companyLogo; //회사로고
 
-    @Column (nullable = false)
+    @Column (name = "haveCardNum",nullable = false)
     private int haveCardNum; //등록카드 갯수
 
     @Builder

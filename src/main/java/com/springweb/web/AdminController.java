@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.List;
 
 //여름 이미지폴더 경로 -> C:\Users\yl951\IdeaProjects\springProject\src\main\resources\static\images"
-//강현 이미지폴더 경로 -> C:\springproject\src\main\resources\static\images
+//강현 이미지폴더 경로 -> C:\Users\sijae\Desktop\springProject\src\main\resources\static\images
 @Controller
 @AllArgsConstructor //빈 생성자
 public class AdminController {

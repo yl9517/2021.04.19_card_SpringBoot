@@ -77,7 +77,7 @@ public class OauthAttributes {
 
     //엔티티로 넣어주기 메소드
     public User toEntity(){
-        return User.builder().name(name).email(email).role(Role.ADMIN).build();
+        return User.builder().name(name).email(email).role(Role.ADMIN).build(); //관리자로 바로.
     } //나중에 role.member로 바꾸기
 
 }

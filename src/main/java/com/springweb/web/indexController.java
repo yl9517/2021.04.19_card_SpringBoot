@@ -2,14 +2,11 @@ package com.springweb.web;
 
 import com.springweb.service.CardService;
 import com.springweb.web.dto.CardDto;
-import com.springweb.web.dto.SesstionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller

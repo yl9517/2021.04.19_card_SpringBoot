@@ -11,16 +11,19 @@ import javax.persistence.*;
 @ToString
 @Entity(name="reply")
 @NoArgsConstructor
+@Table(name="reply")
 public class ReplyEntity extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id",nullable = false)
     private Long id;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "reply_writer",columnDefinition = "TEXT", nullable = false
+    )
     private String reply_writer;
 
-    @Column(length = 300, nullable = false)
+    @Column(name="reply_content",length = 300, nullable = false)
     private String reply_content;
 
     @ManyToOne

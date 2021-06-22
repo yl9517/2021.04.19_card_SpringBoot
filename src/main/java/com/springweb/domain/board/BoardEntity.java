@@ -10,25 +10,28 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity(name="board")
+@Table(name = "board")
 public class BoardEntity extends BaseTimeEntity {
 
     @Id //@Id= 기본키 부여
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="bbsID", nullable = false)
     private Long bbsID;
 
-    @Column(nullable = false)
+    @Column(name="bbsTitle", nullable = false)
     private String bbsTitle;
 
-    @Column(nullable = false)
+
+    @Column(name="bbsCategory", nullable = false)
     private String bbsCategory;
 
-    @Column(nullable = false)
+    @Column(name="bbsContent",nullable = false)
     private String bbsContent;
 
-    @Column(nullable = true)
+    @Column(name ="bbsReply", nullable = true)
     private String bbsReply;
 
-    @Column(nullable = true)
+    @Column(name ="userID", nullable = true)
     private String userID;
 
     @Builder

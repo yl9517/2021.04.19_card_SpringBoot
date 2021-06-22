@@ -10,20 +10,22 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor
+@Table(name="user")
 public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id",nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name ="name", nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(name = "email",nullable = false)
     private String email;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING) //role => varchar , create/modified =datetime
+    @Column(name = "role",nullable = false)
     private Role role;
 
     @Builder
