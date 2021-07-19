@@ -2,14 +2,17 @@ package com.springweb.service;
 
 import com.springweb.domain.card.CardCompanyEntity;
 import com.springweb.domain.card.CardCompanyRepository;
+import com.springweb.domain.card.CardEntity;
 import com.springweb.web.dto.CardCompanyDto;
 import com.springweb.web.dto.CardCompanyUpdateDto;
+import com.springweb.web.dto.CardDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.swing.text.html.Option;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -87,7 +90,7 @@ public class CardCompanyService {
         return cardCompanyDto;
     }
 
-    //해당카드사의 등록카드 갯수 수정
+    //해당카드사의 등록된 카드 갯수 수정
     @Transactional
     public String addCard(String name){
         //수정할 대상 찾기
@@ -99,5 +102,6 @@ public class CardCompanyService {
 
         return name;
     }
+
 
 }

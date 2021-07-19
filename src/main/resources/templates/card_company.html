@@ -101,10 +101,8 @@
 
     <div id="companys">
 
-
+        <!--카드사--->
         <section class="center slider">
-
-
             <div class="oneCompany" th:each="company : ${companyList}">
                 <a th:href="@{'/find_company/'+${company.companyName}}">
                     <input type="hidden" th:value="${company.companyCode}">
@@ -115,10 +113,9 @@
                     <img class="cardPic" src="../static/images/카드3.png" width="180px">
                 </a>
             </div>
-
-
         </section>
 
+        <!--목록-->
         <div id="finCompanyList">
             <h2 th:text="${thisCompany}"></h2>
             <ul>

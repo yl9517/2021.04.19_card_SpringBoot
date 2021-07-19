@@ -32,9 +32,8 @@ a{
     padding: 40px;
    font-size : 35px;
  }
-/*
 
-*/
+
 /*카드사 li*/
 .oneCompany{
     background-color:#fff;
@@ -72,22 +71,6 @@ a{
 .oneCompany:hover{
     border: 5px solid rgba(204,153,255, 0.5);
 }
-
-
-
-/*#companys li:first-child:before{
-   content:'';
-   background : url(../images/카드1.png) no-repeat;
-    position: absolute;
-    background-size: cover;
-    width:60%;
-    height: 60%;
-    top: 55px;
-    right: -80px;
-    filter: blur(3px);
-}*/
-
-
 
 
 /* 카드사 리스트*/

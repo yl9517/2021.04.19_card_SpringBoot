@@ -147,6 +147,7 @@ public class CardService {
         return mainCardList;
     }
 
+
     //조건 전체조회 (차트순위 별)
     public List<CardDto> getRankCard(){
         List<CardEntity> cardEntities = cardRepository.findAll(Sort.by(Sort.Direction.DESC,"count"));

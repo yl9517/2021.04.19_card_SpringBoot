@@ -44,8 +44,8 @@ public class CardController {
     //카드사 페이지
     @GetMapping("/card_company_page")
     public String card_company(Model model){
+        //카드사들
         List<CardCompanyDto> cardCompanyList = cardCompanyService.getAllCardCompany();
-
         model.addAttribute("companyList", cardCompanyList);
         return "card_company";
     }
@@ -91,45 +91,43 @@ public class CardController {
         String[] thisBene = {"교통","마트/편의점","쇼핑","영화/문화","주유","카페/디저트","통신"};
         String[] changeBene = {"benefit_traffic.png","benefit_mart.png","benefit_shopping.png","benefit_movie.png","benefit_gas.png","benefit_cafe.png","benefit_phone.png"};
 
+        List<String> foundBeneList = new ArrayList<>();
+
         for(int i=0; i<foundBene.length; i++){
             for(int j=0; j< thisBene.length; j++) {
                 foundBene[i] = foundBene[i].replace(thisBene[j], changeBene[j]);
             }
+            if(foundBene[i]!="")
+                foundBeneList.add(foundBene[i]);
         }
+
 
         List<CardDto> cardlist = cardService.getAllCard();
         List<CardDto> foundList = new ArrayList<>();
 
-
         for(int i=0; i<cardlist.size(); i++){
 
-            if(cardlist.get(i).getCardType().equals(foundType) || foundType.equals("전체")){ //카드타입 같은거 , 카드 혜택 같은거 골라내기
+            if(cardlist.get(i).getCardType().equals(foundType) || foundType.equals("전체")){ //카드타입 같은것 거르기
 
 
-                if (foundBene[0].equals("") && foundBene[1].equals("") && foundBene[2].equals("")){ //카드혜택 아무것도 선택 안했을 경우
+                if (foundBeneList.size()==0) //카드혜택 아무것도 선택 안했을 경우
                     foundList.add(cardlist.get(i));
-                }
-                else {
-                    for (int j = 0; j < foundBene.length; j++) { //3번 돌기
+                else { //하나라도 선택 했으면
+                    int check =0;
+                    for (int j = 0; j < foundBeneList.size(); j++) { //사이즈만큼 돌기 (혜택 체크)
 
-                        if (cardlist.get(i).getBenefit1().equals(foundBene[j]) || cardlist.get(i).getBenefit2().equals(foundBene[j]) || cardlist.get(i).getBenefit3().equals(foundBene[j])) {
-
-                            if (foundList.size() == 0) {
-                                foundList.add(cardlist.get(i));
-                            } else {
-                                if (!foundList.contains(cardlist.get(i))) { //found리스트 안에 찾는카드의 코드가 없으면
-                                    foundList.add(cardlist.get(i));
-                                }
-                            }
-
-                        }
-
+                        if(cardlist.get(i).getBenefit1().equals(foundBeneList.get(j)))  //카드의 혜택1번과 내가 선택한 혜택중 하나가 맞다면
+                            check++;
+                        if(cardlist.get(i).getBenefit2().equals(foundBeneList.get(j)))
+                            check++;
+                        if(cardlist.get(i).getBenefit3().equals(foundBeneList.get(j)))
+                            check++;
                     }
+                    if( check==foundBeneList.size() )   // 해당카드의 조건 수(Check)가 내가 선택한 조건수와 같다면 (수량 체크)
+                        foundList.add(cardlist.get(i));
                 }
-
             }
         }
-
         model.addAttribute("cardlist",foundList);
         return "card_list";
     }
