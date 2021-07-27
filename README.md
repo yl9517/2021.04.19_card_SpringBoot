@@ -1,5 +1,11 @@
-# springProject
+# :tulip: Card24_SpringBoot 프로젝트
 
+#### 프로젝트 수행자 : 총 2명 - 이강현, 이여름
+#### 프로젝트 기간 : 2021.04.15 ~ 2021.05.18 (약 5주)
+![image](https://user-images.githubusercontent.com/80736033/127148169-cbc90253-8ad5-40bb-8553-260373d21706.png)
+
+## 개요
+![image](https://user-images.githubusercontent.com/80736033/127148559-7fd49edf-5bac-47ad-9e05-548bcc9b7c66.png)
 1. 주제 : 카드사[ 신용카드 추천 사이트 ] 
 
 2. 사이트명 : Card24
