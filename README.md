@@ -6,6 +6,20 @@
 
 ## 개요
 ![image](https://user-images.githubusercontent.com/80736033/127148559-7fd49edf-5bac-47ad-9e05-548bcc9b7c66.png)
+
+## 환경
+* 사용언어 : JAVA (IntelliJ)
+* UI : HTML, CSS, JS, jQuery
+* DBMS : MySQL
+* OS : Windows 10
+
+## 서비스
+![image](https://user-images.githubusercontent.com/80736033/127321984-5fcb7ba0-8125-4b63-bd5d-56fbd68dc6b2.png)
+
+
+
+
+
 1. 주제 : 카드사[ 신용카드 추천 사이트 ] 
 
 2. 사이트명 : Card24
