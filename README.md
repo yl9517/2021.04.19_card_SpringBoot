@@ -17,9 +17,12 @@
 ![image](https://user-images.githubusercontent.com/80736033/127321984-5fcb7ba0-8125-4b63-bd5d-56fbd68dc6b2.png)
 
 ## DB정의서
-
+MIRICANVAS_ITEM_COPY_KEY
 
 ## 주요기술
+![image](https://user-images.githubusercontent.com/80736033/135707744-7bb088c3-77e6-4cfa-87e2-e993d922732f.png)
+
+## 시스템 구조도
 ![image](https://user-images.githubusercontent.com/80736033/127669771-765820a8-334b-47f6-99dd-050ca1a794d6.png)
 
 
